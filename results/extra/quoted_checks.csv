@@ -1,0 +1,88 @@
+id,where,text,value,computed_as_text,match,file,column
+sat_vs_mon,ch1 §1.2,a Saturday about a third below a Monday,-33.15302903074515,33.2%,True,extra/generator_effects.csv,pct (effect=weekday_Sat)
+sat_vs_mon,ch3 §3.1,a Saturday is about 33% below a Monday,-33.15302903074515,33%,True,extra/generator_effects.csv,pct (effect=weekday_Sat)
+sun_vs_mon,ch3 §3.1,a Sunday about 48% below,-47.562467749212765,48%,True,extra/generator_effects.csv,pct (effect=weekday_Sun)
+pub_pct,"ch4 §4.7, ch5 §5.1",public holidays -42%; ch5/ch8 'about 42%',-42.25078919993614,42%,True,extra/generator_effects.csv,pct (effect=pub)
+xmas_pct,"ch4 §4.7, ch5 §5.1",Christmas -25%,-25.065041721961514,25%,True,extra/generator_effects.csv,pct (effect=xmas)
+school_pct,"ch4 §4.7, ch5 §5.1",school holidays -7%,-7.0389009122373665,7%,True,extra/generator_effects.csv,pct (effect=school)
+sigma_robust,ch8 §8.3,robust SD of the fitted residuals 0.049,0.04872726529262043,0.049,True,extra/generator_effects.csv,log_effect (effect=sigma_robust)
+sd_raw,ch8 §8.3,against an ordinary one of 0.097,0.09696473272650753,0.097,True,extra/generator_effects.csv,log_effect (effect=sd_raw)
+elec_sd_ABHW,ch7 §7.2,"about 8% of daily demand for A, B and Holt-Winters",0.07749687017010067,7.5-8.0%,True,extra/surprise_spread.csv,"robust_sd (stream=electricity, adj=A/B/HW)"
+elec_vs_opal_sd,ch7 §7.2,about as noisy as Opal's,0.09408434853430749,Opal 7.9-10.3%,True,extra/surprise_spread.csv,"robust_sd (stream=opal, adj=A/B/HW)"
+elec_lag1_ABHW,ch7 §7.2,lag-one correlation of about 0.7,0.72392109837844,0.67-0.75,True,extra/surprise_spread.csv,"lag1 (stream=electricity, adj=A/B/HW)"
+elec_vs_opal_lag1,ch7 §7.2,at least as dependent (as Opal),0.6538855243634799,Opal 0.63-0.67,True,extra/surprise_spread.csv,"lag1 (stream=opal, adj=A/B/HW)"
+elec_REG_p_sd,ch7 §7.2,robust SD 6.0% (REG_p),0.059937455868967794,6.0%,True,extra/surprise_spread.csv,"robust_sd (stream=electricity, adj=REG_p)"
+elec_REG_p_lag1,ch7 §7.2,lag-one 0.71 (REG_p),0.7111030384000016,0.71,True,extra/surprise_spread.csv,"lag1 (stream=electricity, adj=REG_p)"
+elec_REGT_p_sd,ch7 §7.2,robust SD 4.0% (REGT_p),0.04047789611195493,4.0%,True,extra/surprise_spread.csv,"robust_sd (stream=electricity, adj=REGT_p)"
+elec_REGT_p_lag1,ch7 §7.2,lag-one 0.59 (REGT_p),0.5905492702355828,0.59,True,extra/surprise_spread.csv,"lag1 (stream=electricity, adj=REGT_p)"
+pub_sd_sim,"ch5 §5.1, ch8 §8.3",a public holiday is about 11 SD,11.268034419376287,11.3,True,extra/holiday_sd.csv,pub_in_sd (source=simulation)
+pub_sd_real,ch8 §8.3,against about 5 to 7 on real surprises,5.924611596701336,5.3-7.0,True,extra/holiday_sd.csv,pub_in_sd (source=opal_real)
+covid_drop,ch3 Fig 3.1 caption,COVID-19 cut travel by about four fifths,0.8067419158023179,80.7% (28-day min 80.7%),True,extra/opal_level.csv,"drop_apr_vs_feb, drop_min28_vs_feb"
+observed_days,ch3 §3.1,"2,459 observed days",2459,"2,459",True,extra/opal_level.csv,observed_days
+median_taps,ch3 §3.1,"median of 730,300 train tap-ons",730300.0000000006,"730,300",True,extra/opal_level.csv,median_taps
+elec_n_start,ch7 (method),175 start days,175,175,True,extra/elec_testbed_summary.csv,n_start_days
+elec_unch10,ch7 §7.3,"10% drop, unchanged procedure: gain 0.02 to 0.21",0.21142857142857144,0.02-0.21,True,extra/elec_testbed_summary.csv,"gain (size=10, adj in A,B,HW,YM,REG_p, all det)"
+elec_YM_FOCuS_10,ch7 §7.3,"yearly memory with FOCuS, gain 0.16",0.16,0.16,True,extra/elec_testbed_summary.csv,"gain (size=10, adj=YM, det=FOCuS)"
+elec_REGT_p_CUSUM_10,ch7 §7.3,"with temperature, CUSUM 0.51",0.5142857142857142,0.51,True,extra/elec_testbed_summary.csv,"gain (size=10, adj=REGT_p, det=CUSUM)"
+elec_REGT_p_FOCuS_10,ch7 §7.3,"with temperature, FOCuS 0.55",0.5314285714285715,0.53,False,extra/elec_testbed_summary.csv,"gain (size=10, adj=REGT_p, det=FOCuS)"
+elec_REGT_p_FOCuS-r_10,ch7 §7.3,capped FOCuS gained 0.50 for a 10% drop,0.5142857142857142,0.51,False,extra/elec_testbed_summary.csv,"gain (size=10, adj=REGT_p, det=FOCuS-r)"
+elec_REGT_bg,ch7 §7.3,background rate stayed at 12 to 13%,0.12857142857142856,12-14%,False,extra/elec_testbed_summary.csv,"background (adj=REGT_p, det=CUSUM/FOCuS)"
+elec_5pct,ch7 §7.3,5% drop: gain rose from at most 0.13 to 0.17,0.17142857142857143,0.13 -> 0.17,True,extra/elec_testbed_summary.csv,gain (size=5; unchanged adjs max; REGT_p CUSUM/FOCuS)
+elec_covid_lt_sd,ch7 §7.3,the COVID-19 fall is smaller than one robust SD of the surprises,0.4617418457008459,|median|/SD 0.07-0.46,True,extra/elec_covid.csv,ratio
+echo_count,ch6 §6.1.2,Eight of the 36 alarms of A with CUSUM are upward echoes,8,8 of 36,True,extra/echo_alarms.csv,echo (sum)
+extra_catches,ch6 §6.1.2,"six extra catches: two echoes in 2025, four 2-4 days before a dated order",6,"6 extra; echoes ['strike_2025_01', 'strike_2025_02']; before 4 (2-4 days)",True,extra/extra_catches.csv,kind by episode
+caught_depth,ch6 §6.4,travel was 31 to 45% below the same weekday a week earlier,-45.430809399477845,unannounced catches 31-45%,True,extra/caught_depth.csv,worst_pct (announced=no)
+caught_depth_all,ch6 §6.4,"same sentence, all five caught episodes at the boundary caught",-45.430809399477845,all catches 30-45%,False,extra/caught_depth.csv,worst_pct (caught_here)
+relearn_more_alarms,ch6 §6.7,a 14-day relearn raised about 40% more alarms,0.5086206896551724,"+51% (per monitor +58%, +41%, +53%)",False,extra/relearn_ratio.csv,ratio (method=all three)
+M1_capped_ym,ch1 l.53,"capped CUSUM 2.0%, capped FOCuS 8.1%, capped EWMA 57%",0.0204,2.0 / 21.1 / 57%,False,sim/summary/fa.csv,"fa (phi=0.4,normal,calendar=1,adj=YM,rule=ar1)"
+M2_sens_three,ch6 l.53; tab:opal-sens,counts move by up to three (three monitors),5,5,False,opal/sensitivity.csv,"|episodes - scores.csv ar1| for HW+FOCuS, HW+EWMA, A+CUSUM"
+M2_sens_all,ch6 l.53,across all sensitivity runs by up to four,5,5,False,opal/sensitivity.csv,max |shift| over all rows
+M3_retro_best_orig,ch6 l.99,"retrospective STL with EWMA, independent threshold, 10 (original rule)",10,10,True,opal/rule_variants.csv,"pm7_nodir (STL, EWMA, indep; max of retrospective)"
+M4_holiday_bars,"Fig 5.3, §5.4","holiday detection: forecast 43, detector 41, interaction 16 (%)",43.00547748953973,43 / 41 / 16,True,extra/shares_detsets.csv,"adj/det/adjxdet (phi 0.4, normal, calendar 1, CEFP, drops)"
+M5_fastest,"ch5 l.32, tab:delay","RMD 2.6 (FOCuS-AR), 3.3 (FOCuS), 4.4 (EWMA) at 4 SD",2.58420085731782,2.6 / 3.3 / 4.4,True,sim/summary/delay.csv,rmd
+M6_capping_speed,ch5 l.47,within a week: capped CUSUM 38% vs 93%; capped FOCuS 99%; capped EWMA 90% vs 98%,0.3782568713599673,38 / 93 / 99 / 90 / 98,True,sim/summary/delay.csv,F7
+M8_heldout_indep,"ch6 l.53, ch8 l.15","median of four with EWMA, independent threshold: all three held-out (p<0.001), 6.3 non-event/yr",3,"3, p=0.000, 6.3",True,opal/heldout.csv,"rule=indep, B, EWMA"
+M8_heldout_ar1,ch6 l.53,no AR(1) monitor outside MSTL caught more than one (smallest p = 0.08),1,"max 1, min p 0.078",True,opal/heldout.csv,"rule=ar1, not MSTL/MSTL_p"
+M12_ym_power,ch5 l.41,"yearly memory, 4 SD: capped CUSUM 99, capped FOCuS 97, CPM 88, CUSUM 61 (%)",0.9946957878315132,99 / 97 / 88 / 61,True,sim/summary/detect.csv,"detect60 (YM, cal 1, -4, oracle)"
+M13_indep_validation,ch5 l.11,"independent thresholds at phi=0.4: mean detectors 60-78%, FOCuS-AR 5.3%, variance detectors 10-13%",0.6042,60-78 / 5.3 / 10-13,True,calib/validation.csv,"fa (surprise, phi 0.4, indep)"
+M14_cpm_covid,ch6 l.81,"CPM alarmed 7 to 16 days after the first order (A, B, HW, YM)",7.0,7-16,True,opal/covid.csv,"days_from_16mar (CPM, A/B/HW/YM, both rules)"
+M15_indep_fa,ch1 l.13,"independent thresholds: 52 to 100% after most forecasts; after A 15 to 48% (CUSUM, EWMA, FOCuS, CPM, capped CUSUM and FOCuS)",0.5219,52-100; A 15-48,True,sim/summary/fa.csv,"fa (phi 0.4, normal, cal 0, indep, B/HW/YM and A; CUSUM/EWMA/FOCuS/CPM/CUSUM-r/FOCuS-r)"
+S4d_start_gap,ch6 l.71,"estimated change dates up to 12 days before the alarm (A, B, HW, YM)",12.0,"12; REG_p+CUSUM alarm 2020-04-09, start 2020-03-01",True,opal/covid.csv,days_alarm_after_start_est
+S4e_non_event,"ch6 l.19, ch8 l.13",2.9 to 6.8 (median 5.0); CPM 0.5-1.4,2.887952559300874,2.9-6.8 (median 5.5); CPM 0.5-1.4,False,opal/scores.csv,"non_event_per_year (ar1, past-only)"
+S4f_ar1_target,ch8 l.11,"AR(1) threshold: yearly memory 1.7-4.7%, A 0-4.6%",0.017,YM 1.7-4.7; A 0.0-4.6,True,sim/summary/fa.csv,"fa (phi 0.4, normal, cal 0, ar1, all 8 mean detectors)"
+W11_boot_heldout,"abstract, ch6 l.23","bootstrap thresholds: at most 0.6 non-event/yr held out, 1 of 3; at most 4 of 15 in 2020-26",0.5742924528301887,0.57; 1 of 3; 4 of 15,True,opal/bootstrap_heldout.csv; opal/bootstrap.csv,"non_event_per_year, episodes_caught"
+MF16_focusar_t5,ch5 §5.5,FOCuS-AR fell to 1.9%,0.0193455443506894,1.9%,True,sim/summary/detect.csv,"detect60 (t5, cal 1, oracle adj, -1 SD, oracle rule)"
+MF17_split_half,ch4 l.262,"98.5% of the 462 cells within 4-6%; worst YM + capped EWMA with holidays, 0.9%",0.9848484848484849,"98.5% of 462; min 0.86% (YM, EWMA-r, cal 1)",True,sim/summary/fa.csv,"rule=oracle, noise != wide"
+YM_CUSUM_indep_row,Table 6.1,44 | 20 | 9 (4) | 9 (1) | 5.3 | 2.6 | 187,44,44 | 20 (chance 9) | 9 (4) | 9 (1) | 5.3 | 2.6 | 187,True,opal/scores.csv; opal/rule_variants.csv,"YM, CUSUM, indep"
+t5_variance_col,tab:variance,"x2, t5: var CUSUM 12, var EWMA 6, var FOCuS 12, CUSUM 8, EWMA 7, FOCuS 5, FOCuS-AR 4",0.1241217798594847,12 / 6 / 12 / 8 / 7 / 5 / 4,True,sim/summary/variance.csv,"detect60 (t5, oracle adj, oracle rule)"
+t5_variance_fa,tab:variance caption,variance detectors' AR(1) false alarms under t5: about 60%,0.6000666666666666,58-61%,True,sim/summary/fa.csv,"fa (t5, oracle adj, ar1, variance detectors)"
+var_fa_noholiday,§5.1,variance detectors hold their target without holidays (4.6 to 8.6% after a past-only forecast),0.0457,4.6-8.6%,True,sim/summary/fa.csv,"fa (phi 0.4, normal, cal 0, ar1, A/B/HW/YM, variance detectors)"
+B2_focusar_delay_row,tab:delay,FOCuS-AR: 12.6 0.24 2.6 0.99 | 49.5 0.07 5.1 0.85 | 60.8 0.00,2.58420085731782,12.7 0.24 2.6 0.99 49.5 0.07 5.1 0.85 60.9 0.00,False,sim/summary/delay.csv,"rmd, F7 (oracle rule, FOCuS-AR)"
+N1_past_only_1sd,ch5 l.39,1 to 11% of runs,0.0122950819672131,1.2-11.5%,True,sim/summary/detect.csv,"detect60 (phi .4, cal 0, -1 SD, oracle rule, A/B/HW/YM, 8 mean detectors)"
+N2_arl0_range,ch5 l.11,"6,300 to 7,800 days",6315.1425,"6,315-7,812",True,calib/arl0.csv,"arl0_days (simulated, non-variance detectors)"
+N3_var_indep,ch5 l.11,"variance detectors 10 to 14% (the maximum is 13.48%, so '10 to 13%' is the correct rounding)",0.0994,9.94-13.48%,False,calib/validation.csv,"fa (surprise, phi .4, indep, variance)"
+N4_var_ar1_by_forecast,ch5 l.11,4.6 to 5.8% after HW and YM; 6.0 to 8.6% after A and B,0.0457,4.6-5.8; 6.0-8.6,True,sim/summary/fa.csv,"fa (phi .4, normal, cal 0, ar1, variance detectors)"
+N5_ym_var_holidays,ch5 l.61,"at most 3.5% (capped FOCuS, tripling); Table 5.2 detectors at most 1.3%",0.0313855048523642,"3.1% (FOCuS-r, x3); 1.3%",False,sim/summary/variance.csv,"detect60 (cal 1, YM, oracle)"
+N7_ym_speed,ch5 l.47,"capped FOCuS most within a week (35%); capped CUSUM and capped FOCuS lowest RMD (12.5, 12.9)",0.3275398303331264,F7 33%; RMD 12.5 / 13.2,False,sim/summary/delay.csv,"F7, rmd (yearly memory, holidays, 4 SD, oracle)"
+N8_var_within1d,opal_variance.tex caption,60 to 76% at AR(1),0.6,60-73%,False,opal/variance_vs_mean.csv,"share_within_1d_of_mean (summary, ar1)"
+N9_window14_best,ch6 l.112,"yearly memory with EWMA and yearly memory with CUSUM (indep) catch the most, 10 each",10,YM+CUSUM indep 10; YM+EWMA ar1 10,True,opal/rule_variants.csv,r0_14_dir (max)
+N10_offline_var,appB l.19,offline variance doubling at most 3.5% (phi 0.4),0.0346,"3.5% (all phi, x2: 5.2%; x3: 10.5%)",True,sim/summary/offline.csv,"detect7 (var x2, phi .4, normal)"
+N11_var_ratio,"variance.tex caption, ch5 l.77, l.99, ch8 l.9",1.6 to 2.8 times CUSUM/EWMA/FOCuS; 1.3 to 1.7 times FOCuS-AR,1.6436933941589598,1.6-2.8; 1.3-1.7,True,sim/summary/variance.csv,"detect60 (phi .4, cal 0, x2, true pattern, matched): spread / mean detectors"
+N12_holiday_sd,ch5 l.23,about 5.7 SD,5.662476315259601,5.66,True,sim/generator.json,|pub| / sd_raw
+N13_figB1,Fig B.1 caption,"CPM raw 3.6%; FOCuS-AR after A and YM 4.6, 4.7%; capped CUSUM, EWMA raw 8.2, 6.8%",0.0362,"3.6; 4.6, 4.7; 8.2, 6.8",True,sim/summary/fa.csv,"fa (phi .4, normal, cal 0, indep)"
+N14_validation_median,ch5 l.11 / App D,median 5.5% for the mean detectors when phi > 0,0.0545,5.5%,True,calib/validation.csv,"fa (ar1, phi > 0, mean detectors)"
+N16_ar1_cut,"ch6 l.23, ch8 l.11",fewer non-event alarms in 68 of 70; median 4.9 -> 2.7 (45%); uncapped CEFP 5.6 -> 4.3,69,69 of 70; 4.9 -> 2.6 (47%); 5.6 -> 4.5,False,opal/scores.csv,"non_event_per_year, both rules, 70 monitors without FOCuS-AR; subset 9 non-raw x CUSUM/EWMA/FOCuS/CPM"
+N17_heldout_counts,ch6 l.27,"one alarm each in 21 months, against 9 to 15 with AR(1); same 1 of 3; all <= 0.91 non-event over 2020-26",1,boot 1-1 alarms; AR(1) 9-16; caught 1; 2020-26 max 0.91,False,opal/bootstrap_heldout.csv; opal/heldout.csv; opal/bootstrap.csv,"n_alarms, episodes_caught, non_event_per_year (A/B/HW x CUSUM/EWMA/FOCuS)"
+A2_tuning_1sd,"§5.2, Table B.3","1 SD, true pattern, matched: CUSUM k .25/.5/1 and EWMA lambda .05/.1/.2",0.8363171355498721,93 / 89 / 57 / 84 / 66 / 39,True,sim/summary/tuning.csv,"detect60 (oracle adj, oracle rule, -1 SD)"
+A2_tuning_2sd_rmd,"§5.2, Table B.3",2 SD restricted mean delay by tuning,12.502099764416675,15.9 / 12.3 / 10.8 / 12.5 / 11.3 / 12.8,True,sim/summary/tuning.csv,"rmd (oracle adj, oracle rule, -2 SD)"
+A4_pct_per_sd_normal,Table B.1,"1 SD drop in normal noise, %",4.755914204286915,4.8%,True,sim/generator.json,sigma
+A4_pct_per_sd_wide,Table B.1,"1 SD drop in wide noise, %",9.241198627644243,9.2%,True,sim/generator.json,sd_raw
+A4_wide_A_4SD,Table B.1 (real holiday scale),"detection within 60 days, A, 4 SD (= 32% drop)",0.0188869811130188,CUSUM 2 / EWMA 1 / FOCuS 1 / CPM 6 / CUSUM-r 7 / FOCuS-r 7,True,sim/summary/detect.csv,"detect60 (noise wide, oracle rule, size -4, A)"
+A4_wide_B_4SD,Table B.1 (real holiday scale),"detection within 60 days, B, 4 SD (= 32% drop)",0.4138760778022859,CUSUM 41 / EWMA 6 / FOCuS 6 / CPM 84 / CUSUM-r 77 / FOCuS-r 75,True,sim/summary/detect.csv,"detect60 (noise wide, oracle rule, size -4, B)"
+A4_wide_HW_4SD,Table B.1 (real holiday scale),"detection within 60 days, HW, 4 SD (= 32% drop)",0.4989,CUSUM 50 / EWMA 3 / FOCuS 2 / CPM 97 / CUSUM-r 93 / FOCuS-r 84,True,sim/summary/detect.csv,"detect60 (noise wide, oracle rule, size -4, HW)"
+A4_wide_YM_4SD,Table B.1 (real holiday scale),"detection within 60 days, YM, 4 SD (= 32% drop)",0.9712493465760584,CUSUM 97 / EWMA 35 / FOCuS 30 / CPM 97 / CUSUM-r 100 / FOCuS-r 100,True,sim/summary/detect.csv,"detect60 (noise wide, oracle rule, size -4, YM)"
+A4_wide_A_2SD,Table B.1 (real holiday scale),"detection within 60 days, A, 2 SD (= 18% drop)",0.0005041338979632,CUSUM 0 / EWMA 0 / FOCuS 0 / CPM 1 / CUSUM-r 0 / FOCuS-r 0,True,sim/summary/detect.csv,"detect60 (noise wide, oracle rule, size -2, A)"
+A4_wide_B_2SD,Table B.1 (real holiday scale),"detection within 60 days, B, 2 SD (= 18% drop)",0.008827364830976,CUSUM 1 / EWMA 0 / FOCuS 0 / CPM 21 / CUSUM-r 3 / FOCuS-r 4,True,sim/summary/detect.csv,"detect60 (noise wide, oracle rule, size -2, B)"
+A4_wide_HW_2SD,Table B.1 (real holiday scale),"detection within 60 days, HW, 2 SD (= 18% drop)",0.0039,CUSUM 0 / EWMA 0 / FOCuS 0 / CPM 29 / CUSUM-r 4 / FOCuS-r 3,True,sim/summary/detect.csv,"detect60 (noise wide, oracle rule, size -2, HW)"
+A4_wide_YM_2SD,Table B.1 (real holiday scale),"detection within 60 days, YM, 2 SD (= 18% drop)",0.2278520685332219,CUSUM 23 / EWMA 8 / FOCuS 3 / CPM 36 / CUSUM-r 53 / FOCuS-r 33,True,sim/summary/detect.csv,"detect60 (noise wide, oracle rule, size -2, YM)"
+D3_dashboard_stamp,ch7 §7.4,dashboard build stamp,built 05 Nov 2026 16:07,built 05 Nov 2026 16:07,True,live/dashboard.html,'built ...' stamp

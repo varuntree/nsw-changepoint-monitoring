@@ -1,0 +1,34 @@
+cluster,method,detector,rule,alarms,directions,blind_from_alarm
+11 Sep 2022 (candidate data fault),A,CUSUM,ar1,,,2022-08-27
+11 Sep 2022 (candidate data fault),HW,EWMA,ar1,2022-09-11,-1,
+11 Sep 2022 (candidate data fault),HW,FOCuS,ar1,2022-09-11,-1,
+11 Sep 2022 (candidate data fault),YM,FOCuS,ar1,2022-09-11,-1,
+11 Sep 2022 (candidate data fault),YM,CUSUM-r,ar1,,,
+11 Sep 2022 (candidate data fault),A,EWMA-r,ar1,,,
+11 Sep 2022 (candidate data fault),A,FOCuS-r,ar1,,,2022-09-10
+11 Sep 2022 (candidate data fault),B,EWMA,indep,,,2022-08-31
+11 Sep 2022 (candidate data fault),YM,CUSUM,indep,2022-09-11,-1,
+11 Sep 2022 (candidate data fault),STL,FOCuS-AR,ar1,,,2022-08-31
+11 Sep 2022 (candidate data fault),A,CPM,indep,,,
+"21-25 Nov 2022 (fare-free week, readers off)",A,CUSUM,ar1,,,2022-11-11
+"21-25 Nov 2022 (fare-free week, readers off)",HW,EWMA,ar1,2022-11-21,-1,
+"21-25 Nov 2022 (fare-free week, readers off)",HW,FOCuS,ar1,2022-11-21,-1,
+"21-25 Nov 2022 (fare-free week, readers off)",YM,FOCuS,ar1,2022-11-21,-1,
+"21-25 Nov 2022 (fare-free week, readers off)",YM,CUSUM-r,ar1,,,
+"21-25 Nov 2022 (fare-free week, readers off)",A,EWMA-r,ar1,,,2022-11-08
+"21-25 Nov 2022 (fare-free week, readers off)",A,FOCuS-r,ar1,2022-11-24,-1,
+"21-25 Nov 2022 (fare-free week, readers off)",B,EWMA,indep,2022-11-21,-1,
+"21-25 Nov 2022 (fare-free week, readers off)",YM,CUSUM,indep,,,2022-11-05
+"21-25 Nov 2022 (fare-free week, readers off)",STL,FOCuS-AR,ar1,,,2022-11-05
+"21-25 Nov 2022 (fare-free week, readers off)",A,CPM,indep,2022-11-26,-1,
+28 Nov-2 Dec 2022 (same-weekday echo of the fare-free week),A,CUSUM,ar1,,,2022-11-11
+28 Nov-2 Dec 2022 (same-weekday echo of the fare-free week),HW,EWMA,ar1,,,2022-11-21
+28 Nov-2 Dec 2022 (same-weekday echo of the fare-free week),HW,FOCuS,ar1,,,2022-11-21
+28 Nov-2 Dec 2022 (same-weekday echo of the fare-free week),YM,FOCuS,ar1,,,2022-11-21
+28 Nov-2 Dec 2022 (same-weekday echo of the fare-free week),YM,CUSUM-r,ar1,,,
+28 Nov-2 Dec 2022 (same-weekday echo of the fare-free week),A,EWMA-r,ar1,,,2022-11-08
+28 Nov-2 Dec 2022 (same-weekday echo of the fare-free week),A,FOCuS-r,ar1,,,2022-11-24
+28 Nov-2 Dec 2022 (same-weekday echo of the fare-free week),B,EWMA,indep,,,2022-11-21
+28 Nov-2 Dec 2022 (same-weekday echo of the fare-free week),YM,CUSUM,indep,,,2022-11-05
+28 Nov-2 Dec 2022 (same-weekday echo of the fare-free week),STL,FOCuS-AR,ar1,,,2022-11-05
+28 Nov-2 Dec 2022 (same-weekday echo of the fare-free week),A,CPM,indep,,,2022-11-26

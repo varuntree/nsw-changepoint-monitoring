@@ -1,0 +1,7 @@
+threshold_rule,scoring_rule,pairs,past_more,same,past_fewer,past_fewer_alarms,past_fewer_non_event,median_diff
+ar1,frozen,16,4,2,10,6,6,-1.0
+ar1,direction-aware,16,4,4,8,6,6,-0.5
+indep,frozen,14,4,1,9,2,1,-2.0
+indep,direction-aware,14,6,4,4,2,1,0.0
+both,frozen,30,8,3,19,8,7,-1.0
+both,direction-aware,30,10,8,12,8,7,0.0

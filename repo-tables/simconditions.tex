@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{The core grid crosses autocorrelation, holidays and the kind of change; a smaller robustness grid adds heavy tails, a rise and other variance factors. Shifts $\delta$ are in units of the generator noise standard deviation $\sigma = 0.049$; percentages are $100(e^{\delta\sigma}-1)$. Each condition has 10,000 runs.}
+\label{tab:simconditions}
+\begin{tabular}{@{}p{2.9cm}p{6.6cm}p{5.6cm}@{}}
+\toprule
+Factor & Core grid & Robustness grid \\
+\midrule
+Autocorrelation $\phi$ & 0, 0.40 (generator), 0.6 & 0.40 \\
+Calendar $\kappa$ & off, on & on \\
+Noise & Normal & Student-$t_5$; Normal \\
+No change & yes & yes ($t_5$) \\
+Mean drop $\delta$ & 0.5, 1, 2, 4 ($-2.4\%$, $-4.8\%$, $-9.3\%$, $-17.7\%$) & 1 ($t_5$) \\
+Mean rise $\delta$ & none & 1 ($+5.0\%$, Normal) \\
+Variance factor $v$ & 2 & 2 ($t_5$); 1.5 and 3 (Normal) \\
+\midrule
+Conditions & 36 & 6 \\
+\bottomrule
+\end{tabular}
+\end{table}

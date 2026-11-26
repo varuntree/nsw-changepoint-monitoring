@@ -1,0 +1,6 @@
+episode,boundary,date,class,announced_before,note
+covid_onset,onset,2020-03-23,covid,yes,venues close; demand fell about 5-6% (AEMO QED Q2 2020)
+covid_onset,onset,2020-03-31,covid,yes,statewide stay-at-home order
+covid_easing,end,2020-05-15,covid,yes,first easing
+delta_onset,onset,2021-06-26,covid,yes,Greater Sydney lockdown
+delta_end,end,2021-10-11,covid,yes,reopening

@@ -1,0 +1,5 @@
+id,tex,anchor,source,select,column,transform,rounding,note
+gen_phi,ch2.tex,autocorrelation of $\hat\phi,extra/derived.csv,id=='generator_phi',value,x,dp2,
+ch2_phi_ratio,ch2.tex,marginal variance. with $\phi,extra/derived.csv,id=='generator_phi',value,x,dp2,phi fitted to Opal
+ar1_var_ratio,ch2.tex,0.40$ this ratio is,extra/derived.csv,id=='ar1_var_ratio_phi0.40',value,x,dp1,
+ar1_sd_ratio,ch2.tex,deviation of is about,extra/derived.csv,id=='ar1_sd_ratio_phi0.40',value,x,dp1,

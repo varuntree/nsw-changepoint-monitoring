@@ -1,0 +1,1 @@
+Frozen 22 Oct 2026 before any electricity monitoring run. Weather, holidays, market events (June 2022 suspension), daylight saving and rooftop-solar trend are explanations only. Same +-7 day rule as Opal.

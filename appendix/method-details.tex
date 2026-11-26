@@ -1,0 +1,112 @@
+% Method details: material that the thesis does not print (see Appendix A of the thesis).
+% LaTeX source, written as a chapter of the thesis. Tables it inputs are in ../tables/ (printed in the thesis)
+% and ../repo-tables/ (cited from it); citation keys are those of the thesis bibliography. References to
+% thesis sections, figures, tables and equations are given as their numbers in the thesis.
+\chapter{Method details}\label{app:details}
+% equations numbered (D.1), (D.2), ... through the whole appendix
+\counterwithout{equation}{section}\counterwithin{equation}{chapter}\setcounter{equation}{0}
+
+\section{Data and events}\label{app:d-data}
+
+\paragraph{Event list.} Sources are the NSW Government Gazette, NSW Health, Transport for NSW and news reports, all checked on 22 October 2026; of the 71 rows, 41 have high confidence, 18 medium and 12 low. Of the 18 scored boundaries, nine are COVID-19 orders or easings, four industrial action, three floods, one the network shutdown of 21 February 2022 and one the Homebush overhead wiring failure of 20 May 2025. Fault rows are the two periods named by the publisher (28 January to 5 February 2025 and 28 January to 12 February 2026), a data-quality issue on 15 January 2025 flagged on the publisher's forum, two notices affecting only buses or ferries, and the missing days of June 2021. The publisher notes that other affected periods may exist \citep{tfnsw2026opaldoc}.
+
+\paragraph{Two artefacts in late 2022.} Late 2022 has a probable data fault on Sunday 11 September (64,400 taps) and the fare-free week of 21 to 25 November. Many of the 70 uncapped CUSUM, EWMA and FOCuS monitors alarmed on the first day of each (20 on 11 September, 46 on 21 November), but no CPM or capped monitor did.
+
+\paragraph{FOCuS on the raw counts (Section~1.1).} FOCuS was run on log daily train tap-ons from 1 March 2020, standardised once by the mean and standard deviation of February 2020, with the independent threshold and a restart on the day after each alarm, without the relearn period or the running scale. It raised 169 alarms, 92 of them on a weekend and 33 near a scored change; CUSUM, run the same way, raised 139, 71 and 26.
+
+\paragraph{Alarm classes.} An alarm not near a scored boundary is put in the first matching class: school holiday (within two days of a school-holiday period), public holiday or Christmas (zero to two days after a public holiday, or 20 December to 15 January), after an event (8 to 28 days after a scored boundary), explained (within seven days of a policy, structural or fault row) and unexplained.
+
+\section{Forecasts and detectors}\label{app:d-methods}
+
+\paragraph{Past-only forecasts.} The median of four is computed when at least two of the four reference days are observed. Holt-Winters is started from the first 28 days, skips missing days, and re-centres its weekday effects to sum to zero after each update. Both MSTL fits treat as missing the eight reader-off days of 21 to 25 November 2022, 21 and 22 September 2024, and 26 May 2025.
+
+\paragraph{Retrospective adjustments.} The retrospective references are STL \citep{cleveland1990} with a weekly period, MSTL \citep{bandara2025} with weekly and yearly periods, and a Huber regression with weekday effects, three yearly Fourier pairs and a spline trend. STL and MSTL are fitted with outlier weights, which give days with large remainders less weight. The eight further adjustments of \texttt{appendix/opal} (first section) use standard settings; the Prophet adjustment removes only weekly and yearly Fourier seasonality (orders 3 and 10) and uses no holiday dates.
+
+\paragraph{FOCuS implementation.} We first used the \texttt{focus\_cpt} package for FOCuS and FOCuS-AR. After the first results we found that it leaves out candidate starts at the first one or two observations of each series, and so at the start of every segment after a relearn. We now compute both statistics by direct search over every start. Recalibrating with the exact statistic moved the thresholds by at most 0.4\% for forecast errors and 1.2\% for seasonally adjusted series. On Opal the change kept only about half of each FOCuS monitor's alarm dates (median 44\%), and Holt-Winters with FOCuS fell from 7 to 3 episodes under the direction-aware check (Section~8.4). In simulation one cell moved materially: the yearly memory with capped FOCuS and holidays, from 8.1 to 21.1\% false-alarm years, because every simulated monitoring year starts inside the Christmas period, where the exact statistic can now alarm in the first days.
+
+\paragraph{Variance detectors.} The three variance detectors work on $z_t^2$. The variance CUSUM and EWMA look for an increase. The variance FOCuS tests for a change in either direction, so part of its false-alarm budget goes to falls in spread. The \emph{variance CUSUM} \citep{hawkins1998} is
+\begin{equation}\label{eq:varcusum}
+  V_t = \max(0,\, V_{t-1} + z_t^2 - k_v), \qquad k_v = \frac{v_1 \log v_1}{v_1 - 1},
+\end{equation}
+with $V_0 = 0$ and $v_1 = 2$, the variance ratio the chart is designed to detect, so $k_v \approx 1.39$. The \emph{variance EWMA} is the exponentially weighted mean square of \citet{macgregor1993exponentially}:
+\begin{equation}\label{eq:varewma}
+  E^{v}_t = (1-\lambda)\, E^{v}_{t-1} + \lambda z_t^2, \qquad E^{v}_0 = 1, \qquad
+  D_t = \frac{E^{v}_t - 1}{\sqrt{\dfrac{2\lambda}{2-\lambda}\bigl\{1-(1-\lambda)^{2m_t}\bigr\}}} ,
+\end{equation}
+where $\lambda = 0.1$ as for EWMA and $m_t$ is the number of observed days so far. The denominator is the exact standard deviation of $E^{v}_t$ for independent standard normal $z_t$. The \emph{variance FOCuS} applies FOCuS for the Gamma family \citep{ward2024} to $z_t^2$, treated as Gamma distributed with shape one half; its statistic is the log-likelihood ratio for a change in the Gamma mean at any earlier start. The \texttt{focus\_cpt} Gamma model takes the in-control scale, not the mean, as its parameter, so an in-control mean of 1 needs a scale of 2. Until 23 October 2026 we passed 1, which set the in-control mean to 0.5 and made the statistic drift upward on normal days; we corrected this and recomputed the variance-FOCuS results (in simulation with \texttt{scripts/sim\_addon.py --replace}). A test against a direct Gamma likelihood-ratio search (\texttt{tests/test\_focus\_var.py}) guards the setting.
+
+\paragraph{Estimated change dates and directions.} CUSUM: the last day the active sum was zero; FOCuS and FOCuS-AR: one day after the maximising candidate start; CPM: the maximising split. EWMA gives none, so the direction of an EWMA alarm is the sign of the alarm day's forecast error; on Opal it equals the sign of the EWMA statistic at every one of the alarms of all 24 EWMA and capped EWMA monitors.
+
+\paragraph{Offline benchmarks.} Binary Segmentation splits a segment at the day $b$ that maximises the CUSUM contrast
+\begin{equation}\label{eq:contrast}
+  C_b = \sqrt{\frac{n_L n_R}{n}}\,\big(\bar z_L - \bar z_R\big),
+\end{equation}
+where $n_L$ and $n_R$ are the numbers of days left and right of $b$, $n = n_L + n_R$, and $\bar z_L$, $\bar z_R$ are the two means, and keeps splitting while $|C_b|$ exceeds a threshold. WBS takes the best contrast over random sub-intervals and, as \citet{fryzlewicz2014} allows, the whole segment; PELT minimises the total squared error plus a penalty for each change, using the pruning of \citet{killick2012}, which loses nothing (Table~\ref{tab:checks}). Every segment has at least seven days, each method returns the first day of the new segment, and the first maximiser wins ties. On Opal each series is first divided by a MAD-based long-run scale, $1.4826$ times the MAD of the series minus its 29-day running median, times $\sqrt{(1+\hat\phi)/(1-\hat\phi)}$. The penalty is $3\log n$ for PELT, the threshold $\sqrt{3\log n}$ for Binary Segmentation and $1.3\sqrt{2\log n}$ for WBS with 5,000 random intervals, and the direction of a change is the sign of the later minus the earlier segment mean. Reproducing the change dates needs the interval list, the thresholds, the minimum segment and the preprocessing; all are in the repository.
+
+\paragraph{Offline calibration.} The Binary Segmentation threshold is the 95th percentile, over no-change runs, of the largest absolute CUSUM contrast; the WBS threshold is the 95th percentile of its own statistic with 2,000 random sub-intervals; the PELT penalty is the square of the Binary Segmentation threshold. With the squared-error cost on unit-variance data, splitting at $b$ reduces the cost by exactly the square of the contrast, so PELT adds a single change exactly when the first Binary Segmentation split would; with several changes PELT can differ, because two changes together can be worth more than two penalties.
+
+\paragraph{Simulation generator.} The fitted model has an intercept, a linear trend, six weekday dummies, a yearly Fourier series with three sine and cosine pairs, a public-holiday dummy, a Christmas-effect dummy (24 December to 5 January), a school-holiday dummy and a Metro City dummy from 19 August 2024 (fit only). We fitted it by Huber regression to 2023 to 2025 after removing 323 of 1,096 days: every disruption or fault row of any confidence, including the whole 2024--25 industrial-action period, and the reader-off fare-free days. The fitted trend (0.055 a year on the log scale, about 5.7\%) is not simulated. Table~\ref{tab:simconditions} lists the simulation conditions, and the repository has every coefficient (Appendix~A).
+
+\begin{table}[t]
+\centering
+\caption{The core grid crosses autocorrelation, holidays and the kind of change; a smaller robustness grid adds heavy tails, a rise and other variance factors. Shifts $\delta$ are in units of the generator noise standard deviation $\sigma = 0.049$; percentages are $100(e^{\delta\sigma}-1)$. Each condition has 10,000 runs.}
+\label{tab:simconditions}
+\begin{tabular}{@{}p{2.9cm}p{6.6cm}p{5.6cm}@{}}
+\toprule
+Factor & Core grid & Robustness grid \\
+\midrule
+Autocorrelation $\phi$ & 0, 0.40 (generator), 0.6 & 0.40 \\
+Calendar $\kappa$ & off, on & on \\
+Noise & Normal & Student-$t_5$; Normal \\
+No change & yes & yes ($t_5$) \\
+Mean drop $\delta$ & 0.5, 1, 2, 4 ($-2.4\%$, $-4.8\%$, $-9.3\%$, $-17.7\%$) & 1 ($t_5$) \\
+Mean rise $\delta$ & none & 1 ($+5.0\%$, Normal) \\
+Variance factor $v$ & 2 & 2 ($t_5$); 1.5 and 3 (Normal) \\
+\midrule
+Conditions & 36 & 6 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Share of variation.} Within each simulated condition, the outcome is the logit, $\log\{p/(1-p)\}$, of the false-alarm rate $p$, or of the detection rate within 60 days at the matched threshold, with rates bounded to 0.2--99.8\%. Every combination of the four main past-only forecasts, the detectors of one set and, for false alarms, the two threshold rules appears once. The main set is CUSUM, EWMA and FOCuS; we also report it with CPM added, and with CPM and the capped detectors added (Section~5.4). This balanced design splits the total sum of squares into main effects and interactions, and we report each part as a share of the total. The series with no forecast and the true-pattern adjustment are left out, because they are bounds and not options a user would choose.
+
+\section{Thresholds}\label{app:d-thresholds}
+
+\paragraph{Check on fresh seeds.} Table~\ref{tab:validation} checks the calibrated thresholds of Section~4.4 on fresh seeds. With the AR(1) threshold the rates are slightly above 5\% on average for $\phi > 0$ (median 5.6\% for the mean detectors), because $\phi$ is estimated. FOCuS-AR's threshold is on its own scale: 22.9 at $\phi = 0$ and 20.2 at $\phi = 0.4$, which is 24.1 on the likelihood scale, against 43.0 for plain FOCuS. CPM's 5\% applies to the first year of a segment; in years two to four it is about 8 to 9\% a year, while CUSUM and FOCuS stay near 5\%.
+
+\input{../repo-tables/validation}
+
+\paragraph{When $\hat\phi$ is zero.} Seasonally adjusted series have a running 28-day median subtracted before $\phi$ is estimated, so that slow level movements do not look like autocorrelation. We set $\hat\phi = 0$ when there are fewer than 56 observed days or fewer than 28 pairs of consecutive observed days. This is the case for every past-only forecast in March 2020. Over 2020--2026, $\hat\phi=0$ on 2 to 6\% of the days for the same-weekday difference, 5 to 7\% for Holt-Winters, 3 to 5\% for the yearly memory, and 11 to 16\% for the median of four with CUSUM, EWMA and FOCuS, whose lag-one estimate was often negative in 2025--26.
+
+\paragraph{Matched thresholds.} The matched thresholds of the simulation (Section~4.7) were checked on held-back runs. Set on even batches of runs, they give 4 to 6\% on odd ones in 98.5\% of the 462 cells. The worst cell, the yearly memory with capped EWMA and holidays, gives 0.9\%.
+
+\paragraph{Real-data thresholds.} For each of the six past-only forecasts and each detector, we resampled the forecast errors of 1 January 2023 to 31 July 2024 in circular blocks of 28 days, ran the procedure (150 warm-up days, running scale, 365 monitored days) 2{,}000 times and took the 95th percentile of the yearly maximum statistic as a constant threshold. The calibration stretch ends before the later evaluation period of Section~4.5, so alarms from 1 January 2025 are on later data not used to set these thresholds.
+
+\section{Test bed and checks}\label{app:d-checks}
+
+\paragraph{Test-bed exclusions.} Start days leave out the industrial-action period (18 September 2024 to 19 February 2025); publisher fault periods $\pm30$ days; the Metro City opening $\pm60$ days; incomplete days $\pm7$ days; 20 December to 15 January every year; and scored boundaries $\pm30$ days. Variance changes were inserted by multiplying the deviation from the STL baseline (trend plus weekly part) by $\sqrt{v}$. The \emph{screened} test bed, used as a check, also drops start days within 30 days of a change found by a strict PELT (penalty $8\log n$, minimum segment 14 days) on the retrospective STL series, leaving 124 of the 380 start days.
+
+\paragraph{Test-bed intervals.} Intervals come from 1,000 resamples (2,000 for differences between monitors) of 12 blocks of three calendar months. Windows span 150 days, so adjacent blocks share data and the intervals are approximate; they are not adjusted for multiplicity. With six-month blocks, 58 of the 60 starred gains in Table~6.2 keep their star.
+
+\paragraph{Test bed at a matched background.} As a fair-comparison check, we ran each monitor's first segment from $\tau-90$ with no relearn and counted an alarm if the statistic exceeded $h$ on any day from $\tau$ to $\tau+59$. For each monitor we set $h$ so that 20\% of the unmodified windows alarm, and took the gain as the detection rate minus 0.20. This set-up differs from the main test bed, which keeps the calibrated thresholds and the relearn rule, so we use it only to check comparisons between capped and uncapped detectors.
+
+\paragraph{Software and checks.} We used Python 3.12, numba 0.68, \texttt{focus\_cpt} 0.1.11 and statsmodels 0.15. Seeds are built from the setting and batch number, so every result can be regenerated exactly. The chance baseline uses 1,000 circular shifts with offsets drawn uniformly from 30 to $L-31$ days, where $L$ is the number of monitored days. We used 500 shifts for the further retrospective adjustments, the sensitivity runs and the later evaluation period. Table~\ref{tab:checks} gives the main implementation checks. The published run lengths were checked on 20,000 independent standard normal series of 4,000 days each. EWMA, CPM, PELT, Binary Segmentation and WBS were also written independently from the same definitions; only the detector and search code is independent.
+
+\begin{table}[t]\centering
+\caption{The implementations reproduce published values, reference software and independently written code. The EWMA run length is slightly short because our exact-variance limits are narrower at the start.}\label{tab:checks}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{6.4cm}>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{4.6cm}@{}}
+\toprule
+Check & Reference & Ours \\
+\midrule
+CUSUM, $k=0.5$, $h=4$: in-control run length & 168 \citep{montgomery2020} & 169.4 (SE 1.2) \\
+CUSUM, $k=0.5$, $h=5$: in-control run length & 465 \citep{montgomery2020} & 466.8 (SE 3.3) \\
+EWMA, $\lambda=0.1$, multiplier 2.814: in-control run length & 500 \citep{lucas1990} & 487.9 (SE 3.5) \\
+CPM statistic on a series with many ties & SciPy Mann--Whitney & equal to within $10^{-9}$ \\
+PELT change dates, 100 random series & \texttt{ruptures} & identical \\
+FOCuS and FOCuS-AR statistic, 50 random series & brute-force search over all starts & identical; \texttt{focus\_cpt} lower on 2\% and 3.5\% of days \\
+Independent code on Opal: 60 EWMA, capped EWMA and CPM monitors & our monitors & all 1,779 alarms identical in date and direction; all 60 direction-aware score rows equal \\
+Independent code in simulation, same seeds as our first 2,000 runs, independent and AR(1) thresholds & our runs & identical in all 252 false-alarm and 1,152 detection cells \\
+Independent PELT, Binary Segmentation and WBS code on the retrospective STL, MSTL and regression Opal series & our runs & identical change dates on all 9 series--method pairs; the 6 STL and MSTL score rows and their 392 change dates equal ours \\
+\bottomrule
+\end{tabular}
+\end{table}

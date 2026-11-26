@@ -1,0 +1,3 @@
+shift,shifts,cells,obs_best_dir,obs_best_min_dir_frozen,share_shifts_equal,max_abs_diff,p_dir_ge6,p_dir_ge7,p_dir_ge8,p_dir_ge9,p_min_ge6,p_min_ge7,p_min_ge8,p_min_ge9
+circular,2000,137,9,9,1.0,0.0,0.055,0.006,0.002,0.0,0.055,0.006,0.002,0.0
+era,2000,137,9,9,1.0,0.0,0.038,0.0045,0.0,0.0,0.038,0.0045,0.0,0.0

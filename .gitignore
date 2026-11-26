@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.nbi
+*.nbc
+.pytest_cache/
+.venv/
+.DS_Store
+*.log
+# raw downloads (recreated by make data-opal / make data-electricity)
+data/opal/raw/
+data/opal/opal_hourly_nsw.csv
+data/opal/opal_hourly_train_regions.csv
+data/electricity/raw/
+# raw simulation runs (about 160 MB; recreated by make results)
+results/sim/phi*/
+results/sim_trim/phi*/
+results/rerun.flag
+tools/
+results/opal/scorecard.csv

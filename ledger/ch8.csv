@@ -1,0 +1,55 @@
+id,tex,anchor,source,select,column,transform,rounding,note
+c8_pl_dir,ch8.tex,ar(1) threshold caught,opal/rule_variants.csv,method=='YM' and detector=='FOCuS' and rule=='ar1',r0_7_dir,x,int,as c6_pl_dir
+elec_frozen_ar1_monitors,ch8.tex,rule. under the frozen rule,electricity/rule_variants.csv,rule=='ar1' and frozen > 0,frozen,count,words,N24: four Holt-Winters monitors
+c8_r_capc,ch8.tex,holidays at both scales,sim/summary/fa.csv,phi==0.4 and noise=='normal' and calendar==1 and adj=='YM' and rule=='ar1' and det=='CUSUM-r',fa,100x,dp1,as c5_ym_capcusum
+c8_r_capc_w,ch8.tex,scales (2.0 and,sim/summary/fa.csv,phi==0.4 and noise=='wide' and calendar==1 and rule=='ar1' and adj=='YM' and det=='CUSUM-r',fa,100x,dp1,as c5_wide_ym_capcusum
+c8_r_capc_boot,ch8.tex,false alarms rose to,sim/summary/fa.csv,phi==0.4 and noise=='boot' and adj=='YM' and rule=='ar1' and det=='CUSUM-r',fa,100x,int,as c5_boot_ym_capc
+c8_r_capf_gain,ch8.tex,same forecast gains more,testbed/matched.csv,adj=='YM' and det=='FOCuS-r' and setting=='drop20',gain,x,dp2,
+c8_r_capf_fa,ch8.tex,raises more false alarms,sim/summary/fa.csv,phi==0.4 and noise=='normal' and calendar==1 and adj=='YM' and rule=='ar1' and det=='FOCuS-r',fa,100x,int,
+c8_r_capf_fa_w,ch8.tex,false alarms (21 and,sim/summary/fa.csv,phi==0.4 and noise=='wide' and calendar==1 and adj=='YM' and rule=='ar1' and det=='FOCuS-r',fa,100x,int,
+recommend_row3_gain,ch8.tex,with capped ewma gained,recommend.csv,adj=='A' and det=='EWMA-r',tb_temp20,x,dp2,derived
+c8_hw_rules_lo,ch8.tex,real episodes. it caught,extra/derived.csv,id=='hw_ewma_rules_min',value,x,int,as c6_hw_ewma_rules_min
+c8_hw_rules_hi,ch8.tex,it caught 7 or,extra/derived.csv,id=='hw_ewma_rules_max',value,x,int,as c6_hw_ewma_rules_max
+c8_hw_runs_lo,ch8.tex,"the scoring rule, and",extra/derived.csv,id=='hw_ewma_runs_min',value,x,int,as c6_se_hwe_lo
+c8_hw_runs_hi,ch8.tex,"rule, and 6 to",extra/derived.csv,id=='hw_ewma_runs_max',value,x,int,as c6_se_hwe_hi
+c8_hw_mm20,ch8.tex,"drops, where it gains",testbed/matched.csv,adj=='HW' and det=='EWMA' and setting in ['drop20'&#44;'temp20'],gain,max,dp2,as c6_mm_hw_ewma_20
+focusfix_changed@ch8,ch8.tex,the alarm dates of,extra/derived.csv,id=='focusfix_changed',value,x,int,derived
+focusfix_n@ch8,ch8.tex,of 46 of the,extra/derived.csv,id=='focusfix_n',value,x,int,derived
+focusfix_frozen3@ch8,ch8.tex,monitor's alarms. it moved,extra/derived.csv,id=='focusfix_frozen_moved3',value,x,int,derived
+c8_ff_hw_before,ch8.tex,with focus fell from,opal/focus_check_opal.csv,method=='HW' and detector=='FOCuS' and rule=='ar1',dir_package,x,int,
+c8_ff_hw_after,ch8.tex,fell from 7 to,opal/focus_check_opal.csv,method=='HW' and detector=='FOCuS' and rule=='ar1',dir_exact,x,int,
+c8_ff_sim_before,ch8.tex,memory and holidays from,extra/fa_package_focus.csv,phi==0.4 and noise=='normal' and calendar==1 and adj=='YM' and rule=='ar1' and det=='FOCuS-r',fa,100x,int,"package FOCuS, fa.csv at eb40c17"
+c8_ff_sim_after,ch8.tex,holidays from 8 to,sim/summary/fa.csv,phi==0.4 and noise=='normal' and calendar==1 and adj=='YM' and rule=='ar1' and det=='FOCuS-r',fa,100x,int,
+c8_reader_off,ch8.tex,so was treating the,extra/derived.csv,id=='reader_off_days',value,x,words,
+c8_nodq_lose,ch8.tex,data quality. without it,extra/derived.csv,id=='nodq_survivors_lose',value,x,words,
+survivors_n@ch8,ch8.tex,"it, three of the",opal/bothrules_survivors.csv,survives == True,survives,count,words,N2: five monitors hold under both rules after adjustment
+gen_kurtosis,ch8.tex,"contrast, have excess kurtosis",extra/derived.csv,id=='generator_kurtosis',value,x,dp1,derived
+c8_kurt_max,ch8.tex,excess kurtosis 135 to,extra/derived.csv,id.str.startswith('kurtosis_'),value,max,int,
+boot_uncapped_min@ch8,ch8.tex,uncapped detector alarmed in,sim/summary/fa.csv,noise=='boot' and adj=='oracle' and rule=='ar1' and det in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'&#44;'FOCuS-AR'],fa,min*100,dp1,N7: 99.8
+c8_boot_unc_hi,ch8.tex,in 99.8 to,sim/summary/fa.csv,phi==0.4 and noise=='boot' and adj=='oracle' and rule=='ar1' and det in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'&#44;'FOCuS-AR'],fa,max*100,int,as c5_boot_unc_hi
+c8_cpm_later_lo,ch8.tex,years it is about,calib/cpm_age.csv,det=='CPM' and year>1,p_first_alarm_given_none_before,min*100,int,
+c8_cpm_later_hi,ch8.tex,is about 8 to,calib/cpm_age.csv,det=='CPM' and year>1,p_first_alarm_given_none_before,max*100,int,
+c8_hw_dir_p,ch8.tex,adjustment under the direction-aware rule,opal/rule_variants_familywise.csv,rule_variant=='r0_7_dir',p_best_episodes_ge7,x,dp3,
+c8_hw_frozen_p,ch8.tex,not under the frozen rule,opal/rule_variants_familywise.csv,rule_variant=='frozen',p_best_episodes_ge8,x,dp2,
+c8_kurt_min,ch8.tex,2023--25 have excess kurtosis,extra/derived.csv,id in ['kurtosis_A'&#44;'kurtosis_B'&#44;'kurtosis_HW'],value,min,int,
+c8_r_capf_boot,ch8.tex,"(21 and 12\%, and",sim/summary/fa.csv,phi==0.4 and noise=='boot' and calendar==1 and adj=='YM' and rule=='ar1' and det=='FOCuS-r',fa,100x,int,
+c8_narrow_gain,ch8.tex,14-day drop is,recommend.csv,adj=='YM' and det=='CUSUM-r' and rule=='ar1',tb_temp20,x,dp2,
+c8_narrow_lo,ch8.tex,with an interval from,recommend.csv,adj=='YM' and det=='CUSUM-r' and rule=='ar1',tb_temp20_lo,x,dp3,
+c8_calm_max2,ch8.tex,thresholds caught at most,opal/bootstrap.csv,,episodes_caught,max,int,
+c8_var_lo,ch8.tex,detectors found variance doublings,extra/derived.csv,id=='var_ratio_lo',value,x,dp1,
+c8_var_hi,ch8.tex,doublings 1.6 to,extra/derived.csv,id=='var_ratio_hi',value,x,dp1,
+c8_pl_frozen2,ch8.tex,under the direction-aware rule and,opal/rule_variants.csv,method=='YM' and detector=='FOCuS' and rule=='ar1',frozen,x,int,
+c8_capc_gain2,ch8.tex,test bed it gained,testbed/matched.csv,adj=='YM' and det=='CUSUM-r' and setting=='drop20',gain,x,dp2,
+c8_capc_ne3,ch8.tex,capped cusum. it raises,opal/scores.csv,method=='YM' and detector=='CUSUM-r' and rule=='ar1',non_event_per_year,x,dp1,
+c8_capc_eps3,ch8.tex,"(table~ ), but it caught",opal/rule_variants.csv,method=='YM' and detector=='CUSUM-r' and rule=='ar1',r0_7_dir,x,int,
+c8_hw_lo,ch8.tex,holt-winters with ewma caught,extra/derived.csv,id=='hw_ewma_rules_min',value,x,int,
+c8_hw_hi,ch8.tex,ewma caught 7 or,extra/derived.csv,id=='hw_ewma_rules_max',value,x,int,
+c8_hw_ne,ch8.tex,"8, but it raises",opal/scores.csv,method=='HW' and detector=='EWMA' and rule=='ar1',non_event_per_year,x,dp1,
+c8_hw_blind,ch8.tex,and is blind for,recommend.csv,adj=='HW' and det=='EWMA' and rule=='ar1',blind_pct,x,int,
+c8_kurt_lo2,ch8.tex,"each, it is about",extra/derived.csv,id.str.endswith('_no_reader_off_week'),value,min,int,
+c8_kurt_hi2,ch8.tex,is about 7 to,extra/derived.csv,id.str.endswith('_no_reader_off_week'),value,max,int,
+c8_trim_n2,ch8.tex,mostly holidays. without the,sim_trim/summary/boot_trim_removed_days.csv,,resid,count,int,
+c8_trim_focus2,ch8.tex,"extreme days, focus finds",sim_trim/summary/verdict_values.csv,key=='detect_2sd_FOCuS_trim',value,x,int,
+c8_kurt_ro2,ch8.tex,135 to 245. without,extra/derived.csv,id=='reader_off_days_2023_25',value,x,words,
+c8_phi0_lo2,ch8.tex,"is the independent one wherever , on",extra/phi_fallback.csv,,share_days_phi0,min*100,int,
+c8_phi0_hi2,ch8.tex,"independent one wherever , on 2 to",extra/phi_fallback.csv,,share_days_phi0,max*100,int,

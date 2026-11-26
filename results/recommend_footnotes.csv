@@ -1,0 +1,10 @@
+,value
+a_boot_fa,45.34
+b_alarms,9.0
+c_hw_ewma_no_holidays,12.73
+d_hw_ewma_own_gain,0.2184210526315789
+d_hw_ewma_own_background,0.3973684210526316
+e_hw_ewma_both_rules_p_adj,0.006
+e_ym_cusum_indep_both_rules_p_adj,0.0
+f_calm_frozen_p_adj,0.0585
+f_calm_dir_p_adj,0.0

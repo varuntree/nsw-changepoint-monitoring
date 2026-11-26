@@ -1,0 +1,19 @@
+episode,boundary,date,class,announced_before,note
+covid_onset,onset,2020-03-16,covid,partly,first public health order (events of 500+); travel already falling from mid-March
+covid_onset,onset,2020-03-23,covid,yes,non-essential venues close
+covid_onset,onset,2020-03-31,covid,yes,statewide stay-at-home order
+covid_easing,end,2020-05-15,covid,yes,first easing
+flood_2021_03,onset,2021-03-20,flood,no,east coast floods
+delta_onset,onset,2021-06-23,covid,partly,Greater Sydney restrictions then lockdown 26 Jun
+delta_onset,onset,2021-06-26,covid,yes,stay-at-home lockdown
+delta_end,end,2021-10-11,covid,yes,reopening at 70%
+omicron_onset,onset,2021-12-24,covid,partly,Omicron wave; masks and work from home (confounded with Christmas)
+omicron_end,end,2022-02-18,covid,yes,work from home back to employer discretion
+shutdown_2022_02,onset,2022-02-21,shutdown,no,Sydney Trains network shut down overnight (industrial dispute)
+flood_2022_03,onset,2022-03-07,flood,no,floods reach Sydney; line closures
+strike_2022_06,onset,2022-06-28,industrial,partly,peak services cut
+flood_2022_07,onset,2022-07-01,flood,no,east coast low; lines closed
+strike_2022_08,onset,2022-08-31,industrial,partly,24-hour ban on foreign-built trains
+strike_2025_01,onset,2025-01-15,industrial,partly,peak of rail work bans
+strike_2025_02,onset,2025-02-14,industrial,no,mass sick leave / go-slow
+outage_2025_05,onset,2025-05-20,outage,no,Homebush overhead wiring failure

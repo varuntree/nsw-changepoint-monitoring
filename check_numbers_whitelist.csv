@@ -1,0 +1,147 @@
+pattern,scope,reason
+\b(19|20)\d\d\b,all,year
+"\b\d{1,2}(--\d{1,2})?\s+(January|February|March|April|May|June|July|August|September|October|November|December)(\s+\d{4})?",all,day in a date
+"(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(--\d{1,2})?\b",all,day in a date
+\b(Chapter|Section|Sections|Table|Tables|Figure|Figures|Appendix|Equation|Eq\.|RQ|Phase|Step|D)~?\s?\d+(\.\d+)*[a-z]?,all,cross-reference
+\b\d+\.\d+\.\d+\b,all,version string
+version\s+\d+(\.\d+)*,all,version string
+.*,acknowledgements\.tex,front matter
+5\\%\s*(chance|target|false|rate|level|a year|of normal)|matched\s+5\\%|\b0\.05\b(?=\s*(target|false|chance))|target of 5\\%,all,design: 5% false-alarm target
+\b(1|10)\\%\s*(and|or)\s*(5|10)\\%|\b(1|5|10)\\%\s+(targets?|and 10),all,design: alternative targets 1/5/10%
+\b28(-|\s)?days?|28-day|28 days,all,design: 28-day relearn / window / blocks
+(\b7|seven)(-|\s)day|within\s+7\s+days|\$\\pm\$\s?7|\\pm\s?7|±\s?7|0--7|0\s+to\s+7|7\s+days\s+(either|after|before),all,design: 7-day window
+\b3-day|\b14-day|0--3|0--14|0\s+to\s+(3|14)\s+days|windows? of 3 and 14 days|window to 14 days|lasting (only )?14 days|minimum segment 14 days|within 14 days|in the 14 days before|Relearn 14 days,all,"design: 3- and 14-day windows, drops and relearn (explicit phrases only)"
+cap(ped|s)?\s+(each\s+\w+\s+)?(at|of)\s+\$?\\?(pm)?\s?3|\$\\pm\$\s?3\b|\\pm\s?3\b|±3,all,design: cap 3
+k\s*=\s*(0\.25|0\.5|1)\b|\\lambda\s*=\s*(0\.05|0\.1|0\.2)\b|λ\s*=\s*(0\.05|0\.1|0\.2)\b|k_v|\\sigma_1\^2\s*=\s*2,all,design: detector constants and tuning grid
+start-?up\s+(of\s+)?(15|20)|(15|20)\s+observations|warm-up\s+(of\s+)?14,all,design: CPM start-up
+"\b56\s+(past\s+)?days|28\s+(consecutive|pairs)|\b365\s+(past|days|daily|monitored|in-control)|\b0\.9\]|\[0,\s?0\.9\]|t\s*-\s*119|t\s*-\s*29|t\s*-\s*28|\b91\s+days",all,design: phi_hat and running-scale windows
+"10(\{,\}|,)000\s+(runs|simulated|years|series)|20(\{,\}|,)000\s+(in-control\s+)?(years|series|runs|N\(0)|5(\{,\}|,)000\s+(years|runs|fresh|random)|4(\{,\}|,)000\s+(series|runs)|2(\{,\}|,)000\s+(shifts|offsets|resamples|runs|draws|times|episode)|1(\{,\}|,)000\s+(shifts|offsets|resamples|times|runs)|\(2(\{,\}|,)000\s+for|(1|2)(\{,\}|,)000\s+times",all,design: Monte Carlo sizes
+\b150\s+(warm-up|days of warm-up)|warm-up\s+of\s+150,all,design: 150 warm-up days
+\b30\s+(days|to\s+180)|30--180|180\s+days,all,design: minimum offset / local shift
+\b60\s+days|60-day|within\s+60,all,design: 60-day detection window
+\b(0\.5|1|2|3|4)\s?(SD|standard deviations?)\b,all,design: shift sizes in SD
+\$?\\times\$?\s?(1\.5|2|3)\b|×\s?(1\.5|2|3)\b|\b(1\.5|2|3)\s?(×|\$\\times\$)|v\s*=\s*(1\.5|2|3)\b|(multiplied|doubl\w*|tripl\w*)\s+by\s+(1\.5|2|3),all,design: variance factors
+"\b(2\.5|5|10|20|40)\\%(,)?\s+(drops?|lasting|14-day|permanent|two-week)|\b20\\%\s*/\s*40\\%|drops?\s+of\s+(2\.5|5|10|20|40)\\%|(2\.5|5|10|20|40)\\% (and|or) (5|10|20|40)\\%",all,"design: inserted drop sizes (explicit phrases only)"
+(28|3|6)(-|\s)(day|month)\s+blocks?|\b12\s+blocks|(3|6)-month,all,design: bootstrap blocks
+(\b10|ten)\s+alarms,all,design: family floor
+\bof\s+15\b|\b15\s+(scored\s+|frozen\s+)?episodes|\b71\s+(dated\s+|sourced\s+)?events|\b18\s+boundaries|\b14\s+episodes,all,design: frozen event list sizes
+\b(137|150|136|80|40)\s+(monitors|combinations|past-only|calm)|best[\s-]of[\s-](137|80|40|136|family),all,design: family sizes
+(four|\b4)\s+main\s+forecasts|(eight|\b8)\s+detectors|(six|\b6)\s+past-only,all,design: design sizes
+"\\phi\s*=\s*(0\.2|0\.4|0\.6|0\.8|0)(?![\d.])|ϕ\s*=\s*(0\.2|0\.4|0\.6|0)(?![\d.])|0,\s*0\.05,\s*\\dots,\s*0\.90?|\\phi\s*\\in",all,design: phi grid
+\\alpha\s*=\s*0\.(01|02|05|10?)\b|\\gamma\s*=\s*0\.10?\b|α\s*=\s*0\.(01|02|05|10?),all,design: Holt-Winters weights
+\bset to raise (34|20) alarms|\b(34|20)\s+alarms,all,design: alarm budgets (the achieved counts are ledger rows)
+1\.4826,all,design: MAD constant
+AR\(\d\)|AR\(\$?p\$?\)|COVID-19|X-12|\bF\(\d+\)|\bM\d\b|t_?5|\$t_5\$,all,names and notation
+\b\d{4}s\b|\b\d0s\b,all,decade
+14 methods|37 (real )?series|five people,ch2\.tex,literature value
+(736|857) alarms,all,value from the submitted project plan (historical)
+nearest 100\b|rounded to the nearest,all,data publisher rounding
+\b20\s+hours,all,data rule: a day with fewer than 20 hours of taps is a data fault
+\bp\s*<\s*0\.05\b|p\s*\(own\)\s*\$<\$\s*0\.05|\$<\$\s*0\.05|<\s*0\.05|\b0\.05\s*level,all,design: significance level
+95\\?%\s+(interval|percentile|quantile|of|bootstrap)|\b95th|2\.5\s*/\s*97\.5|\b97\.5,all,design: interval level
+one year in twenty|about one false alarm in (twenty|20) years,all,design: 5% target restated
+\b15\s+((real|main|scored|frozen|Opal|real-world)\s+)*(changes|episodes|disruptions)|\bFifteen\s+(Opal\s+)?episodes|\bof the 15\b,all,design: frozen event list size
+\b18\s+(scored\s+)?boundaries|of the 18\b,all,design: frozen event list size
+\b71\s+(dated|rows|sourced|events),all,design: event list size
+(four|\b4)\s+(electricity\s+)?episodes\s+with\s+(five|5)\s+boundaries|(four|\b4)\s+electricity\s+episodes|(four|\b4)\s+scored\s+(changes|episodes),all,design: electricity frozen list size
+seven\s+weekday\s+effects|seven\s+weekdays,all,design: weekday model
+"\bthree\s+gaps|Gaps:\s*1|\b(1|2|3),\s+(past-only|several|threshold)",ch2\.tex,list labels
+Proposition~?\s?\d,all,cross-reference
+six and a half years,all,design: monitoring period 1 Mar 2020 - 28 Sep 2026
+\b16 daily syndromic series|below 0\.15|seventy years|three responses|370 or 500|textbook 370,ch2\.tex|ch4\.tex,literature value
+"AEMO put [^.]{0,60}at about 5\\%",all,external source value (AEMO)
+two public streams|are two episodes,ch3\.tex,definition
+"\d{1,2}\s+and\s+\d{1,2}\s+(January|February|March|April|May|June|July|August|September|October|November|December)",all,day in a date
+"2\\,m temperature|CC BY \d\.\d",all,unit / licence version
+52 weeks earlier|\\omega_t\s*=\s*0\.5|\b364 days|\beight valid days|three times the current scale|previous three years|two years exist|four weeks|four-week gap|constant 3\b|at most 3\b|add 3\b|three scale units,all,design: forecast and cap definitions
+"\b(1|5|10)\\%\s*(and|or|,)\s*(5|10)\\%|targets of 1, 5 and 10\\%|of 1, 5 and 10",all,design: alternative targets
+\b61 days|counts as 61,all,design: restricted mean delay cap
+\bWindows of 3 and 14 days|of 3 and 14 days,all,design: windows
+"(1,095|1\{,\}095) days on the real dates|first 730 days|last 365|\b730\s+(training\s+)?days",all,design: simulation length
+days 60 to 300|60 to 300 of,all,design: change day range
+(every second eligible day)|90 days before|60 days after,all,design: test-bed windows
+12 blocks of three consecutive|Windows span 150 days|six-month blocks|six blocks,all,design: bootstrap blocks
+common 20\\% background|20\\% background,all,design: matched background
+five sizes from 2\.5 to 40\\%|four sizes from 5 to 40\\%|by 1\.5 or 2\b,all,design: inserted change sizes
+two windows of the procedure|two monitors would have to share|count for two episodes|catch two episodes|one alarm catch two,ch4\.tex,definition
+target 5\\%|\(target 5\\%\),all,design: 5% target
+2020--22 and within 2023--26|within 2020--22|2023--26|2023--25|2024--25|2025--26,all,year range
+\bwithin seven days of,all,design: yearly memory window
+"MSTL[^.]{0,80}three years",all,design: MSTL window
+pulse of about 4 weeks,ch4\.tex,design: median-of-four forecast memory
+against their 500,ch4\.tex,literature value (Hawkins and Deng target)
+\$?\\hat\\phi\$?\s+is 0|is 0 and the AR\(1\) threshold,all,definition
+\b4 to 6\\% on odd,all,design: tolerance band of the split-half check
+near 5\\%,all,design: 5% target
+not 0\.05,all,design: Holt-Winters alpha
+"at 10\{,\}000 days|up to 100\{,\}000",all,design: timing grid
+its three years|three years is monitored|for two weeks|two-week average|about two weeks|four-week blocks,all,design: simulation length / holiday block / EWMA memory / bootstrap blocks
+fall of more than 14\\%,all,design: echo definition (an upward alarm 6 to 8 days after a fall of more than 14%)
+six to eight days after,all,design: echo window
+8 to 28 days after a change|\(within 2 days\),all,design: alarm classes of the overlay
+"onsets \(16, 23 and 31 March\)",all,dates
+two-sided|two-week|within two months|two to three months later,all,design: two-sided detectors / inserted drop length / 60-day window / holds check
+\b40\\% two-week drop|\b20\\% drop lasting 14 days,all,design: inserted change sizes and lengths
+in the fourteen days before,all,design: 14-day window of the COVID chance check
+final only four days later,all,data: Opal publication lag
+the three monitors of Table,all,design: the monitors chosen for the sensitivity table
+"permanent drops of 2\.5, 5 and 10\\%",all,design: inserted change sizes
+\bwithin 60 days\b,all,design: 60-day window
+on 25 or 26 December|the two lockdowns,all,dates / event list
+last 120 days,all,design: dashboard window
+came in two steps a week apart,ch7\.tex,event list: two COVID-19 onset boundaries (23 and 31 March 2020)
+one or two episodes,all,rhetorical
+first one or two days of each series,all,software property of focus_cpt (calib/focus_check.csv)
+six days after the May 2025 outage,all,dates: 26 May against the 20 May 2025 boundary
+CPM's 5\\%|The 5\\% target|5\\% target,all,design: 5% target
+after a 4~SD step|4~SD step,all,design: change size
+\b\d\d:\d\d\b,all,clock times of the rule changes
+alarms 0 to 7 days after|0--7 d,all,design: scoring window
+the 2\.5 and 5\\% drops|1\.5-fold,all,design: inserted change sizes
+needs two years for a yearly pattern,all,design: MSTL needs two years
+"none of 2\{,\}000|2\{,\}000 circular",all,design: number of shifts
+count for two close boundaries,all,definition of the frozen rule
+setcounter\{equation\}\{0\},all,LaTeX counter
+857 for CUSUM,all,project-plan value (exploratory run; not a result of this study)
+21 to 25 November 2022,all,dates
+and 0 otherwise,all,definition
+here 7 and about 365 days|\(7 and 365\.25 days\),all,design: seasonal periods
+batches of 500|all 320 batches,all,design: simulation batches
+"Dependence\s*& 0, 0\.40 \(generator\), 0\.6 & 0\.40|Mean drop\s*& 0\.5, 1, 2, 4\b|\)\s*& 1 \(|Mean rise\s*& none\s*& 1\b|Variance factor\s*& 2\s*& 2\b|1\.5 and 3 \(Normal\)|Conditions\s*& 36\s*& 6\b",appD\.tex,design: simulation-condition table
+"2,000 random sub-intervals",all,design: WBS intervals
+8 to 28 days after,all,design: after-event class
+within two days of a school-holiday|zero to two days after,all,design: explanation classes
+bounded to 0\.2--99\.8\\%,all,design: logit bounds
+fewer than 56 observed days|fewer than 28 pairs,all,design: phi estimation minimum
+"0\.2, 0\.4 and 0\.6",all,design: phi grid
+so that 20\\% of the unmodified windows|minus 0\.20|three-month blocks,all,design: matched test bed
+Python 3\.12|numba 0\.68|statsmodels 0\.15,all,software versions
+"1,000 circular shifts|uniformly from 30 to|used 500 shifts|300 for the persistence check",all,design: number of shifts
+\(target 0\.002\)|\(target 500\),all,literature value (Hawkins and Deng target)
+"20,000 independent standard normal series of 4,000 days",all,design: run-length check sizes
+has variance 2\b,all,mathematical fact (chi-square with one degree of freedom)
+from 400 past days|from 0 to 0\.8|\\phi = 0\.8,all,design: phi grid and estimation window
+"up to 60,000 days, 2,000 times",all,design: run-length simulation sizes
+run length & (168|465|500)\s*&|multiplier 2\.814|100 random series|50 random series,all,published reference values and check sizes
+four-day refresh cycle|at least two of the four reference days,all,data / design
+slightly above 5\\%,all,design: 5% target
+"1\{,\}000\\,\$\\mu\$s = 1\\,ms|median of 51 repeats|at least 2\\,ms",all,units / timing design
+lasting unless marked 14 d,all,design: two-week drop
+points at 5\\%,all,design: 5% target
+"\bat\s+and \$0\.4\$|gives\s+and \$0\.6\$",all,design: phi values (with the blanked $\\phi=0$)
+"in the 10\\% gain",all,design: inserted drop size
+"is at most 6\\%",ch8\.tex,design: simulation pass rule (recommend_rules.csv)
+"every one of 2\{,\}000 circular and 2\{,\}000 era shifts",all,design: number of shifts
+"5\\% yearly chance",all,design: 5% false-alarm target
+"beyond five robust SD",all,design: trimming threshold of the robustness run (sim.TRIM_SD)
+"Fourier seasonality \(orders 3 and 10\)",appD\.tex,design: Prophet Fourier orders of the further retrospective adjustments
+"with \$-0\$ and",appD\.tex,notation: negative zero (the signed-zero tie case)
+"\bVariants? [123]\b|\b[Vv]ariants 1 and 2",all,labels of the rule versions in tab:rule-variants
+"21 to 25 November",all,dates
+"close to their 500",ch4\.tex,literature value (Hawkins and Deng target)
+"smaller of its two counts",ch6\.tex,definition (two scoring rules)
+"29-day running median|\b3\s*\\log\s*n|\\sqrt\{3\s*\\log\s*n\}|1\.3\s*\\sqrt\{2\s*\\log\s*n\}|5\{?,\}?000 intervals|minimum (segment )?(of )?seven days",all,design: offline segmentation settings (App D)
+"penalty 8\s*\\?log\s*n|minimum segment 14 days",all,design: strict PELT of the screened test bed
+"adjust for trying 137 of them",all,design: family size
+"smaller of each monitor's two counts",ch6\.tex,definition (two scoring rules)
+"\b\d{1,2}\s+to\s+\d{1,2}\s+(January|February|March|April|May|June|July|August|September|October|November|December)",all,date range

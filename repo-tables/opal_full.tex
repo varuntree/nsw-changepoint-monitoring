@@ -1,0 +1,187 @@
+% written by scripts/tables.py from results/; do not edit
+{\footnotesize\linespread{1}\selectfont\setlength{\tabcolsep}{3.2pt}
+\begin{longtable}{@{}lrrrrrrrr@{}}
+\caption{Opal case study, 1 March 2020 to 28 September 2026, every forecast, detector and threshold rule (Thr.). Near: share of alarms within 7 days of a scored boundary. Episodes: scored episodes caught (of 15) under the main rule (fixed on 22 October: an alarm within 7 days either side of any boundary, in any direction) and under the direction-aware check (0 to 7 days after the nearest boundary, in its direction; 23 October). Brackets: chance median; $^{*}$ $p$ (own) $<0.05$. Non-event and unexplained alarms and blind days are per year. Definitions: Table~\ref{tab:measures}.}\label{tab:opal-full}\\
+\toprule
+ & & & & \multicolumn{2}{c}{Episodes (chance)} & & & \\
+\cmidrule(lr){5-6}
+Detector & Thr. & Alarms & \begin{tabular}[b]{@{}c@{}}Near, \%\\(chance)\end{tabular} & \begin{tabular}[b]{@{}c@{}}Main\\rule\end{tabular} & \begin{tabular}[b]{@{}c@{}}Direction-\\aware\end{tabular} & \begin{tabular}[b]{@{}c@{}}Non-\\event\end{tabular} & \begin{tabular}[b]{@{}c@{}}Unex-\\plained\end{tabular} & \begin{tabular}[b]{@{}c@{}}Blind\\days\end{tabular} \\
+\midrule
+\endfirsthead
+\toprule
+ & & & & \multicolumn{2}{c}{Episodes (chance)} & & & \\
+\cmidrule(lr){5-6}
+Detector & Thr. & Alarms & \begin{tabular}[b]{@{}c@{}}Near, \%\\(chance)\end{tabular} & \begin{tabular}[b]{@{}c@{}}Main\\rule\end{tabular} & \begin{tabular}[b]{@{}c@{}}Direction-\\aware\end{tabular} & \begin{tabular}[b]{@{}c@{}}Non-\\event\end{tabular} & \begin{tabular}[b]{@{}c@{}}Unex-\\plained\end{tabular} & \begin{tabular}[b]{@{}c@{}}Blind\\days\end{tabular} \\
+\midrule
+\endhead
+\multicolumn{9}{@{}l}{\emph{Same-weekday difference}} \\*
+\quad CUSUM & indep. & 44 & 20$^{*}$ (9) & 10$^{*}$ (4) & 4$^{*}$ (1) & 5.3 & 2.4 & 187 \\
+\quad CUSUM & AR(1) & 36 & 31$^{*}$ (8) & 12$^{*}$ (4) & 5$^{*}$ (1) & 3.8 & 1.2 & 153 \\
+\quad EWMA & indep. & 44 & 18$^{*}$ (9) & 10$^{*}$ (4) & 4$^{*}$ (1) & 5.5 & 2.6 & 187 \\
+\quad EWMA & AR(1) & 37 & 24$^{*}$ (8) & 11$^{*}$ (4) & 6$^{*}$ (1) & 4.3 & 1.7 & 157 \\
+\quad FOCuS & indep. & 50 & 18$^{*}$ (10) & 11$^{*}$ (5) & 3 (1) & 6.2 & 2.6 & 213 \\
+\quad FOCuS & AR(1) & 48 & 19$^{*}$ (8) & 11$^{*}$ (5) & 6$^{*}$ (1) & 5.9 & 2.4 & 203 \\
+\quad FOCuS-AR & AR(1) & 52 & 13 (10) & 8 (5) & 5$^{*}$ (2) & 6.8 & 2.9 & 221 \\
+\quad CPM & indep. & 19 & 32$^{*}$ (11) & 7$^{*}$ (2) & 6$^{*}$ (1) & 2.0 & 0.8 & 81 \\
+\quad CPM & AR(1) & 4 & 25 (0) & 1 (0) & 1 (0) & 0.5 & 0.0 & 17 \\
+\quad capped CUSUM & indep. & 27 & 26$^{*}$ (7) & 8$^{*}$ (3) & 4$^{*}$ (1) & 3.0 & 1.4 & 115 \\
+\quad capped CUSUM & AR(1) & 13 & 38$^{*}$ (8) & 5$^{*}$ (1) & 4$^{*}$ (0) & 1.2 & 0.5 & 55 \\
+\quad capped EWMA & indep. & 31 & 23$^{*}$ (10) & 8$^{*}$ (3) & 5$^{*}$ (1) & 3.6 & 1.7 & 132 \\
+\quad capped EWMA & AR(1) & 21 & 33$^{*}$ (10) & 8$^{*}$ (2) & 4$^{*}$ (0) & 2.1 & 0.9 & 89 \\
+\quad capped FOCuS & indep. & 32 & 22$^{*}$ (9) & 8$^{*}$ (3) & 4$^{*}$ (1) & 3.8 & 1.8 & 136 \\
+\quad capped FOCuS & AR(1) & 16 & 44$^{*}$ (6) & 8$^{*}$ (1) & 4$^{*}$ (0) & 1.4 & 0.8 & 68 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\emph{Median of four}} \\*
+\quad CUSUM & indep. & 46 & 20$^{*}$ (9) & 10$^{*}$ (4) & 5$^{*}$ (1) & 5.6 & 2.4 & 196 \\
+\quad CUSUM & AR(1) & 38 & 18$^{*}$ (8) & 8$^{*}$ (4) & 6$^{*}$ (1) & 4.7 & 1.2 & 162 \\
+\quad EWMA & indep. & 49 & 20$^{*}$ (8) & 12$^{*}$ (5) & 8$^{*}$ (1) & 5.9 & 2.9 & 209 \\
+\quad EWMA & AR(1) & 46 & 20$^{*}$ (9) & 11$^{*}$ (5) & 6$^{*}$ (1) & 5.6 & 1.8 & 196 \\
+\quad FOCuS & indep. & 47 & 19$^{*}$ (9) & 11$^{*}$ (4) & 5$^{*}$ (1) & 5.8 & 2.4 & 200 \\
+\quad FOCuS & AR(1) & 44 & 18$^{*}$ (9) & 10$^{*}$ (4) & 5$^{*}$ (1) & 5.5 & 1.8 & 187 \\
+\quad FOCuS-AR & AR(1) & 47 & 19$^{*}$ (9) & 11$^{*}$ (5) & 5$^{*}$ (1) & 5.8 & 2.1 & 200 \\
+\quad CPM & indep. & 27 & 30$^{*}$ (7) & 9$^{*}$ (3) & 5$^{*}$ (1) & 2.9 & 1.4 & 115 \\
+\quad CPM & AR(1) & 10 & 20 (10) & 2 (1) & 2$^{*}$ (0) & 1.2 & 0.5 & 43 \\
+\quad capped CUSUM & indep. & 37 & 16 (8) & 7 (4) & 4$^{*}$ (1) & 4.7 & 1.5 & 157 \\
+\quad capped CUSUM & AR(1) & 17 & 29$^{*}$ (12) & 5$^{*}$ (2) & 2 (0) & 1.8 & 0.8 & 72 \\
+\quad capped EWMA & indep. & 38 & 24$^{*}$ (8) & 10$^{*}$ (4) & 5$^{*}$ (1) & 4.4 & 1.5 & 162 \\
+\quad capped EWMA & AR(1) & 26 & 23$^{*}$ (8) & 7$^{*}$ (2) & 3$^{*}$ (0) & 3.0 & 1.4 & 111 \\
+\quad capped FOCuS & indep. & 38 & 16 (8) & 7 (4) & 5$^{*}$ (1) & 4.9 & 1.5 & 162 \\
+\quad capped FOCuS & AR(1) & 23 & 26$^{*}$ (9) & 7$^{*}$ (2) & 5$^{*}$ (0) & 2.6 & 1.4 & 98 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\emph{Holt-Winters}} \\*
+\quad CUSUM & indep. & 44 & 14 (9) & 7 (4) & 5$^{*}$ (1) & 5.8 & 1.7 & 187 \\
+\quad CUSUM & AR(1) & 36 & 17 (8) & 7$^{*}$ (4) & 6$^{*}$ (1) & 4.6 & 1.7 & 153 \\
+\quad EWMA & indep. & 42 & 17$^{*}$ (10) & 8$^{*}$ (4) & 6$^{*}$ (1) & 5.3 & 2.1 & 179 \\
+\quad EWMA & AR(1) & 37 & 19$^{*}$ (8) & 8$^{*}$ (4) & 7$^{*}$ (1) & 4.6 & 1.5 & 157 \\
+\quad FOCuS & indep. & 49 & 18$^{*}$ (8) & 10$^{*}$ (5) & 4 (1) & 6.1 & 2.3 & 209 \\
+\quad FOCuS & AR(1) & 43 & 16 (9) & 9$^{*}$ (4) & 3 (1) & 5.5 & 1.8 & 183 \\
+\quad FOCuS-AR & AR(1) & 43 & 14 (9) & 7 (4) & 4$^{*}$ (1) & 5.6 & 1.7 & 183 \\
+\quad CPM & indep. & 26 & 27$^{*}$ (8) & 8$^{*}$ (3) & 6$^{*}$ (1) & 2.9 & 1.1 & 108 \\
+\quad CPM & AR(1) & 9 & 22 (11) & 2 (1) & 1 (0) & 1.1 & 0.5 & 38 \\
+\quad capped CUSUM & indep. & 33 & 18$^{*}$ (9) & 8$^{*}$ (3) & 5$^{*}$ (1) & 4.1 & 1.7 & 140 \\
+\quad capped CUSUM & AR(1) & 14 & 21 (7) & 3 (1) & 2 (0) & 1.7 & 0.5 & 60 \\
+\quad capped EWMA & indep. & 37 & 14 (8) & 6 (4) & 5$^{*}$ (1) & 4.9 & 2.1 & 157 \\
+\quad capped EWMA & AR(1) & 17 & 18 (6) & 3 (1) & 3$^{*}$ (0) & 2.1 & 0.9 & 72 \\
+\quad capped FOCuS & indep. & 32 & 19$^{*}$ (9) & 6 (3) & 5$^{*}$ (1) & 4.0 & 1.5 & 136 \\
+\quad capped FOCuS & AR(1) & 17 & 12 (6) & 2 (1) & 2 (0) & 2.3 & 0.9 & 72 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\emph{Yearly memory}} \\*
+\quad CUSUM & indep. & 44 & 20$^{*}$ (9) & 11$^{*}$ (4) & 9$^{*}$ (1) & 5.3 & 2.6 & 187 \\
+\quad CUSUM & AR(1) & 23 & 17 (9) & 4 (2) & 3$^{*}$ (1) & 2.9 & 0.9 & 98 \\
+\quad EWMA & indep. & 45 & 9 (9) & 5 (4) & 4$^{*}$ (1) & 6.2 & 2.4 & 192 \\
+\quad EWMA & AR(1) & 37 & 16 (8) & 7$^{*}$ (4) & 6$^{*}$ (1) & 4.7 & 1.8 & 157 \\
+\quad FOCuS & indep. & 48 & 19$^{*}$ (8) & 11$^{*}$ (5) & 7$^{*}$ (2) & 5.9 & 3.0 & 204 \\
+\quad FOCuS & AR(1) & 43 & 12 (9) & 7 (4) & 5$^{*}$ (1) & 5.8 & 2.6 & 183 \\
+\quad FOCuS-AR & AR(1) & 45 & 16 (9) & 8 (4) & 4 (2) & 5.8 & 2.0 & 192 \\
+\quad CPM & indep. & 28 & 21$^{*}$ (7) & 7$^{*}$ (3) & 3$^{*}$ (1) & 3.3 & 1.5 & 119 \\
+\quad CPM & AR(1) & 5 & 20 (0) & 1 (0) & 1 (0) & 0.6 & 0.5 & 21 \\
+\quad capped CUSUM & indep. & 34 & 18$^{*}$ (9) & 7$^{*}$ (3) & 6$^{*}$ (1) & 4.3 & 1.8 & 145 \\
+\quad capped CUSUM & AR(1) & 9 & 22 (11) & 2 (1) & 2$^{*}$ (0) & 1.1 & 0.3 & 38 \\
+\quad capped EWMA & indep. & 36 & 17$^{*}$ (8) & 7$^{*}$ (3) & 6$^{*}$ (1) & 4.6 & 1.5 & 153 \\
+\quad capped EWMA & AR(1) & 11 & 27 (9) & 3 (1) & 3$^{*}$ (0) & 1.2 & 0.6 & 47 \\
+\quad capped FOCuS & indep. & 31 & 16 (10) & 6 (3) & 4$^{*}$ (1) & 4.0 & 1.5 & 132 \\
+\quad capped FOCuS & AR(1) & 14 & 36$^{*}$ (7) & 6$^{*}$ (1) & 5$^{*}$ (0) & 1.4 & 0.6 & 60 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\emph{MSTL refitted on the past}} \\*
+\quad CUSUM & indep. & 51 & 10 (8) & 7 (5) & 4 (2) & 7.0 & 2.9 & 217 \\
+\quad CUSUM & AR(1) & 37 & 11 (8) & 5 (4) & 4$^{*}$ (1) & 5.0 & 2.1 & 157 \\
+\quad EWMA & indep. & 52 & 10 (10) & 5 (5) & 4 (2) & 7.1 & 3.2 & 221 \\
+\quad EWMA & AR(1) & 39 & 23$^{*}$ (8) & 10$^{*}$ (4) & 4$^{*}$ (1) & 4.6 & 1.8 & 166 \\
+\quad FOCuS & indep. & 54 & 13 (9) & 8 (5) & 3 (2) & 7.1 & 3.6 & 229 \\
+\quad FOCuS & AR(1) & 43 & 14 (9) & 7 (4) & 3 (1) & 5.6 & 2.3 & 183 \\
+\quad FOCuS-AR & AR(1) & 50 & 14 (8) & 8 (5) & 3 (1) & 6.5 & 3.2 & 212 \\
+\quad CPM & indep. & 25 & 20$^{*}$ (8) & 5 (2) & 5$^{*}$ (1) & 3.0 & 1.4 & 106 \\
+\quad CPM & AR(1) & 10 & 10 (10) & 1 (1) & 1 (0) & 1.4 & 0.6 & 42 \\
+\quad capped CUSUM & indep. & 44 & 14 (9) & 6 (4) & 6$^{*}$ (2) & 5.8 & 3.2 & 187 \\
+\quad capped CUSUM & AR(1) & 27 & 19 (7) & 5 (3) & 3 (1) & 3.3 & 1.8 & 115 \\
+\quad capped EWMA & indep. & 43 & 19$^{*}$ (9) & 8$^{*}$ (4) & 5$^{*}$ (1) & 5.3 & 2.1 & 179 \\
+\quad capped EWMA & AR(1) & 30 & 23$^{*}$ (10) & 8$^{*}$ (3) & 5$^{*}$ (1) & 3.5 & 2.0 & 128 \\
+\quad capped FOCuS & indep. & 45 & 13 (9) & 7 (4) & 4 (2) & 5.9 & 2.7 & 187 \\
+\quad capped FOCuS & AR(1) & 32 & 19$^{*}$ (9) & 7$^{*}$ (3) & 3 (1) & 4.0 & 2.1 & 136 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\emph{Regression refitted on the past}} \\*
+\quad CUSUM & indep. & 46 & 11 (9) & 6 (5) & 5$^{*}$ (1) & 6.2 & 2.9 & 196 \\
+\quad CUSUM & AR(1) & 25 & 8 (8) & 2 (2) & 1 (1) & 3.5 & 1.1 & 106 \\
+\quad EWMA & indep. & 50 & 16$^{*}$ (8) & 9$^{*}$ (5) & 6$^{*}$ (1) & 6.4 & 4.0 & 213 \\
+\quad EWMA & AR(1) & 30 & 7 (10) & 2 (3) & 2 (1) & 4.3 & 1.7 & 128 \\
+\quad FOCuS & indep. & 49 & 8 (8) & 5 (5) & 3 (1) & 6.8 & 3.3 & 209 \\
+\quad FOCuS & AR(1) & 39 & 8 (10) & 4 (4) & 3 (1) & 5.5 & 2.1 & 166 \\
+\quad FOCuS-AR & AR(1) & 47 & 6 (9) & 4 (5) & 3 (2) & 6.7 & 2.7 & 200 \\
+\quad CPM & indep. & 35 & 9 (9) & 3 (3) & 2 (1) & 4.9 & 2.4 & 149 \\
+\quad CPM & AR(1) & 7 & 14 (0) & 1 (0) & 0 (0) & 0.9 & 0.5 & 30 \\
+\quad capped CUSUM & indep. & 40 & 10 (10) & 4 (4) & 3 (1) & 5.5 & 2.4 & 170 \\
+\quad capped CUSUM & AR(1) & 7 & 0 (14) & 0 (1) & 0 (0) & 1.1 & 0.5 & 30 \\
+\quad capped EWMA & indep. & 40 & 10 (10) & 4 (4) & 4$^{*}$ (1) & 5.5 & 2.9 & 170 \\
+\quad capped EWMA & AR(1) & 6 & 0 (0) & 0 (0) & 0 (0) & 0.9 & 0.3 & 26 \\
+\quad capped FOCuS & indep. & 40 & 10 (10) & 4 (4) & 3 (1) & 5.5 & 2.4 & 170 \\
+\quad capped FOCuS & AR(1) & 17 & 12 (12) & 2 (2) & 1 (0) & 2.3 & 1.2 & 72 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\emph{Retrospective STL}} \\*
+\quad CUSUM & indep. & 41 & 17$^{*}$ (10) & 8$^{*}$ (4) & 3 (1) & 5.2 & 2.3 & 174 \\
+\quad CUSUM & AR(1) & 26 & 15 (8) & 4 (2) & 4$^{*}$ (1) & 3.3 & 0.9 & 111 \\
+\quad EWMA & indep. & 50 & 20$^{*}$ (10) & 12$^{*}$ (5) & 5$^{*}$ (1) & 6.1 & 3.3 & 213 \\
+\quad EWMA & AR(1) & 47 & 15 (9) & 8 (5) & 3 (1) & 6.1 & 2.6 & 200 \\
+\quad FOCuS & indep. & 44 & 16 (9) & 7 (4) & 3 (1) & 5.6 & 2.3 & 187 \\
+\quad FOCuS & AR(1) & 37 & 19$^{*}$ (8) & 7 (4) & 6$^{*}$ (1) & 4.6 & 1.7 & 157 \\
+\quad FOCuS-AR & AR(1) & 43 & 23$^{*}$ (9) & 10$^{*}$ (4) & 7$^{*}$ (1) & 5.0 & 2.3 & 183 \\
+\quad CPM & indep. & 35 & 23$^{*}$ (9) & 10$^{*}$ (3) & 5$^{*}$ (1) & 4.1 & 1.8 & 149 \\
+\quad CPM & AR(1) & 17 & 12 (6) & 2 (1) & 1 (0) & 2.3 & 1.1 & 72 \\
+\quad capped CUSUM & indep. & 36 & 17 (8) & 7$^{*}$ (4) & 4$^{*}$ (1) & 4.6 & 2.9 & 153 \\
+\quad capped CUSUM & AR(1) & 15 & 13 (7) & 2 (1) & 2$^{*}$ (0) & 2.0 & 1.1 & 64 \\
+\quad capped EWMA & indep. & 42 & 17$^{*}$ (10) & 8$^{*}$ (4) & 4$^{*}$ (1) & 5.3 & 2.7 & 179 \\
+\quad capped EWMA & AR(1) & 29 & 17 (7) & 5 (3) & 4$^{*}$ (1) & 3.6 & 1.5 & 123 \\
+\quad capped FOCuS & indep. & 27 & 22$^{*}$ (7) & 6$^{*}$ (3) & 4$^{*}$ (1) & 3.2 & 1.7 & 115 \\
+\quad capped FOCuS & AR(1) & 20 & 15 (10) & 3 (2) & 1 (0) & 2.6 & 1.2 & 85 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\emph{Retrospective MSTL}} \\*
+\quad CUSUM & indep. & 38 & 21$^{*}$ (8) & 9$^{*}$ (4) & 5$^{*}$ (1) & 4.6 & 1.7 & 162 \\
+\quad CUSUM & AR(1) & 27 & 19 (7) & 6$^{*}$ (3) & 4$^{*}$ (1) & 3.3 & 1.1 & 115 \\
+\quad EWMA & indep. & 48 & 17$^{*}$ (8) & 8 (5) & 6$^{*}$ (1) & 6.1 & 2.0 & 204 \\
+\quad EWMA & AR(1) & 43 & 21$^{*}$ (9) & 10$^{*}$ (4) & 6$^{*}$ (1) & 5.2 & 2.0 & 183 \\
+\quad FOCuS & indep. & 43 & 21$^{*}$ (9) & 10$^{*}$ (4) & 5$^{*}$ (1) & 5.2 & 1.7 & 183 \\
+\quad FOCuS & AR(1) & 39 & 21$^{*}$ (8) & 9$^{*}$ (4) & 6$^{*}$ (1) & 4.7 & 1.5 & 166 \\
+\quad FOCuS-AR & AR(1) & 43 & 19$^{*}$ (9) & 9$^{*}$ (4) & 6$^{*}$ (1) & 5.3 & 1.4 & 183 \\
+\quad CPM & indep. & 21 & 10 (10) & 2 (2) & 1 (0) & 2.9 & 1.1 & 89 \\
+\quad CPM & AR(1) & 12 & 8 (8) & 1 (1) & 1 (0) & 1.7 & 1.4 & 51 \\
+\quad capped CUSUM & indep. & 28 & 21$^{*}$ (7) & 7$^{*}$ (3) & 4$^{*}$ (1) & 3.3 & 1.8 & 119 \\
+\quad capped CUSUM & AR(1) & 7 & 29 (0) & 2 (0) & 1 (0) & 0.8 & 0.5 & 30 \\
+\quad capped EWMA & indep. & 29 & 17 (10) & 6 (3) & 3$^{*}$ (0) & 3.6 & 1.4 & 123 \\
+\quad capped EWMA & AR(1) & 14 & 36$^{*}$ (7) & 6$^{*}$ (1) & 2$^{*}$ (0) & 1.4 & 0.5 & 60 \\
+\quad capped FOCuS & indep. & 17 & 29$^{*}$ (6) & 6$^{*}$ (1) & 4$^{*}$ (0) & 1.8 & 0.5 & 72 \\
+\quad capped FOCuS & AR(1) & 7 & 14 (14) & 1 (1) & 1 (0) & 0.9 & 0.6 & 30 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\emph{Retrospective regression}} \\*
+\quad CUSUM & indep. & 43 & 14 (9) & 6 (4) & 4$^{*}$ (1) & 5.6 & 3.0 & 180 \\
+\quad CUSUM & AR(1) & 25 & 16 (8) & 4 (2) & 2 (1) & 3.2 & 2.0 & 106 \\
+\quad EWMA & indep. & 51 & 14 (10) & 8 (5) & 6$^{*}$ (1) & 6.7 & 3.5 & 215 \\
+\quad EWMA & AR(1) & 41 & 12 (10) & 5 (4) & 3 (1) & 5.5 & 2.6 & 173 \\
+\quad FOCuS & indep. & 40 & 20$^{*}$ (8) & 9$^{*}$ (4) & 4$^{*}$ (1) & 4.9 & 2.3 & 168 \\
+\quad FOCuS & AR(1) & 32 & 9 (9) & 3 (3) & 2 (1) & 4.4 & 1.4 & 133 \\
+\quad FOCuS-AR & AR(1) & 39 & 15 (8) & 6 (4) & 3 (1) & 5.0 & 2.1 & 163 \\
+\quad CPM & indep. & 34 & 15 (9) & 6 (3) & 2 (1) & 4.4 & 2.3 & 144 \\
+\quad CPM & AR(1) & 21 & 10 (10) & 2 (2) & 1 (0) & 2.9 & 2.1 & 89 \\
+\quad capped CUSUM & indep. & 38 & 13 (11) & 6 (4) & 2 (1) & 5.0 & 3.2 & 160 \\
+\quad capped CUSUM & AR(1) & 17 & 6 (6) & 1 (1) & 1 (0) & 2.4 & 0.9 & 72 \\
+\quad capped EWMA & indep. & 41 & 15 (10) & 7 (4) & 2 (1) & 5.3 & 2.7 & 172 \\
+\quad capped EWMA & AR(1) & 35 & 3 (9) & 1 (4) & 1 (1) & 5.2 & 3.3 & 147 \\
+\quad capped FOCuS & indep. & 30 & 23$^{*}$ (10) & 7$^{*}$ (3) & 3$^{*}$ (1) & 3.5 & 2.3 & 125 \\
+\quad capped FOCuS & AR(1) & 17 & 18 (6) & 3 (2) & 1 (0) & 2.1 & 1.1 & 68 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\emph{No forecast}} \\*
+\quad CUSUM & indep. & 32 & 13 (9) & 4 (3) & 3 (1) & 4.3 & 2.1 & 134 \\
+\quad CUSUM & AR(1) & 7 & 29 (0) & 2 (0) & 2$^{*}$ (0) & 0.8 & 0.0 & 30 \\
+\quad EWMA & indep. & 39 & 23$^{*}$ (8) & 10$^{*}$ (4) & 5$^{*}$ (1) & 4.6 & 1.8 & 165 \\
+\quad EWMA & AR(1) & 19 & 26$^{*}$ (5) & 5$^{*}$ (2) & 3$^{*}$ (0) & 2.1 & 0.8 & 81 \\
+\quad FOCuS & indep. & 25 & 20$^{*}$ (8) & 5 (2) & 3$^{*}$ (1) & 3.0 & 0.8 & 106 \\
+\quad FOCuS & AR(1) & 13 & 23 (8) & 3 (1) & 2$^{*}$ (0) & 1.5 & 0.6 & 55 \\
+\quad FOCuS-AR & AR(1) & 21 & 24$^{*}$ (10) & 6$^{*}$ (2) & 3$^{*}$ (0) & 2.4 & 0.8 & 89 \\
+\quad CPM & indep. & 17 & 18 (6) & 3 (1) & 3$^{*}$ (0) & 2.1 & 1.2 & 72 \\
+\quad CPM & AR(1) & 6 & 17 (0) & 1 (0) & 1 (0) & 0.8 & 0.3 & 26 \\
+\quad capped CUSUM & indep. & 22 & 18 (9) & 4 (2) & 3$^{*}$ (0) & 2.7 & 1.2 & 94 \\
+\quad capped CUSUM & AR(1) & 6 & 17 (0) & 1 (0) & 1 (0) & 0.8 & 0.6 & 26 \\
+\quad capped EWMA & indep. & 28 & 25$^{*}$ (7) & 8$^{*}$ (3) & 6$^{*}$ (1) & 3.2 & 1.4 & 119 \\
+\quad capped EWMA & AR(1) & 11 & 18 (9) & 2 (1) & 2$^{*}$ (0) & 1.4 & 0.6 & 47 \\
+\quad capped FOCuS & indep. & 18 & 11 (11) & 2 (2) & 2 (0) & 2.4 & 0.9 & 77 \\
+\quad capped FOCuS & AR(1) & 5 & 20 (0) & 1 (0) & 1 (0) & 0.6 & 0.3 & 21 \\
+\bottomrule
+\end{longtable}}

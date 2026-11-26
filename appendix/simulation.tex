@@ -1,0 +1,27 @@
+% Additional simulation results: material that the thesis does not print (see Appendix A of the thesis).
+% LaTeX source, written as a chapter of the thesis. Tables it inputs are in ../tables/ (printed in the thesis)
+% and ../repo-tables/ (cited from it); citation keys are those of the thesis bibliography. References to
+% thesis sections, figures, tables and equations are given as their numbers in the thesis.
+\chapter{Additional simulation results}\label{app:sim}
+
+This appendix holds the simulation results that Chapter~5 uses but does not print. The full table for resampled residuals, the delays and the false-alarm figure for the independent threshold are in the repository (Appendix~A); the computing times are in Table~A.2 of the thesis.
+
+\paragraph{Other levels of autocorrelation.} Table~\ref{tab:sim-appendix} repeats the main false-alarm and detection results at weaker ($\phi=0$) and stronger ($\phi=0.6$) autocorrelation. The pattern is the same as at $\phi=0.4$, with one exception: at $\phi=0$, the median of four and Holt-Winters exceed the false-alarm target by far without holidays, for the reason given in Section~5.1.
+
+\input{../repo-tables/sim_appendix}
+
+The same drift explains the one exception at other values of $\phi$. At $\phi=0$, the median of four and Holt-Winters give a false alarm in 33 to 83\% of years without holidays (Table~\ref{tab:sim-appendix}). There the slow drift is the main autocorrelation left, which a lag-one estimate does not see; at $\phi=0.6$ the rates fall to at most 9\%. With the independent threshold almost every combination fails at $\phi=0.4$ (figure in the repository, Appendix~A). Without any forecast the rates are erratic, 0 to 98\%.
+
+\paragraph{Variance detectors and false alarms.} Without holidays at $\phi=0.4$ the variance detectors stay close to the target with Holt-Winters and the yearly memory (4.6 to 5.8\%) and slightly above it with the two simple forecasts (6.0 to 8.6\%); like the uncapped mean detectors, they alarm in every year once holidays are in the data.
+
+\paragraph{The Holt-Winters level weight.} A slower level ($\alpha=0.01$, not 0.05) lets capped CUSUM find 82\% of four-SD drops with holidays instead of 2\%, but the AR(1) threshold then gives CUSUM false alarms in 55\% of years without holidays; $\alpha=0.10$ meets the target but finds no more, and a frozen level alarms every year.
+
+\paragraph{Share of variation in false alarms.} In the split of Figure~5.3, the detector explains only 2\% of the variation in false alarms without holidays. The threshold rule's share grows with the autocorrelation, from 2\% without autocorrelation to 82\% at $\phi=0.6$. With resampled noise and CPM added, the detector explains 48\% of the variation in false alarms and the forecast 1\%. For detection with holidays, the capped detectors in place of CPM leave the forecast in front: with CUSUM, EWMA, FOCuS and their capped versions, the forecast explains 63 to 76\% of the variation and the detector 6 to 31\% across Gaussian noise with simulated and with real-scale holidays, $t_5$ noise and resampled residuals (\texttt{results/extra/shares\_detsets.csv}).
+
+\paragraph{Tuning and variance changes.} Table~\ref{tab:tuning} gives the tuning of CUSUM and EWMA, which shows how much of EWMA's gap to CUSUM comes from its weight $\lambda$. Table~\ref{tab:variance} gives the detection of variance changes behind Section~5.3.
+
+\input{../repo-tables/tuning}
+
+\input{../repo-tables/variance}
+
+\paragraph{Offline benchmarks.} PELT, Binary Segmentation and WBS were run with penalties calibrated to a 5\% chance of a spurious change in a normal year. On the true-pattern series they located a one-SD drop within seven days in 63 to 68\% of runs. They located a two-SD drop in 95 to 96\%. A doubling of the variance was located in at most 3.5\% of runs at $\phi = 0.4$, because their cost function looks for changes in mean. On the Holt-Winters forecast errors they located only 2 to 4\% of one-SD drops, and none when holidays were in the data. Their median location error there was 12 to 21 days. The standardisation uses the monitor's running scale, which a large step inflates for a few weeks; with one fixed scale from the training year, one-SD detection is 67 to 70\% and the spurious changes after a 4~SD step fall from 1.8 to 2.2 per run to 0.04 to 0.09.

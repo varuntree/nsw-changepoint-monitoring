@@ -1,0 +1,2 @@
+id,tex,anchor,source,select,column,transform,rounding,note
+ab_boot_capc,abstract.tex,even it raised a false alarm in,recommend.csv,adj=='YM' and det=='CUSUM-r' and rule=='ar1',sim_boot,x,int,

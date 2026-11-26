@@ -1,0 +1,10 @@
+adjustment,method,n_changes,frozen,direction_aware
+STL,PELT,98,14,8
+STL,BinSeg,80,13,8
+STL,WBS,88,14,7
+MSTL,PELT,49,9,5
+MSTL,BinSeg,30,7,4
+MSTL,WBS,47,8,5
+REG,PELT,73,11,6
+REG,BinSeg,58,10,6
+REG,WBS,70,12,7

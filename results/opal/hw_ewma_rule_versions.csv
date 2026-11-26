@@ -1,0 +1,6 @@
+rule_version,label,episodes,chance_median,p_own,p_adjusted,best_of_137
+frozen,"+-7 d, any boundary (frozen rule)",8,4.0,0.025,0.7765,12
+pm7_nodir,"+-7 d, nearest boundary",7,3.0,0.022,0.8205,11
+pm7_dir,"+-7 d, nearest boundary, direction",7,2.0,0.0,0.1135,10
+r0_7_nodir,"0-7 d, nearest earlier boundary",7,2.0,0.003,0.1385,9
+r0_7_dir,"0-7 d, nearest earlier boundary, direction (direction-aware rule)",7,1.0,0.0,0.006,9

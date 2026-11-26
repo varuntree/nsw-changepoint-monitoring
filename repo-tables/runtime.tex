@@ -1,0 +1,22 @@
+% written by scripts/tables.py from results/; do not edit
+\begin{table}[t]\centering\small
+\caption{Every method is fast enough to run daily: CUSUM, EWMA and their variance versions take about a microsecond for a year of data, and the slowest method takes 7\,ms for the whole series. Computing time in microseconds ($\mu$s; 1{,}000\,$\mu$s = 1\,ms) for one run on $n$ daily observations (one thread, after compilation and a warm-up; median of 51 repeats, each timing a batch of calls lasting at least 2\,ms; Apple M4). Online detectors compute the statistic for every day (FOCuS and FOCuS-AR by direct search, quadratic in $n$); offline methods segment the whole series.}\label{tab:runtime}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Method & $n=365$ & $n=1{,}095$ & $n=2{,}463$ \\
+\midrule
+CUSUM & 1.0 & 2.4 & 4.8 \\
+EWMA & 1.5 & 4.6 & 10 \\
+FOCuS & 203 & 1{,}088 & 4{,}381 \\
+FOCuS-AR & 196 & 1{,}042 & 4{,}168 \\
+CPM & 154 & 1{,}286 & 6{,}624 \\
+Variance CUSUM & 1.1 & 2.4 & 4.9 \\
+Variance EWMA & 1.7 & 4.9 & 11 \\
+Variance FOCuS & 853 & 2{,}539 & 5{,}853 \\
+\addlinespace
+PELT & 129 & 1{,}198 & 5{,}681 \\
+BinSeg & 1.2 & 2.9 & 6.0 \\
+WBS & 918 & 2{,}928 & 6{,}603 \\
+\bottomrule
+\end{tabular}
+\end{table}

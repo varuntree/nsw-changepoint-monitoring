@@ -1,0 +1,13 @@
+source,detector,adjustment,n_changes_ours,n_changes_indep,dates_identical,directions_identical,scores_identical,differing_fields,explanation
+independent,PELT,HW,7,7,True,True,True,,
+independent,PELT,REGT_p,6,6,True,True,True,,
+independent,BinSeg,HW,1,1,True,True,True,,
+independent,BinSeg,REGT_p,0,0,True,True,True,,
+independent,WBS,HW,20,20,True,True,False,unexplained_per_year indep-ours +0.1505,"one change date (28 Apr 2026) is the day after Monday 27 Apr 2026, NSW's additional ANZAC Day public holiday for 2026 (holidays >= the release with the NSW 2026-2027 rule, ours 0.107); an older holidays package has no such day, so the alarm counts as unexplained there. Ours is right."
+independent,WBS,REGT_p,11,11,True,True,True,,
+shared code re-run,PELT,HW,7,7,True,True,True,,
+shared code re-run,PELT,REGT_p,6,6,True,True,True,,
+shared code re-run,BinSeg,HW,1,1,True,True,True,,
+shared code re-run,BinSeg,REGT_p,0,0,True,True,True,,
+shared code re-run,WBS,HW,20,20,True,True,True,,
+shared code re-run,WBS,REGT_p,11,11,True,True,True,,

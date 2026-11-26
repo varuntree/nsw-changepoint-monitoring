@@ -1,0 +1,36 @@
+% written by scripts/tables.py from results/; do not edit
+\begin{table}[ht]\centering\footnotesize\setlength{\tabcolsep}{3.6pt}
+\caption{Hindsight gives no uniform advantage: fitted on the past only, the same model catches fewer episodes than its retrospective fit in 19 of 30 pairs under the main rule and 12 of 30 under the direction-aware check, and more in 8 and 10. Episodes caught of 15 (past-only / retrospective) for every detector; the pairs differ in fitting and level treatment as well as in what the fit can see. FOCuS-AR has only the AR(1) threshold.}\label{tab:past-retro}
+\begin{tabular}{@{}lrrrrrrrr@{}}
+\toprule
+ & \multicolumn{4}{c}{AR(1) threshold} & \multicolumn{4}{c}{Independent threshold} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+ & \multicolumn{2}{c}{\begin{tabular}[b]{@{}c@{}}Main\\rule\end{tabular}} & \multicolumn{2}{c}{\begin{tabular}[b]{@{}c@{}}Direction-\\aware\end{tabular}} & \multicolumn{2}{c}{\begin{tabular}[b]{@{}c@{}}Main\\rule\end{tabular}} & \multicolumn{2}{c}{\begin{tabular}[b]{@{}c@{}}Direction-\\aware\end{tabular}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+Detector & past & retro. & past & retro. & past & retro. & past & retro. \\
+\midrule
+\multicolumn{9}{@{}l}{\emph{MSTL: refitted on the past / whole series}} \\*
+\quad CUSUM & 5 & 6 & 4 & 4 & 7 & 9 & 4 & 5 \\
+\quad EWMA & 10 & 10 & 4 & 6 & 5 & 8 & 4 & 6 \\
+\quad FOCuS & 7 & 9 & 3 & 6 & 8 & 10 & 3 & 5 \\
+\quad FOCuS-AR & 8 & 9 & 3 & 6 & -- & -- & -- & -- \\
+\quad CPM & 1 & 1 & 1 & 1 & 5 & 2 & 5 & 1 \\
+\quad Capped CUSUM & 5 & 2 & 3 & 1 & 6 & 7 & 6 & 4 \\
+\quad Capped EWMA & 8 & 6 & 5 & 2 & 8 & 6 & 5 & 3 \\
+\quad Capped FOCuS & 7 & 1 & 3 & 1 & 7 & 6 & 4 & 4 \\
+\addlinespace
+\multicolumn{9}{@{}l}{\emph{Regression: refitted on the past / whole series}} \\*
+\quad CUSUM & 2 & 4 & 1 & 2 & 6 & 6 & 5 & 4 \\
+\quad EWMA & 2 & 5 & 2 & 3 & 9 & 8 & 6 & 6 \\
+\quad FOCuS & 4 & 3 & 3 & 2 & 5 & 9 & 3 & 4 \\
+\quad FOCuS-AR & 4 & 6 & 3 & 3 & -- & -- & -- & -- \\
+\quad CPM & 1 & 2 & 0 & 1 & 3 & 6 & 2 & 2 \\
+\quad Capped CUSUM & 0 & 1 & 0 & 1 & 4 & 6 & 3 & 2 \\
+\quad Capped EWMA & 0 & 1 & 0 & 1 & 4 & 7 & 4 & 2 \\
+\quad Capped FOCuS & 2 & 3 & 1 & 1 & 4 & 7 & 3 & 3 \\
+\addlinespace
+Past-only more / same / fewer & \multicolumn{2}{c}{4 / 2 / 10} & \multicolumn{2}{c}{4 / 4 / 8} & \multicolumn{2}{c}{4 / 1 / 9} & \multicolumn{2}{c}{6 / 4 / 4} \\
+Past-only raises fewer alarms & \multicolumn{2}{c}{6 of 16} & \multicolumn{2}{c}{6 of 16} & \multicolumn{2}{c}{2 of 14} & \multicolumn{2}{c}{2 of 14} \\
+\bottomrule
+\end{tabular}
+\end{table}

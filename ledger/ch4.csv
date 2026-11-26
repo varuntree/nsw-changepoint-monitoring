@@ -1,0 +1,38 @@
+id,tex,anchor,source,select,column,transform,rounding,note
+ch4_reader_off_n,ch4.tex,"mstl is fitted, the",extra/derived.csv,id=='reader_off_days',value,x,words,
+focusar_trigger,ch4.tex,single day with above,extra/derived.csv,id=='focusar_trigger_phi0.4',value,x,dp1,derived
+focus_trigger,ch4.tex,"trigger an alarm, against",extra/derived.csv,id=='focus_trigger_phi0.4',value,x,dp1,derived
+ch4_cpm_arl,ch4.tex,gives an in-control average run length of,calib/cpm_hd_check.csv,check.str.startswith('in-control ARL&#44; H&D'),value,x,int,
+ch4_cpm_arl_se,ch4.tex,505 observations (standard error,calib/cpm_hd_check.csv,check.str.startswith('in-control ARL&#44; H&D'),se,x,int,
+ch4_arl_geom_years,ch4.tex,"length of days, about",calib/arl0.csv,kind=='geometric' and target==0.05,arl0_years,x,dp1,
+ch4_h_cusum_phi0,ch4.tex,threshold that meets is,calib/h_table_flat.csv,kind=='surprise' and det=='CUSUM' and phi==0.0,h,x,dp1,
+ch4_h_cusum_phi04,ch4.tex,9.3 when and,calib/h_table_flat.csv,kind=='surprise' and det=='CUSUM' and phi==0.4,h,x,dp1,
+ch4_h_focusar_phi0,ch4.tex,on its own scale,calib/h_table_flat.csv,kind=='surprise' and det=='FOCuS-AR' and phi==0.0,h,x,dp1,
+ch4_h_focusar_phi04,ch4.tex,22.9 at and,calib/h_table_flat.csv,kind=='surprise' and det=='FOCuS-AR' and phi==0.4,h,x,dp1,
+focusar_h_llr_phi04@ch4,ch4.tex,"0.4$, which is",extra/derived.csv,id=='focusar_h_llr_phi0.4',value,x,dp1,derived
+ch4_h_focus_phi04,ch4.tex,"the likelihood scale, against",calib/h_table_flat.csv,kind=='surprise' and det=='FOCuS' and phi==0.4,h,x,dp1,
+ch4_phi0_later_min,ch4.tex,ewma and focus in,extra/derived.csv,id=='phi0_later_B_min',value,x,int,
+ch4_phi0_later_max,ch4.tex,focus in 5 to,extra/derived.csv,id=='phi0_later_B_max',value,x,int,
+ch4_phi0_share_min,ch4.tex,"2025--26. in all, on",extra/phi_fallback.csv,,share_days_phi0,min*100,int,
+ch4_phi0_share_max,ch4.tex,"all, on 2 to",extra/phi_fallback.csv,,share_days_phi0,max*100,int,
+ch4_gen_used,ch4.tex,"fourier pairs, on the",extra/derived.csv,id=='generator_n_used',value,x,int,
+ch4_gen_days,ch4.tex,on the 773 of,extra/derived.csv,id=='generator_n_days',value,x,thousands,
+ch4_gen_phi,ch4.tex,lag-one autocorrelation $\hat\phi,extra/derived.csv,id=='generator_phi',value,x,dp2,
+ch4_gen_sigma,ch4.tex,robust standard deviation $\sigma,extra/derived.csv,id=='generator_sigma',value,x,dp3,
+ch4_gen_sd_raw,ch4.tex,ordinary standard deviation is,extra/derived.csv,id=='generator_sd_raw',value,x,dp3,
+ch4_gen_kurtosis,ch4.tex,and their excess kurtosis,extra/derived.csv,id=='generator_kurtosis',value,x,dp1,
+ch4_pct_per_sd,ch4.tex,"one robust sd, about",extra/derived.csv,id=='pct_per_sd_normal',value,x,dp1,
+ch4_surprise_sd_lo,ch4.tex,past-only surprises are wider,extra/surprise_spread.csv,stream=='opal' and adj in ['A'&#44;'B'&#44;'HW'&#44;'YM'],robust_sd,min*100,int,robust SD of the past-only surprises (log scale x 100)
+ch4_surprise_sd_hi,ch4.tex,"are wider, 8 to",extra/surprise_spread.csv,stream=='opal' and adj in ['A'&#44;'B'&#44;'HW'&#44;'YM'],robust_sd,max*100,int,
+ch4_splithalf_share,ch4.tex,on odd ones in,extra/derived.csv,id=='splithalf_share_in_band',value,x,dp1,
+ch4_splithalf_cells,ch4.tex,98.5\% of the,extra/derived.csv,id=='splithalf_cells',value,x,int,
+ch4_splithalf_min,ch4.tex,the 462 cells (worst,extra/derived.csv,id=='splithalf_min_pct',value,x,dp1,
+phi0_hw_ewma_share@ch4,ch4.tex,calibrated to the same,extra/phi_fallback.csv,method=='HW' and detector=='EWMA',share_days_phi0,100x,int,derived
+ch4_testbed_starts,ch4.tex,second eligible day gives,testbed/summary.csv,subset=='all' and setting=='drop40' and adj=='A' and det=='CUSUM' and rule=='ar1',n,x,int,
+blocks_t62_surviving,ch4.tex,with six-month blocks,testbed/block_sensitivity.csv,table=='Table 6.2 (gain cells)',surviving,x,int,derived
+blocks_t62_starred,ch4.tex,"blocks, 58 of the",testbed/block_sensitivity.csv,table=='Table 6.2 (gain cells)',starred_3m,x,int,derived
+ch4_validation_lo,ch4.tex,ar(1) thresholds give,calib/validation.csv,kind=='surprise' and rule=='ar1',fa,min*100,dp1,
+ch4_validation_hi,ch4.tex,give 3.8 to,calib/validation.csv,kind=='surprise' and rule=='ar1',fa,max*100,dp1,
+c4_cal_pub,ch4.tex,the fitted calendar effects are,extra/generator_effects.csv,effect=='pub',pct,x,int,
+c4_cal_xmas,ch4.tex,"$-42$\% on public holidays,",extra/generator_effects.csv,effect=='xmas',pct,x,int,
+c4_cal_school,ch4.tex,in the christmas period and,extra/generator_effects.csv,effect=='school',pct,x,int,

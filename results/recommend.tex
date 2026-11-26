@@ -1,0 +1,11 @@
+% written by scripts/recommend.py from results/; do not edit
+\multicolumn{8}{@{}l}{\emph{From simulation and test bed}} \\
+False alarms must be rare & yearly memory + capped CUSUM & \checkmark 2.0 / 3.6 & \checkmark 0.16 / 0.39 & 1.1 & 10 & $\times$ 2 & (\checkmark) 2 \\
+More detection, about one or two alarms a year to check & yearly memory + capped FOCuS & $\times$ 21 / 12 & \checkmark 0.22 / 0.45 & 1.4 & 16 & (\checkmark) 6 & (\checkmark) 5 \\
+Drops of one to two weeks, holiday alarms checked by hand & same-weekday difference + capped EWMA & $\times$ 100 / 51 & \checkmark 0.57 / 0.49 & 2.1 & 24 & (\checkmark) 8 & (\checkmark) 4 \\
+\multicolumn{8}{@{}l}{\emph{Raised by the case study}} \\
+Short disruptions, someone checks about five alarms a year & Holt-Winters + EWMA & $\times$ 100 / 100 & $\times$ 0.04 / 0.04 & 4.6 & 43 & (\checkmark) 8 & \checkmark 7 \\
+Fewest false alarms on real data & same-weekday difference + CUSUM, threshold from a calm stretch & -- & -- & 0.6 & 9 & (\checkmark) 4 & \checkmark 4 \\
+\multicolumn{8}{@{}l}{\emph{Not recommended}} \\
+Most real episodes under both rules & yearly memory + CUSUM, independent threshold & $\times$ 63 (no holidays) & $\times$ 0.02 / 0.12 & 5.3 & 51 & \checkmark 11 & \checkmark 9 \\
+% footnotes: a_boot_fa = 45.3; b_alarms = 9; c_hw_ewma_no_holidays = 12.7; d_hw_ewma_own_gain = 0.218; d_hw_ewma_own_background = 0.397; e_hw_ewma_both_rules_p_adj = 0.006; e_ym_cusum_indep_both_rules_p_adj = 0; f_calm_frozen_p_adj = 0.0585; f_calm_dir_p_adj = 0

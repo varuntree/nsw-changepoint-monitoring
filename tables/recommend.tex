@@ -1,0 +1,30 @@
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{1.1pt}
+\caption{Set-ups ranked by simulation and test bed, with the Opal episodes as supporting evidence; every row, chosen after the main results, is a hypothesis for a forward test (Section~\ref{sec:7-limits}; pass rules in Section~\ref{sec:7-recommend}). \checkmark{} passes or supports; (\checkmark) beats chance alone, not after adjustment for the best of the family; $\times$ does not; -- not tested. Simul.\ and real scale: holidays at the simulated and at the real size; resampled: Opal's residuals resampled. Main: the main rule; Direction-aware: the direction-aware check. Independent-threshold rows fail the simulation even without holidays (63\%, 28\%).}\label{tab:recommend}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.8cm}rrr@{\hspace{3pt}}crr@{\hspace{3pt}}crcr@{\hspace{2pt}}cc@{}}
+\toprule
+ & \multicolumn{4}{c}{\begin{tabular}[b]{@{}c@{}}Simulated\\false alarms,\\holidays (\%)\end{tabular}} & \multicolumn{3}{c}{\begin{tabular}[b]{@{}c@{}}Test-bed gain\\at 20\%\\background\end{tabular}} & \multicolumn{4}{c}{\begin{tabular}[b]{@{}c@{}}Opal\\episodes\\(of 15)\end{tabular}} & \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-8}\cmidrule(lr){9-12}
+\begin{tabular}[b]{@{}c@{}}Situation, then\\set-up (AR(1)\\unless stated)\end{tabular} & \begin{tabular}[b]{@{}c@{}}simul.\\scale\end{tabular} & \begin{tabular}[b]{@{}c@{}}real\\scale\end{tabular} & \begin{tabular}[b]{@{}c@{}}resam-\\pled\end{tabular} & pass & \begin{tabular}[b]{@{}c@{}}20\%,\\14 d\end{tabular} & \begin{tabular}[b]{@{}c@{}}20\%,\\lasting\end{tabular} & pass & \begin{tabular}[b]{@{}c@{}}Main\\rule\end{tabular} & & \begin{tabular}[b]{@{}c@{}}Direc-\\tion-\\aware\end{tabular} & & \begin{tabular}[b]{@{}c@{}}Calm\\stretch:\\alarms /\\episodes /\\COVID\end{tabular} \\
+\midrule
+\multicolumn{13}{@{}l}{\textbf{Candidates from simulation and test bed}} \\
+\multicolumn{13}{@{}l}{\emph{False alarms must be rare}} \\*
+Yearly memory + capped CUSUM & 2.0 & 3.6 & 45 & \checkmark & 0.16 & 0.39 & \checkmark & 2 & $\times$ & 2 & (\checkmark) & 0 / 0 / no \\
+\multicolumn{13}{@{}l}{\emph{More detection, about one or two alarms a year to review}} \\*
+Yearly memory + capped FOCuS & 21 & 12 & 68 & $\times$ & 0.22 & 0.45 & \checkmark & 6 & (\checkmark) & 5 & (\checkmark) & 0 / 0 / no \\
+\multicolumn{13}{@{}l}{\emph{Drops of one to two weeks, holiday alarms checked by hand}} \\*
+Same-weekday difference + capped EWMA & 100 & 51 & 100 & $\times$ & 0.57 & 0.49 & \checkmark & 8 & (\checkmark) & 4 & (\checkmark) & 6 / 4 / yes \\
+\addlinespace
+\multicolumn{13}{@{}l}{\textbf{Raised by the case study}} \\
+\multicolumn{13}{@{}l}{\emph{Short disruptions, someone reviews about five alarms a year}} \\*
+Holt-Winters + EWMA & 100 & 100 & 100 & $\times$ & 0.04 & 0.04 & $\times$ & 8 & (\checkmark) & 7 & \checkmark & 8 / 3 / yes \\
+\multicolumn{13}{@{}l}{\emph{Fewest false alarms on real data}} \\*
+Same-weekday difference + CUSUM (calm stretch) & -- & -- & -- & -- & -- & -- & -- & 4 & (\checkmark) & 4 & \checkmark & 8 / 4 / yes \\
+\addlinespace
+\multicolumn{13}{@{}l}{\textbf{Not recommended (grey; independent threshold)}} \\
+\multicolumn{13}{@{}l}{\textcolor{gray}{\emph{Most real episodes under both rules}}} \\*
+\textcolor{gray}{Yearly memory + CUSUM} & \textcolor{gray}{100} & \textcolor{gray}{100} & \textcolor{gray}{100} & \textcolor{gray}{$\times$} & \textcolor{gray}{0.02} & \textcolor{gray}{0.12} & \textcolor{gray}{$\times$} & \textcolor{gray}{11} & \textcolor{gray}{\checkmark} & \textcolor{gray}{9} & \textcolor{gray}{\checkmark} & \textcolor{gray}{3 / 0 / no} \\
+\multicolumn{13}{@{}l}{\textcolor{gray}{\emph{Rank-based detector on the simplest forecast}}} \\*
+\textcolor{gray}{Same-weekday difference + CPM} & \textcolor{gray}{100} & \textcolor{gray}{98} & \textcolor{gray}{100} & \textcolor{gray}{$\times$} & \textcolor{gray}{0.01} & \textcolor{gray}{0.00} & \textcolor{gray}{$\times$} & \textcolor{gray}{7} & \textcolor{gray}{(\checkmark)} & \textcolor{gray}{6} & \textcolor{gray}{(\checkmark)} & \textcolor{gray}{4 / 0 / no} \\
+\bottomrule
+\end{tabular}
+\end{table}

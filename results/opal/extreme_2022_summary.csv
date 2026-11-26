@@ -1,0 +1,4 @@
+cluster,monitors,uncapped_monitors,first_day_alarms,first_day_alarms_uncapped,first_day_alarms_cpm,monitors_alarming,downward,upward
+11 Sep 2022 (candidate data fault),150,70,20,20,0,28,23,5
+"21-25 Nov 2022 (fare-free week, readers off)",150,70,46,46,0,69,69,0
+28 Nov-2 Dec 2022 (same-weekday echo of the fare-free week),150,70,0,0,0,2,0,2

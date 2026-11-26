@@ -1,0 +1,10 @@
+# Python 3.12. What dashboard/build_data.py needs, pinned to the versions used for the thesis results.
+holidays==0.107
+llvmlite==0.50.0
+numba==0.68.0
+numpy==2.5.4
+pandas==3.0.6
+patsy==1.0.3
+requests==2.34.2
+scipy==1.18.1
+statsmodels==0.15.0

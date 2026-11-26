@@ -1,0 +1,94 @@
+id,tex,anchor,source,select,column,transform,rounding,note
+events_high@appD,appD.tex,of the 71 rows,../data/opal/events_verified.csv,confidence=='high',confidence,count,int,
+events_medium@appD,appD.tex,41 have high confidence,../data/opal/events_verified.csv,confidence=='medium',confidence,count,int,
+events_low@appD,appD.tex,"confidence, 18 medium and",../data/opal/events_verified.csv,confidence=='low',confidence,count,int,
+raw_focus_weekend,appD.tex,it raised 169 alarms,opal/raw_focus_summary.csv,,weekend,x,int,
+aD_rf_near,appD.tex,on a weekend and,opal/raw_focus_summary.csv,,near_scored_boundary,x,int,
+raw_cusum_alarms,appD.tex,"the same way, raised",opal/raw_cusum_summary.csv,,n_alarms,x,int,derived
+aD_rc_we,appD.tex,"same way, raised 139",opal/raw_cusum_summary.csv,,weekend,x,int,
+aD_rc_near,appD.tex,"raised 139, 71 and",opal/raw_cusum_summary.csv,,near_scored_boundary,x,int,
+aD_h_surprise,appD.tex,thresholds by at most,extra/derived.csv,id=='focusfix_h_move_surprise',value,x,dp1,
+aD_h_level,appD.tex,0.4\% for surprises and,extra/derived.csv,id=='focusfix_h_move_level',value,x,dp1,text 1.9: largest move 1.23% (section H)
+focusfix_changed@appD,appD.tex,moved the alarms of,extra/derived.csv,id=='focusfix_changed',value,x,int,derived
+focusfix_n@appD,appD.tex,alarms of 46 of,extra/derived.csv,id=='focusfix_n',value,x,int,derived
+focusfix_kept,appD.tex,monitor's alarm dates (median,extra/derived.csv,id=='focusfix_kept_median',value,x,int,N3: median % of exact alarms also in the package run
+focusfix_frozen3@appD,appD.tex,(median 44\%) and moved,extra/derived.csv,id=='focusfix_frozen_moved3',value,x,int,derived
+aD_ff_hw_before,appD.tex,with focus fell from,opal/focus_check_opal.csv,method=='HW' and detector=='FOCuS' and rule=='ar1',dir_package,x,int,
+hw_focus_dir_after_fix@appD,appD.tex,fell from 7 to,opal/rule_variants.csv,method=='HW' and detector=='FOCuS' and rule=='ar1',r0_7_dir,x,int,
+aD_ff_sim_before,appD.tex,"focus and holidays, from",extra/fa_package_focus.csv,phi==0.4 and noise=='normal' and calendar==1 and adj=='YM' and rule=='ar1' and det=='FOCuS-r',fa,100x,dp1,
+aD_ff_sim_after,appD.tex,from 8.1 to,sim/summary/fa.csv,phi==0.4 and noise=='normal' and calendar==1 and adj=='YM' and rule=='ar1' and det=='FOCuS-r',fa,100x,dp1,
+aD_reader_off,appD.tex,treat as missing the,extra/derived.csv,id=='reader_off_days',value,x,words,
+aD_gen_excl,appD.tex,to 2025 after removing,extra/derived.csv,id=='generator_n_excluded',value,x,int,
+aD_gen_days,appD.tex,after removing 323 of,extra/derived.csv,id=='generator_n_days',value,x,int,
+aD_gen_trend,appD.tex,days. the fitted trend,extra/derived.csv,id=='generator_trend',value,x,dp3,
+aD_gen_trend_pct,appD.tex,"the log scale, about",extra/derived.csv,id=='generator_trend_pct',value,x,dp1,
+aD_gen_sigma,appD.tex,noise standard deviation $\sigma,extra/derived.csv,id=='generator_sigma',value,x,dp3,
+aD_ewma_dir_n,appD.tex,the alarms of all,extra/ewma_direction.csv,,alarms,count,int,
+aD_val_med,appD.tex,on average for (median,calib/validation.csv,kind=='surprise' and rule=='ar1' and det in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'&#44;'FOCuS-AR'&#44;'CPM'&#44;'CUSUM-r'&#44;'EWMA-r'&#44;'FOCuS-r'],fa,median*100,dp1,
+aD_phi0_a_lo,appD.tex,"over 2020--2026, on",extra/phi_fallback.csv,method=='A' and detector in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'],share_days_phi0,min*100,int,
+aD_phi0_a_hi,appD.tex,"2020--2026, on 2 to",extra/phi_fallback.csv,method=='A' and detector in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'],share_days_phi0,max*100,int,
+aD_phi0_hw_lo,appD.tex,the same-weekday difference,extra/phi_fallback.csv,method=='HW' and detector in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'],share_days_phi0,min*100,int,
+aD_phi0_hw_hi,appD.tex,"same-weekday difference, 5 to",extra/phi_fallback.csv,method=='HW' and detector in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'],share_days_phi0,max*100,int,
+aD_phi0_ym_lo,appD.tex,7\% for holt-winters,extra/phi_fallback.csv,method=='YM' and detector in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'],share_days_phi0,min*100,int,
+phi0_hw_ewma_share@appD,appD.tex,"holt-winters, 3 to",extra/phi_fallback.csv,method=='HW' and detector=='EWMA',share_days_phi0,100x,int,derived
+aD_phi0_b_lo,appD.tex,"the yearly memory, and",extra/phi_fallback.csv,method=='B' and detector in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'],share_days_phi0,min*100,int,
+phi0_b_focus_share,appD.tex,"memory, and 11 to",extra/phi_fallback.csv,method=='B' and detector=='FOCuS',share_days_phi0,100x,int,derived
+aD_cpm_later_lo,appD.tex,four it is about,calib/cpm_age.csv,det=='CPM' and year>1,p_first_alarm_given_none_before,min*100,int,
+aD_cpm_later_hi,appD.tex,is about 8 to,calib/cpm_age.csv,det=='CPM' and year>1,p_first_alarm_given_none_before,max*100,int,
+aD_split_min,appD.tex,"ewma and holidays, gives",extra/derived.csv,id=='splithalf_min_pct',value,x,dp1,
+aD_far_llr_0,appD.tex,likelihood scale it rises,extra/derived.csv,id=='focusar_h_llr_phi0.0',value,x,dp1,
+focusar_h_llr_phi02,appD.tex,it rises: 22.9,extra/derived.csv,id=='focusar_h_llr_phi0.2',value,x,dp1,derived
+focusar_h_llr_phi04@appD,appD.tex,"22.9, 23.3",extra/derived.csv,id=='focusar_h_llr_phi0.4',value,x,dp1,derived
+aD_far_llr_6,appD.tex,"23.3, 24.1 and",extra/derived.csv,id=='focusar_h_llr_phi0.6',value,x,dp1,
+aD_hd_hazard,appD.tex,false-alarm hazard of,calib/cpm_hd_check.csv,check.str.startswith('hazard at tabulated'),value,x,dp4,
+aD_hd_arl,appD.tex,in-control average run length of,calib/cpm_hd_check.csv,check.str.startswith('in-control ARL&#44; H&D'),value,x,int,
+cpm_pkg_arl,appD.tex,20 days it gives,calib/cpm_hd_check.csv,check.str.startswith('in-control ARL&#44; cpm'),value,x,int,derived
+aD_geo,appD.tex,geometric average run length of,calib/arl0.csv,kind=='geometric' and target==0.05,arl0_days,x,int,
+arl0_min,appD.tex,average run length was,calib/arl0.csv,kind=='simulated' and det!='FOCuS-var',arl0_days,min,hundreds,N9: 6209 -> 6200
+arl0_max,appD.tex,"was 6,200 to",calib/arl0.csv,kind=='simulated' and det!='FOCuS-var',arl0_days,max,hundreds,derived
+aD_fvar_arl,appD.tex,run length of about,calib/arl0.csv,kind=='simulated' and det=='FOCuS-var',arl0_days,mean,hundreds,
+aD_p365_lo,appD.tex,within 365 days was,calib/arl0.csv,kind=='simulated',p_alarm_365,min*100,dp1,
+aD_p365_hi,appD.tex,was 4.6 to,calib/arl0.csv,kind=='simulated',p_alarm_365,max*100,dp1,
+aD_k_h4,appD.tex,in-control run length & 168,calib/kernel_arl.csv,setting=='k=0.5&#44; h=4',arl,x,dp1,scripts/kernel_arl.py; the text values had no committed source (section H)
+aD_k_h4_se,appD.tex,168 & 169.4 (se,calib/kernel_arl.csv,setting=='k=0.5&#44; h=4',se,x,dp1,
+aD_k_h5,appD.tex,in-control run length & 465,calib/kernel_arl.csv,setting=='k=0.5&#44; h=5',arl,x,dp1,scripts/kernel_arl.py; the text values had no committed source (section H)
+aD_k_h5_se,appD.tex,465 & 466.8 (se,calib/kernel_arl.csv,setting=='k=0.5&#44; h=5',se,x,dp1,
+aD_k_ewma,appD.tex,in-control run length & 500,calib/kernel_arl.csv,setting=='lambda=0.1&#44; L=2.814',arl,x,dp1,scripts/kernel_arl.py; the text values had no committed source (section H)
+aD_k_ewma_se,appD.tex,500 & 487.9 (se,calib/kernel_arl.csv,setting=='lambda=0.1&#44; L=2.814',se,x,dp1,
+aD_fc_focus,appD.tex,\texttt{focus\_cpt} lower on,extra/derived.csv,id=='focus_cpt_lower_pct_FOCuS',value,x,int,
+aD_fc_ar,appD.tex,lower on 2\% and,extra/derived.csv,id=='focus_cpt_lower_pct_FOCuS-AR',value,x,dp1,
+aD_t_ve_lo,appD.tex,fresh seeds & 5\% target,calib/validation.csv,det=='EWMA-var' and kind=='surprise' and rule=='ar1',fa,min*100,dp1,
+aD_t_ve_hi,appD.tex,target & 4.8 to,calib/validation.csv,det=='EWMA-var' and kind=='surprise' and rule=='ar1',fa,max*100,dp1,
+aD_t_geo,appD.tex,"ar(1) threshold, mean detectors",calib/arl0.csv,kind=='geometric' and target==0.05,arl0_days,x,int,
+aD_t_arl_lo,appD.tex,"7,116 days (geometric",calib/arl0.csv,kind=='simulated' and target==0.05 and not det.str.endswith('-var'),arl0_days,min,int,
+aD_t_arl_hi,appD.tex,"(geometric) & 6,315 to",calib/arl0.csv,kind=='simulated' and target==0.05 and not det.str.endswith('-var'),arl0_days,max,int,
+aD_drop05,appD.tex,"mean drop & 0.5, 1, 2, 4 (",extra/derived.csv,id=='drop_pct_sd0.5',value,x,dp1,
+aD_drop1,appD.tex,"mean drop & 0.5, 1, 2, 4 ($-2.4\%$,",extra/derived.csv,id=='drop_pct_sd1',value,x,dp1,
+aD_drop2,appD.tex,"($-2.4\%$, $-4.8\%$,",extra/derived.csv,id=='drop_pct_sd2',value,x,dp1,
+aD_drop4,appD.tex,"$-4.8\%$, $-9.3\%$,",extra/derived.csv,id=='drop_pct_sd4',value,x,dp1,
+aD_y_opal_alarms,appD.tex,cpm monitors & our monitors & all,extra/crosscheck_ewma_cpm.csv,check=='Opal alarms&#44; independent code',value,x,int,
+aD_y_opal_scores,appD.tex,identical in date and direction; all,extra/crosscheck_ewma_cpm.csv,check=='Opal score rows with every compared column equal',value,x,int,
+aD_rf_n,appD.tex,or the running scale. it raised,opal/raw_focus_summary.csv,,n_alarms,x,int,
+aD_cpm_moved,appD.tex,on opal this moved,extra/crosscheck_ewma_cpm.csv,check=='CPM alarms whose change date differs',value,x,int,
+aD_cpm_of,appD.tex,on opal this moved 6 of,extra/crosscheck_ewma_cpm.csv,check=='CPM alarms compared for the change date',value,x,int,
+aD_cpm_days,appD.tex,368 cpm change dates by,extra/crosscheck_ewma_cpm_cpm_start.csv,,days_indep_minus_ours,min*-1,words,
+aD_holds_null,appD.tex,the check was not informative: about,opal/holds.csv,,null_share_hold,mean*100,int,
+aD_holds_real,appD.tex,"of randomly shifted alarms also held, against",opal/holds.csv,,share_hold,mean*100,int,
+aD_ve_lo2,appD.tex,"estimated from 400 past days,",calib/validation.csv,det=='EWMA-var' and kind=='surprise' and rule=='ar1',fa,min*100,dp1,
+aD_ve_hi2,appD.tex,"estimated from 400 past days, 4.8 to",calib/validation.csv,det=='EWMA-var' and kind=='surprise' and rule=='ar1',fa,max*100,dp1,
+aD_ve_i02,appD.tex,"threshold at every from 0 to 0.8, against",calib/validation.csv,det=='EWMA-var' and kind=='surprise' and rule=='indep' and phi==0.0,fa,100x,dp1,
+aD_ve_i82,appD.tex,4.9\% at rising to,calib/validation.csv,det=='EWMA-var' and kind=='surprise' and rule=='indep' and phi==0.8,fa,100x,int,
+aD_ve_five,appD.tex,(a run length more than,calib/ewma_var_arl.csv,setting=='variance doubled',ratio_to_in_control,x,gtw5,text: more than five times; result 20.9 times (316 vs 15 days)
+aD_y_opal_n2,appD.tex,independent code on opal:,extra/crosscheck_ewma_cpm.csv,check=='Opal monitors compared',value,x,int,
+aD_y_de_same,appD.tex,identical in all 252 false-alarm and,extra/crosscheck_ewma_cpm.csv,check=='first 2&#44;000 runs: EWMA/capped EWMA/CPM detection cells identical',value,x,int,
+aD_y_matched_z,appD.tex,"our 10,000 runs & largest",extra/crosscheck_ewma_cpm.csv,check=='matched-rule false-alarm max |z|',value,x,dp2,
+aD_y_ewma_n2,appD.tex,"7,812 days \\ independent ewma code,",extra/crosscheck_ewma_cpm.csv,check=='kernel inputs',value,x,int,
+aD_y_cpm_n2,appD.tex,"largest difference \\ independent cpm code,",extra/crosscheck_ewma_cpm.csv,check=='kernel inputs',value,x,int,
+aD_y_fa_same,appD.tex,& our runs & identical in all,extra/crosscheck_ewma_cpm.csv,check=='first 2&#44;000 runs: EWMA/capped EWMA/CPM false-alarm cells identical',value,x,int,
+aD_y_matched_n,appD.tex,"detection cells \\ same, matched thresholds,",extra/crosscheck_ewma_cpm.csv,check=='matched-rule false-alarm cells (threshold from the independent 1&#44;000 held-out runs vs our 5&#44;000)',value,x,int,
+aD_s_rand,appD.tex,shared test vector and,extra/crosscheck_offline.csv,check=='random cases',value,x,int,
+aD_scr_n,appD.tex,"on the retrospective stl series, leaving",testbed/summary.csv,setting=='drop40' and adj=='HW' and det=='CUSUM' and rule=='ar1' and subset=='screened',n,x,int,
+aD_scr_of,appD.tex,"stl series, leaving 124 of the",testbed/summary.csv,setting=='drop40' and adj=='HW' and det=='CUSUM' and rule=='ar1' and subset=='all',n,x,int,
+aD_s_pairs,appD.tex,identical change dates on all,extra/crosscheck_offline.csv,check=='Opal series x methods identical',value,x,int,
+aD_s_scores2,appD.tex,series--method pairs; the,extra/crosscheck_offline.csv,check=='independent Opal score rows equal (max abs difference 0)',value,x,int,
+aD_s_dates2,appD.tex,stl and mstl score rows and their,extra/crosscheck_offline.csv,check=='independent Opal change dates compared',value,x,int,

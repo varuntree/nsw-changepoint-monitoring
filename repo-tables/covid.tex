@@ -1,0 +1,59 @@
+% written by scripts/tables.py from results/; do not edit
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{5pt}
+\caption{First alarm at the start of COVID-19 ($\hat\phi=0$ in this segment: the AR(1) and independent thresholds coincide). Estimated start: the change date the detector estimates at the alarm (EWMA has no estimator); days: from the estimated start to the alarm, and from the first public health order (16 March 2020) and the closure of venues (23 March) to the alarm. Chance: chance (\%) of an unrelated alarm in the 14 days before 16 March, given each monitor's own background rate.}\label{tab:covid}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+ & & & \multicolumn{3}{c}{Days to the alarm from} & \\
+\cmidrule(lr){4-6}
+Detector & First alarm & Estimated start & estimate & 16 Mar & 23 Mar & Chance (\%) \\
+\midrule
+\multicolumn{7}{@{}l}{\emph{Same-weekday difference}} \\*
+\quad CUSUM & 17 Mar & 5 Mar & 12 & +1 & $-$6 & 14 \\
+\quad EWMA & 17 Mar & -- & -- & +1 & $-$6 & 15 \\
+\quad FOCuS & 18 Mar & 14 Mar & 4 & +2 & $-$5 & 20 \\
+\quad CPM & 25 Mar & 17 Mar & 8 & +9 & +2 & 2 \\
+\addlinespace
+\multicolumn{7}{@{}l}{\emph{Median of four}} \\*
+\quad CUSUM & 15 Mar & 7 Mar & 8 & $-$1 & $-$8 & 17 \\
+\quad EWMA & 15 Mar & -- & -- & $-$1 & $-$8 & 19 \\
+\quad FOCuS & 15 Mar & 14 Mar & 1 & $-$1 & $-$8 & 19 \\
+\quad CPM & 23 Mar & 14 Mar & 9 & +7 & 0 & 5 \\
+\addlinespace
+\multicolumn{7}{@{}l}{\emph{Holt-Winters}} \\*
+\quad CUSUM & 18 Mar & 14 Mar & 4 & +2 & $-$5 & 16 \\
+\quad EWMA & 17 Mar & -- & -- & +1 & $-$6 & 16 \\
+\quad FOCuS & 17 Mar & 14 Mar & 3 & +1 & $-$6 & 19 \\
+\quad CPM & 1 Apr & 22 Mar & 10 & +16 & +9 & 4 \\
+\addlinespace
+\multicolumn{7}{@{}l}{\emph{Yearly memory}} \\*
+\quad CUSUM & 18 Mar & 14 Mar & 4 & +2 & $-$5 & 10 \\
+\quad EWMA & 17 Mar & -- & -- & +1 & $-$6 & 17 \\
+\quad FOCuS & 17 Mar & 14 Mar & 3 & +1 & $-$6 & 20 \\
+\quad CPM & 1 Apr & 22 Mar & 10 & +16 & +9 & 2 \\
+\addlinespace
+\multicolumn{7}{@{}l}{\emph{MSTL refitted on the past}} \\*
+\quad CUSUM & 10 Apr & 10 Apr & 0 & +25 & +18 & 18 \\
+\quad EWMA & 8 Apr & -- & -- & +23 & +16 & 16 \\
+\quad FOCuS & 8 Apr & 8 Apr & 0 & +23 & +16 & 19 \\
+\quad CPM & none & -- & -- & -- & -- & 5 \\
+\addlinespace
+\multicolumn{7}{@{}l}{\emph{Regression refitted on the past}} \\*
+\quad CUSUM & 9 Apr & 1 Mar & 39 & +24 & +17 & 13 \\
+\quad EWMA & 8 Apr & -- & -- & +23 & +16 & 15 \\
+\quad FOCuS & 8 Apr & 8 Apr & 0 & +23 & +16 & 19 \\
+\quad CPM & 29 Apr & 18 Apr & 11 & +44 & +37 & 3 \\
+\addlinespace
+\multicolumn{7}{@{}l}{\emph{Retrospective STL}} \\*
+\quad CUSUM & 18 Mar & 7 Mar & 11 & +2 & $-$5 & 12 \\
+\quad EWMA & 15 Mar & -- & -- & $-$1 & $-$8 & 21 \\
+\quad FOCuS & 17 Mar & 14 Mar & 3 & +1 & $-$6 & 16 \\
+\quad CPM & 23 Mar & 14 Mar & 9 & +7 & 0 & 8 \\
+\addlinespace
+\multicolumn{7}{@{}l}{\emph{Retrospective MSTL}} \\*
+\quad CUSUM & 25 Mar & 15 Mar & 10 & +9 & +2 & 12 \\
+\quad EWMA & 24 Mar & -- & -- & +8 & +1 & 18 \\
+\quad FOCuS & 25 Mar & 22 Mar & 3 & +9 & +2 & 17 \\
+\quad CPM & 24 Mar & 15 Mar & 9 & +8 & +1 & 6 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,15 @@
+% written by scripts/tables.py from results/; do not edit
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Episodes caught move by up to five with the false-alarm target, the window after a boundary and the relearn length (of 15, direction-aware check, AR(1) threshold; main settings in bold). Relearn 14 days: episodes, with alarms in brackets; at 28 days the alarms are 43, 37 and 36. Missed in relearn: missed episodes whose whole 0--7-day window fell in a relearn period, and those where part of it did.}\label{tab:opal-sens}
+\begin{tabular}{@{}lccccccccc@{}}
+\toprule
+ & \multicolumn{3}{c}{Target a year} & \multicolumn{3}{c}{Window, days} & Relearn & \multicolumn{2}{c}{Missed in relearn} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){9-10}
+Monitor & 1\% & \textbf{5\%} & 10\% & 3 & \textbf{7} & 14 & 14 days & wholly & partly \\
+\midrule
+Holt-Winters + FOCuS & 6 & \textbf{3} & 2 & 3 & \textbf{3} & 6 & 8 (68) & 6 of 12 & 5 of 12 \\
+Holt-Winters + EWMA & 6 & \textbf{7} & 7 & 6 & \textbf{7} & 9 & 8 (52) & 1 of 8 & 2 of 8 \\
+Same-weekday difference + CUSUM & 6 & \textbf{5} & 4 & 5 & \textbf{5} & 5 & 8 (55) & 6 of 10 & 4 of 10 \\
+\bottomrule
+\end{tabular}
+\end{table}

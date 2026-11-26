@@ -1,0 +1,15 @@
+,value
+cells,137.0
+obs_max_share,0.4375
+p_share,0.0
+null_max_share_median,0.23529411764705882
+null_max_share_95,0.35746753246753216
+obs_max_episodes,9.0
+p_episodes,0.0
+null_max_episodes_median,4.0
+null_max_episodes_95,6.0
+p_best_episodes_ge4,0.667
+p_best_episodes_ge5,0.226
+p_best_episodes_ge6,0.055
+p_best_episodes_ge7,0.006
+p_best_episodes_ge8,0.002

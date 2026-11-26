@@ -1,0 +1,487 @@
+adj,det,rule,boot,trim,measure
+oracle,CUSUM,indep,1.0,1.0,false-alarm years
+oracle,CUSUM,ar1,0.9981,0.9574,false-alarm years
+oracle,CUSUM,oracle,0.0426,0.0464,false-alarm years
+oracle,EWMA,indep,1.0,1.0,false-alarm years
+oracle,EWMA,ar1,0.998,0.9166,false-alarm years
+oracle,EWMA,oracle,0.0492,0.0502,false-alarm years
+oracle,FOCuS,indep,1.0,1.0,false-alarm years
+oracle,FOCuS,ar1,0.9999,0.9708,false-alarm years
+oracle,FOCuS,oracle,0.045,0.0492,false-alarm years
+oracle,FOCuS-AR,indep,1.0,0.9989,false-alarm years
+oracle,FOCuS-AR,ar1,1.0,0.9989,false-alarm years
+oracle,FOCuS-AR,oracle,0.0448,0.0474,false-alarm years
+oracle,CPM,indep,0.997,0.9996,false-alarm years
+oracle,CPM,ar1,0.758,0.7036,false-alarm years
+oracle,CPM,oracle,0.0424,0.0406,false-alarm years
+oracle,CUSUM-r,indep,1.0,1.0,false-alarm years
+oracle,CUSUM-r,ar1,0.9386,0.9006,false-alarm years
+oracle,CUSUM-r,oracle,0.0446,0.0452,false-alarm years
+oracle,EWMA-r,indep,1.0,1.0,false-alarm years
+oracle,EWMA-r,ar1,0.8904,0.8116,false-alarm years
+oracle,EWMA-r,oracle,0.0494,0.048,false-alarm years
+oracle,FOCuS-r,indep,1.0,1.0,false-alarm years
+oracle,FOCuS-r,ar1,0.9424,0.9002,false-alarm years
+oracle,FOCuS-r,oracle,0.0444,0.0526,false-alarm years
+oracle,FOCuS-var,indep,1.0,0.9998,false-alarm years
+oracle,FOCuS-var,ar1,1.0,0.9985,false-alarm years
+oracle,FOCuS-var,oracle,0.0514,0.0458,false-alarm years
+oracle,CUSUM-var,indep,1.0,0.9995,false-alarm years
+oracle,CUSUM-var,ar1,1.0,0.9983,false-alarm years
+oracle,CUSUM-var,oracle,0.0492,0.0488,false-alarm years
+oracle,EWMA-var,indep,1.0,0.9994,false-alarm years
+oracle,EWMA-var,ar1,0.9999,0.9908,false-alarm years
+oracle,EWMA-var,oracle,0.0438,0.048,false-alarm years
+raw,CUSUM,indep,0.9315,0.9591,false-alarm years
+raw,CUSUM,ar1,0.0803,0.0328,false-alarm years
+raw,CUSUM,oracle,0.0466,0.0424,false-alarm years
+raw,EWMA,indep,0.9999,1.0,false-alarm years
+raw,EWMA,ar1,0.8028,0.8444,false-alarm years
+raw,EWMA,oracle,0.0476,0.044,false-alarm years
+raw,FOCuS,indep,0.7819,0.8442,false-alarm years
+raw,FOCuS,ar1,0.1001,0.0539,false-alarm years
+raw,FOCuS,oracle,0.0434,0.0444,false-alarm years
+raw,FOCuS-AR,indep,0.3679,0.2686,false-alarm years
+raw,FOCuS-AR,ar1,0.3679,0.2686,false-alarm years
+raw,FOCuS-AR,oracle,0.0492,0.0442,false-alarm years
+raw,CPM,indep,0.9616,0.9837,false-alarm years
+raw,CPM,ar1,0.2508,0.2789,false-alarm years
+raw,CPM,oracle,0.0488,0.0454,false-alarm years
+raw,CUSUM-r,indep,0.4592,0.4393,false-alarm years
+raw,CUSUM-r,ar1,0.078,0.0346,false-alarm years
+raw,CUSUM-r,oracle,0.0472,0.0414,false-alarm years
+raw,EWMA-r,indep,0.9679,0.9783,false-alarm years
+raw,EWMA-r,ar1,0.0849,0.0478,false-alarm years
+raw,EWMA-r,oracle,0.0516,0.052,false-alarm years
+raw,FOCuS-r,indep,0.1751,0.1446,false-alarm years
+raw,FOCuS-r,ar1,0.0666,0.0247,false-alarm years
+raw,FOCuS-r,oracle,0.046,0.0404,false-alarm years
+raw,FOCuS-var,indep,1.0,1.0,false-alarm years
+raw,FOCuS-var,ar1,1.0,1.0,false-alarm years
+raw,FOCuS-var,oracle,0.0564,0.0482,false-alarm years
+raw,CUSUM-var,indep,1.0,1.0,false-alarm years
+raw,CUSUM-var,ar1,1.0,1.0,false-alarm years
+raw,CUSUM-var,oracle,0.0548,0.048,false-alarm years
+raw,EWMA-var,indep,1.0,1.0,false-alarm years
+raw,EWMA-var,ar1,0.9999,0.9998,false-alarm years
+raw,EWMA-var,oracle,0.044,0.0422,false-alarm years
+A,CUSUM,indep,1.0,1.0,false-alarm years
+A,CUSUM,ar1,1.0,1.0,false-alarm years
+A,CUSUM,oracle,0.0548,0.0522,false-alarm years
+A,EWMA,indep,1.0,1.0,false-alarm years
+A,EWMA,ar1,1.0,1.0,false-alarm years
+A,EWMA,oracle,0.0562,0.0544,false-alarm years
+A,FOCuS,indep,1.0,1.0,false-alarm years
+A,FOCuS,ar1,1.0,1.0,false-alarm years
+A,FOCuS,oracle,0.0548,0.0476,false-alarm years
+A,FOCuS-AR,indep,1.0,1.0,false-alarm years
+A,FOCuS-AR,ar1,1.0,1.0,false-alarm years
+A,FOCuS-AR,oracle,0.0502,0.0506,false-alarm years
+A,CPM,indep,0.9989,1.0,false-alarm years
+A,CPM,ar1,0.0925,0.0378,false-alarm years
+A,CPM,oracle,0.0496,0.0582,false-alarm years
+A,CUSUM-r,indep,1.0,1.0,false-alarm years
+A,CUSUM-r,ar1,0.7097,0.5375,false-alarm years
+A,CUSUM-r,oracle,0.0526,0.0622,false-alarm years
+A,EWMA-r,indep,1.0,1.0,false-alarm years
+A,EWMA-r,ar1,0.9965,0.9982,false-alarm years
+A,EWMA-r,oracle,0.0538,0.052,false-alarm years
+A,FOCuS-r,indep,1.0,1.0,false-alarm years
+A,FOCuS-r,ar1,0.9939,0.9956,false-alarm years
+A,FOCuS-r,oracle,0.0536,0.0496,false-alarm years
+A,FOCuS-var,indep,1.0,1.0,false-alarm years
+A,FOCuS-var,ar1,1.0,1.0,false-alarm years
+A,FOCuS-var,oracle,0.0466,0.0486,false-alarm years
+A,CUSUM-var,indep,1.0,1.0,false-alarm years
+A,CUSUM-var,ar1,1.0,1.0,false-alarm years
+A,CUSUM-var,oracle,0.0468,0.0486,false-alarm years
+A,EWMA-var,indep,1.0,1.0,false-alarm years
+A,EWMA-var,ar1,1.0,1.0,false-alarm years
+A,EWMA-var,oracle,0.0534,0.0494,false-alarm years
+B,CUSUM,indep,1.0,1.0,false-alarm years
+B,CUSUM,ar1,0.9993,0.9996,false-alarm years
+B,CUSUM,oracle,0.0466,0.0534,false-alarm years
+B,EWMA,indep,1.0,1.0,false-alarm years
+B,EWMA,ar1,1.0,1.0,false-alarm years
+B,EWMA,oracle,0.0492,0.0542,false-alarm years
+B,FOCuS,indep,1.0,1.0,false-alarm years
+B,FOCuS,ar1,1.0,1.0,false-alarm years
+B,FOCuS,oracle,0.0504,0.0542,false-alarm years
+B,FOCuS-AR,indep,1.0,1.0,false-alarm years
+B,FOCuS-AR,ar1,1.0,1.0,false-alarm years
+B,FOCuS-AR,oracle,0.0476,0.0504,false-alarm years
+B,CPM,indep,1.0,1.0,false-alarm years
+B,CPM,ar1,0.371,0.2549,false-alarm years
+B,CPM,oracle,0.0574,0.0448,false-alarm years
+B,CUSUM-r,indep,1.0,1.0,false-alarm years
+B,CUSUM-r,ar1,0.9218,0.8865,false-alarm years
+B,CUSUM-r,oracle,0.0462,0.0538,false-alarm years
+B,EWMA-r,indep,1.0,1.0,false-alarm years
+B,EWMA-r,ar1,0.989,0.9805,false-alarm years
+B,EWMA-r,oracle,0.049,0.0488,false-alarm years
+B,FOCuS-r,indep,1.0,1.0,false-alarm years
+B,FOCuS-r,ar1,0.9706,0.9387,false-alarm years
+B,FOCuS-r,oracle,0.0528,0.0514,false-alarm years
+B,FOCuS-var,indep,1.0,1.0,false-alarm years
+B,FOCuS-var,ar1,1.0,1.0,false-alarm years
+B,FOCuS-var,oracle,0.0524,0.0526,false-alarm years
+B,CUSUM-var,indep,1.0,1.0,false-alarm years
+B,CUSUM-var,ar1,1.0,1.0,false-alarm years
+B,CUSUM-var,oracle,0.052,0.0524,false-alarm years
+B,EWMA-var,indep,1.0,1.0,false-alarm years
+B,EWMA-var,ar1,1.0,1.0,false-alarm years
+B,EWMA-var,oracle,0.0486,0.0522,false-alarm years
+HW,CUSUM,indep,1.0,1.0,false-alarm years
+HW,CUSUM,ar1,1.0,1.0,false-alarm years
+HW,CUSUM,oracle,0.0446,0.0542,false-alarm years
+HW,EWMA,indep,1.0,1.0,false-alarm years
+HW,EWMA,ar1,1.0,1.0,false-alarm years
+HW,EWMA,oracle,0.05,0.0522,false-alarm years
+HW,FOCuS,indep,1.0,1.0,false-alarm years
+HW,FOCuS,ar1,1.0,1.0,false-alarm years
+HW,FOCuS,oracle,0.0502,0.0492,false-alarm years
+HW,FOCuS-AR,indep,1.0,1.0,false-alarm years
+HW,FOCuS-AR,ar1,1.0,1.0,false-alarm years
+HW,FOCuS-AR,oracle,0.0498,0.0522,false-alarm years
+HW,CPM,indep,1.0,1.0,false-alarm years
+HW,CPM,ar1,0.6512,0.5876,false-alarm years
+HW,CPM,oracle,0.0466,0.0492,false-alarm years
+HW,CUSUM-r,indep,1.0,1.0,false-alarm years
+HW,CUSUM-r,ar1,0.9427,0.9437,false-alarm years
+HW,CUSUM-r,oracle,0.052,0.0478,false-alarm years
+HW,EWMA-r,indep,1.0,1.0,false-alarm years
+HW,EWMA-r,ar1,0.9939,0.9947,false-alarm years
+HW,EWMA-r,oracle,0.0544,0.0502,false-alarm years
+HW,FOCuS-r,indep,1.0,1.0,false-alarm years
+HW,FOCuS-r,ar1,0.988,0.9791,false-alarm years
+HW,FOCuS-r,oracle,0.0512,0.0486,false-alarm years
+HW,FOCuS-var,indep,1.0,1.0,false-alarm years
+HW,FOCuS-var,ar1,1.0,1.0,false-alarm years
+HW,FOCuS-var,oracle,0.0508,0.0456,false-alarm years
+HW,CUSUM-var,indep,1.0,1.0,false-alarm years
+HW,CUSUM-var,ar1,1.0,1.0,false-alarm years
+HW,CUSUM-var,oracle,0.0506,0.046,false-alarm years
+HW,EWMA-var,indep,1.0,1.0,false-alarm years
+HW,EWMA-var,ar1,1.0,1.0,false-alarm years
+HW,EWMA-var,oracle,0.0516,0.056,false-alarm years
+YM,CUSUM,indep,1.0,1.0,false-alarm years
+YM,CUSUM,ar1,0.996,0.9963,false-alarm years
+YM,CUSUM,oracle,0.0464,0.0538,false-alarm years
+YM,EWMA,indep,1.0,1.0,false-alarm years
+YM,EWMA,ar1,0.9999,1.0,false-alarm years
+YM,EWMA,oracle,0.0548,0.0528,false-alarm years
+YM,FOCuS,indep,1.0,1.0,false-alarm years
+YM,FOCuS,ar1,1.0,1.0,false-alarm years
+YM,FOCuS,oracle,0.0446,0.0524,false-alarm years
+YM,FOCuS-AR,indep,1.0,1.0,false-alarm years
+YM,FOCuS-AR,ar1,1.0,1.0,false-alarm years
+YM,FOCuS-AR,oracle,0.0448,0.0514,false-alarm years
+YM,CPM,indep,0.9784,0.99,false-alarm years
+YM,CPM,ar1,0.1837,0.1042,false-alarm years
+YM,CPM,oracle,0.0486,0.0478,false-alarm years
+YM,CUSUM-r,indep,1.0,1.0,false-alarm years
+YM,CUSUM-r,ar1,0.4534,0.2785,false-alarm years
+YM,CUSUM-r,oracle,0.0444,0.0508,false-alarm years
+YM,EWMA-r,indep,0.9999,1.0,false-alarm years
+YM,EWMA-r,ar1,0.7812,0.7048,false-alarm years
+YM,EWMA-r,oracle,0.0512,0.045,false-alarm years
+YM,FOCuS-r,indep,1.0,1.0,false-alarm years
+YM,FOCuS-r,ar1,0.6756,0.5257,false-alarm years
+YM,FOCuS-r,oracle,0.0526,0.054,false-alarm years
+YM,FOCuS-var,indep,1.0,1.0,false-alarm years
+YM,FOCuS-var,ar1,1.0,1.0,false-alarm years
+YM,FOCuS-var,oracle,0.049,0.0478,false-alarm years
+YM,CUSUM-var,indep,1.0,1.0,false-alarm years
+YM,CUSUM-var,ar1,1.0,1.0,false-alarm years
+YM,CUSUM-var,oracle,0.0488,0.0482,false-alarm years
+YM,EWMA-var,indep,1.0,1.0,false-alarm years
+YM,EWMA-var,ar1,1.0,1.0,false-alarm years
+YM,EWMA-var,oracle,0.0462,0.056,false-alarm years
+oracle,CUSUM,indep,1.0,1.0,2 SD drop found within 60 days
+oracle,CUSUM,ar1,0.9991015274034142,0.9996224990562477,2 SD drop found within 60 days
+oracle,CUSUM,oracle,0.6654727793696275,0.8558889569299857,2 SD drop found within 60 days
+oracle,EWMA,indep,1.0,0.9974747474747475,2 SD drop found within 60 days
+oracle,EWMA,ar1,1.0,0.9958585536795158,2 SD drop found within 60 days
+oracle,EWMA,oracle,0.1068349753694581,0.5782737790519095,2 SD drop found within 60 days
+oracle,FOCuS,indep,1.0,1.0,2 SD drop found within 60 days
+oracle,FOCuS,ar1,0.9982608695652174,0.9995519713261649,2 SD drop found within 60 days
+oracle,FOCuS,oracle,0.0125985865000512,0.8129931345424736,2 SD drop found within 60 days
+oracle,FOCuS-AR,indep,0.9965870307167236,0.9988412514484357,2 SD drop found within 60 days
+oracle,FOCuS-AR,ar1,0.9965870307167236,0.9988412514484357,2 SD drop found within 60 days
+oracle,FOCuS-AR,oracle,0.0036904151717068,0.5071333264908139,2 SD drop found within 60 days
+oracle,CPM,indep,0.9830205540661304,0.9893617021276596,2 SD drop found within 60 days
+oracle,CPM,ar1,0.942702890978753,0.961624203821656,2 SD drop found within 60 days
+oracle,CPM,oracle,0.6176917620832911,0.6886324526773965,2 SD drop found within 60 days
+oracle,CUSUM-r,indep,1.0,1.0,2 SD drop found within 60 days
+oracle,CUSUM-r,ar1,0.9993577392421324,0.9997302400863232,2 SD drop found within 60 days
+oracle,CUSUM-r,oracle,0.9071144227824844,0.9455213221791471,2 SD drop found within 60 days
+oracle,EWMA-r,indep,1.0,1.0,2 SD drop found within 60 days
+oracle,EWMA-r,ar1,0.996464509110688,0.9973810563072893,2 SD drop found within 60 days
+oracle,EWMA-r,oracle,0.8153042409342348,0.8595862351495289,2 SD drop found within 60 days
+oracle,FOCuS-r,indep,1.0,1.0,2 SD drop found within 60 days
+oracle,FOCuS-r,ar1,0.9993373094764744,0.9997345367666578,2 SD drop found within 60 days
+oracle,FOCuS-r,oracle,0.903475690551422,0.94092439546985,2 SD drop found within 60 days
+raw,CUSUM,indep,0.043058981834492,0.029017857142857144,2 SD drop found within 60 days
+raw,CUSUM,ar1,0.0036407766990291,0.002103154732098147,2 SD drop found within 60 days
+raw,CUSUM,oracle,0.0021120386201347,0.005718298555377207,2 SD drop found within 60 days
+raw,EWMA,indep,0.0776699029126213,0.0,2 SD drop found within 60 days
+raw,EWMA,ar1,0.0062653837547549,0.001435544071202986,2 SD drop found within 60 days
+raw,EWMA,oracle,0.0,0.0,2 SD drop found within 60 days
+raw,FOCuS,indep,0.0258029834699637,0.016725591514821867,2 SD drop found within 60 days
+raw,FOCuS,ar1,0.0037426663969249,0.0011026463512429831,2 SD drop found within 60 days
+raw,FOCuS,oracle,0.0015078407720144,0.001002004008016032,2 SD drop found within 60 days
+raw,FOCuS-AR,indep,0.0220361392684001,0.0010524100189433804,2 SD drop found within 60 days
+raw,FOCuS-AR,ar1,0.0220361392684001,0.0010524100189433804,2 SD drop found within 60 days
+raw,FOCuS-AR,oracle,0.0033242671501964,0.00010053282396702523,2 SD drop found within 60 days
+raw,CPM,indep,0.037022051385798,0.03849462365591398,2 SD drop found within 60 days
+raw,CPM,ar1,0.0039860997547015,0.0027506112469437654,2 SD drop found within 60 days
+raw,CPM,oracle,0.0008008008008008,0.0004002801961372961,2 SD drop found within 60 days
+raw,CUSUM-r,indep,0.0234334541688244,0.015895398025894115,2 SD drop found within 60 days
+raw,CUSUM-r,ar1,0.0023246411966848,0.000500751126690035,2 SD drop found within 60 days
+raw,CUSUM-r,oracle,0.0020114653525093,0.0012030075187969924,2 SD drop found within 60 days
+raw,EWMA-r,indep,0.0218423551756885,0.006845052893590542,2 SD drop found within 60 days
+raw,EWMA-r,ar1,0.000304197931454,0.00020066218521119696,2 SD drop found within 60 days
+raw,EWMA-r,oracle,0.0002018163471241,0.00020070245860511792,2 SD drop found within 60 days
+raw,FOCuS-r,indep,0.0154837368803907,0.012419831008856765,2 SD drop found within 60 days
+raw,FOCuS-r,ar1,0.0040281973816717,0.0005004504053648283,2 SD drop found within 60 days
+raw,FOCuS-r,oracle,0.0019099316445516,0.0013031275060144346,2 SD drop found within 60 days
+A,CUSUM,indep,,,2 SD drop found within 60 days
+A,CUSUM,ar1,0.6222222222222222,0.39473684210526316,2 SD drop found within 60 days
+A,CUSUM,oracle,0.0001011633788568,0.0,2 SD drop found within 60 days
+A,EWMA,indep,,,2 SD drop found within 60 days
+A,EWMA,ar1,1.0,,2 SD drop found within 60 days
+A,EWMA,oracle,0.0002025521571804,0.0,2 SD drop found within 60 days
+A,FOCuS,indep,,,2 SD drop found within 60 days
+A,FOCuS,ar1,1.0,0.5,2 SD drop found within 60 days
+A,FOCuS,oracle,0.0015131645314233,0.0,2 SD drop found within 60 days
+A,FOCuS-AR,indep,1.0,,2 SD drop found within 60 days
+A,FOCuS-AR,ar1,1.0,,2 SD drop found within 60 days
+A,FOCuS-AR,oracle,0.0048879837067209,0.0007046506945842561,2 SD drop found within 60 days
+A,CPM,indep,0.6946028960070206,0.8408963585434174,2 SD drop found within 60 days
+A,CPM,ar1,0.0223503965392934,0.011114479135091442,2 SD drop found within 60 days
+A,CPM,oracle,0.0140372291730241,0.013386066321874049,2 SD drop found within 60 days
+A,CUSUM-r,indep,,,2 SD drop found within 60 days
+A,CUSUM-r,ar1,0.0446376811594202,0.02345176239292234,2 SD drop found within 60 days
+A,CUSUM-r,oracle,0.0014187271990271,0.0012185215272136475,2 SD drop found within 60 days
+A,EWMA-r,indep,1.0,,2 SD drop found within 60 days
+A,EWMA-r,ar1,0.1756756756756756,0.10983606557377049,2 SD drop found within 60 days
+A,EWMA-r,oracle,0.000101988781234,0.0004053917097395358,2 SD drop found within 60 days
+A,FOCuS-r,indep,,,2 SD drop found within 60 days
+A,FOCuS-r,ar1,0.1324137931034482,0.06340819022457067,2 SD drop found within 60 days
+A,FOCuS-r,oracle,0.0007085737422816,0.0006066734074823053,2 SD drop found within 60 days
+B,CUSUM,indep,,,2 SD drop found within 60 days
+B,CUSUM,ar1,0.4175257731958763,0.27521367521367524,2 SD drop found within 60 days
+B,CUSUM,oracle,0.0001007353681877,0.0,2 SD drop found within 60 days
+B,EWMA,indep,,,2 SD drop found within 60 days
+B,EWMA,ar1,0.7692307692307693,0.8,2 SD drop found within 60 days
+B,EWMA,oracle,0.0,0.0,2 SD drop found within 60 days
+B,FOCuS,indep,,,2 SD drop found within 60 days
+B,FOCuS,ar1,0.7222222222222222,0.5555555555555556,2 SD drop found within 60 days
+B,FOCuS,oracle,0.0,0.0,2 SD drop found within 60 days
+B,FOCuS-AR,indep,1.0,,2 SD drop found within 60 days
+B,FOCuS-AR,ar1,1.0,,2 SD drop found within 60 days
+B,FOCuS-AR,oracle,0.0038657171922685,0.0002028809089064719,2 SD drop found within 60 days
+B,CPM,indep,0.9931972789115646,1.0,2 SD drop found within 60 days
+B,CPM,ar1,0.18412447852069,0.12015826738858809,2 SD drop found within 60 days
+B,CPM,oracle,0.0114148392910784,0.009705823494096457,2 SD drop found within 60 days
+B,CUSUM-r,indep,,,2 SD drop found within 60 days
+B,CUSUM-r,ar1,0.1633986928104575,0.09550881182490051,2 SD drop found within 60 days
+B,CUSUM-r,oracle,0.0003139717425431,0.0,2 SD drop found within 60 days
+B,EWMA-r,indep,,,2 SD drop found within 60 days
+B,EWMA-r,ar1,0.1903199343724364,0.1416267942583732,2 SD drop found within 60 days
+B,EWMA-r,oracle,0.0027278238027884,0.0023211222121303867,2 SD drop found within 60 days
+B,FOCuS-r,indep,,,2 SD drop found within 60 days
+B,FOCuS-r,ar1,0.1689237348538845,0.13216374269005848,2 SD drop found within 60 days
+B,FOCuS-r,oracle,0.0017795456924526,0.0008333333333333334,2 SD drop found within 60 days
+HW,CUSUM,indep,,,2 SD drop found within 60 days
+HW,CUSUM,ar1,0.6247379454926625,0.5269886363636364,2 SD drop found within 60 days
+HW,CUSUM,oracle,0.0,0.0,2 SD drop found within 60 days
+HW,EWMA,indep,,,2 SD drop found within 60 days
+HW,EWMA,ar1,0.9,1.0,2 SD drop found within 60 days
+HW,EWMA,oracle,0.0,0.0,2 SD drop found within 60 days
+HW,FOCuS,indep,,,2 SD drop found within 60 days
+HW,FOCuS,ar1,1.0,1.0,2 SD drop found within 60 days
+HW,FOCuS,oracle,0.0,0.0,2 SD drop found within 60 days
+HW,FOCuS-AR,indep,,,2 SD drop found within 60 days
+HW,FOCuS-AR,ar1,,,2 SD drop found within 60 days
+HW,FOCuS-AR,oracle,0.0026350461133069,0.00020120724346076458,2 SD drop found within 60 days
+HW,CPM,indep,0.9934383202099738,1.0,2 SD drop found within 60 days
+HW,CPM,ar1,0.3998249124562281,0.3773977351513751,2 SD drop found within 60 days
+HW,CPM,oracle,0.0223536487570168,0.024153136901182603,2 SD drop found within 60 days
+HW,CUSUM-r,indep,1.0,,2 SD drop found within 60 days
+HW,CUSUM-r,ar1,0.1479562464018422,0.10336538461538461,2 SD drop found within 60 days
+HW,CUSUM-r,oracle,0.0,0.0001049317943336831,2 SD drop found within 60 days
+HW,EWMA-r,indep,,,2 SD drop found within 60 days
+HW,EWMA-r,ar1,0.2,0.1368421052631579,2 SD drop found within 60 days
+HW,EWMA-r,oracle,0.0007033055360192,0.00010054293183189222,2 SD drop found within 60 days
+HW,FOCuS-r,indep,,,2 SD drop found within 60 days
+HW,FOCuS-r,ar1,0.1614610905240868,0.12264150943396226,2 SD drop found within 60 days
+HW,FOCuS-r,oracle,0.0008351602463722,0.00020889910173386254,2 SD drop found within 60 days
+YM,CUSUM,indep,1.0,1.0,2 SD drop found within 60 days
+YM,CUSUM,ar1,0.8893499308437067,0.9190600522193212,2 SD drop found within 60 days
+YM,CUSUM,oracle,0.0625974836227513,0.08340301003344482,2 SD drop found within 60 days
+YM,EWMA,indep,,,2 SD drop found within 60 days
+YM,EWMA,ar1,0.9803921568627452,1.0,2 SD drop found within 60 days
+YM,EWMA,oracle,0.0134482034040764,0.017204982056153683,2 SD drop found within 60 days
+YM,FOCuS,indep,,,2 SD drop found within 60 days
+YM,FOCuS,ar1,1.0,1.0,2 SD drop found within 60 days
+YM,FOCuS,oracle,0.0038512212425255,0.0030278562777553493,2 SD drop found within 60 days
+YM,FOCuS-AR,indep,1.0,,2 SD drop found within 60 days
+YM,FOCuS-AR,ar1,1.0,,2 SD drop found within 60 days
+YM,FOCuS-AR,oracle,0.0048755713560182,0.0015320192013073232,2 SD drop found within 60 days
+YM,CPM,indep,0.6858749121574139,0.7532091097308489,2 SD drop found within 60 days
+YM,CPM,ar1,0.1323982573584103,0.10759103065212919,2 SD drop found within 60 days
+YM,CPM,oracle,0.0458223750758648,0.06298018600889607,2 SD drop found within 60 days
+YM,CUSUM-r,indep,1.0,1.0,2 SD drop found within 60 days
+YM,CUSUM-r,ar1,0.456869907277325,0.43483512501509847,2 SD drop found within 60 days
+YM,CUSUM-r,oracle,0.1445300462249615,0.2076423936553713,2 SD drop found within 60 days
+YM,EWMA-r,indep,1.0,1.0,2 SD drop found within 60 days
+YM,EWMA-r,ar1,0.4406514249921703,0.3950683462878585,2 SD drop found within 60 days
+YM,EWMA-r,oracle,0.0718887411800797,0.10497009692720148,2 SD drop found within 60 days
+YM,FOCuS-r,indep,1.0,1.0,2 SD drop found within 60 days
+YM,FOCuS-r,ar1,0.445006599208095,0.4131108052305575,2 SD drop found within 60 days
+YM,FOCuS-r,oracle,0.081437249047668,0.122783366172353,2 SD drop found within 60 days
+oracle,CUSUM,indep,1.0,1.0,4 SD drop found within 60 days
+oracle,CUSUM,ar1,1.0,1.0,4 SD drop found within 60 days
+oracle,CUSUM,oracle,0.998159509202454,1.0,4 SD drop found within 60 days
+oracle,EWMA,indep,1.0,1.0,4 SD drop found within 60 days
+oracle,EWMA,ar1,1.0,1.0,4 SD drop found within 60 days
+oracle,EWMA,oracle,0.6731677273660439,0.9943693693693694,4 SD drop found within 60 days
+oracle,FOCuS,indep,1.0,1.0,4 SD drop found within 60 days
+oracle,FOCuS,ar1,1.0,1.0,4 SD drop found within 60 days
+oracle,FOCuS,oracle,0.3522154826770844,1.0,4 SD drop found within 60 days
+oracle,FOCuS-AR,indep,1.0,1.0,4 SD drop found within 60 days
+oracle,FOCuS-AR,ar1,1.0,1.0,4 SD drop found within 60 days
+oracle,FOCuS-AR,oracle,0.0260261289990741,0.993437916538501,4 SD drop found within 60 days
+oracle,CPM,indep,1.0,1.0,4 SD drop found within 60 days
+oracle,CPM,ar1,0.996300863131936,0.9998395121168352,4 SD drop found within 60 days
+oracle,CPM,oracle,0.9604783137413864,0.9844843322178278,4 SD drop found within 60 days
+oracle,CUSUM-r,indep,1.0,1.0,4 SD drop found within 60 days
+oracle,CUSUM-r,ar1,1.0,1.0,4 SD drop found within 60 days
+oracle,CUSUM-r,oracle,1.0,1.0,4 SD drop found within 60 days
+oracle,EWMA-r,indep,1.0,1.0,4 SD drop found within 60 days
+oracle,EWMA-r,ar1,1.0,1.0,4 SD drop found within 60 days
+oracle,EWMA-r,oracle,0.9992846924177397,0.9998976458546571,4 SD drop found within 60 days
+oracle,FOCuS-r,indep,1.0,1.0,4 SD drop found within 60 days
+oracle,FOCuS-r,ar1,1.0,1.0,4 SD drop found within 60 days
+oracle,FOCuS-r,oracle,1.0,1.0,4 SD drop found within 60 days
+raw,CUSUM,indep,0.458006718924972,0.49138146390207343,4 SD drop found within 60 days
+raw,CUSUM,ar1,0.0211474248709905,0.023453944071364138,4 SD drop found within 60 days
+raw,CUSUM,oracle,0.0044229995979091,0.04707889981931339,4 SD drop found within 60 days
+raw,EWMA,indep,0.320754716981132,0.28846153846153844,4 SD drop found within 60 days
+raw,EWMA,ar1,0.0843984133979726,0.0709823963657013,4 SD drop found within 60 days
+raw,EWMA,oracle,0.0013176565984188,0.0004047763610605141,4 SD drop found within 60 days
+raw,FOCuS,indep,0.1762503343139877,0.2054418029407723,4 SD drop found within 60 days
+raw,FOCuS,ar1,0.0129633380595503,0.015756724207145724,4 SD drop found within 60 days
+raw,FOCuS,oracle,0.0040225261464199,0.014943335673453014,4 SD drop found within 60 days
+raw,FOCuS-AR,indep,0.0276431718061674,0.022462386098749735,4 SD drop found within 60 days
+raw,FOCuS-AR,ar1,0.0276431718061674,0.022462386098749735,4 SD drop found within 60 days
+raw,FOCuS-AR,oracle,0.0019164817429897,0.003825631732608477,4 SD drop found within 60 days
+raw,CPM,indep,0.7008617152236356,0.7594420600858369,4 SD drop found within 60 days
+raw,CPM,ar1,0.0283202126571925,0.03568515497553018,4 SD drop found within 60 days
+raw,CPM,oracle,0.0002002002002002,0.00010009008107296567,4 SD drop found within 60 days
+raw,CUSUM-r,indep,0.4271806853582554,0.47546595663750474,4 SD drop found within 60 days
+raw,CUSUM-r,ar1,0.0007077140835102,0.00040096230954290296,4 SD drop found within 60 days
+raw,CUSUM-r,oracle,0.0004021312958681,0.001907247540654487,4 SD drop found within 60 days
+raw,EWMA-r,indep,0.2258522727272727,0.21056020605280104,4 SD drop found within 60 days
+raw,EWMA-r,ar1,0.0135121406075383,0.00762592815572948,4 SD drop found within 60 days
+raw,EWMA-r,oracle,0.0070735650767987,0.008427811778870272,4 SD drop found within 60 days
+raw,FOCuS-r,indep,0.0718886349470185,0.08249415115451124,4 SD drop found within 60 days
+raw,FOCuS-r,ar1,0.0007054318250529,0.00010015022533800701,4 SD drop found within 60 days
+raw,FOCuS-r,oracle,0.0003015681544028,0.002307615129928765,4 SD drop found within 60 days
+A,CUSUM,indep,,,4 SD drop found within 60 days
+A,CUSUM,ar1,0.7391304347826086,0.4857142857142857,4 SD drop found within 60 days
+A,CUSUM,oracle,0.0004049812696162,0.00010091835704914725,4 SD drop found within 60 days
+A,EWMA,indep,,,4 SD drop found within 60 days
+A,EWMA,ar1,1.0,,4 SD drop found within 60 days
+A,EWMA,oracle,0.0004059677255658,0.000201450443190975,4 SD drop found within 60 days
+A,FOCuS,indep,,,4 SD drop found within 60 days
+A,FOCuS,ar1,1.0,,4 SD drop found within 60 days
+A,FOCuS,oracle,0.0009094583670169,0.00010016025641025641,4 SD drop found within 60 days
+A,FOCuS-AR,indep,,,4 SD drop found within 60 days
+A,FOCuS-AR,ar1,,,4 SD drop found within 60 days
+A,FOCuS-AR,oracle,0.0039840637450199,0.0003020235578375113,4 SD drop found within 60 days
+A,CPM,indep,0.8149840109639105,0.9312676056338028,4 SD drop found within 60 days
+A,CPM,ar1,0.0386001029336078,0.01929682764194787,4 SD drop found within 60 days
+A,CPM,oracle,0.0296296296296296,0.027150238071117414,4 SD drop found within 60 days
+A,CUSUM-r,indep,1.0,,4 SD drop found within 60 days
+A,CUSUM-r,ar1,0.1565099632424066,0.11304836895388076,4 SD drop found within 60 days
+A,CUSUM-r,oracle,0.0117754542686021,0.010557303827022637,4 SD drop found within 60 days
+A,EWMA-r,indep,1.0,,4 SD drop found within 60 days
+A,EWMA-r,ar1,0.3187134502923976,0.2735562310030395,4 SD drop found within 60 days
+A,EWMA-r,oracle,0.0032646398694144,0.002837454398054317,4 SD drop found within 60 days
+A,FOCuS-r,indep,1.0,,4 SD drop found within 60 days
+A,FOCuS-r,ar1,0.3798657718120805,0.28116710875331563,4 SD drop found within 60 days
+A,FOCuS-r,oracle,0.0104177202386972,0.008689501869253309,4 SD drop found within 60 days
+B,CUSUM,indep,,,4 SD drop found within 60 days
+B,CUSUM,ar1,0.6694677871148459,0.7119205298013245,4 SD drop found within 60 days
+B,CUSUM,oracle,0.00402982067298,0.003907815631262525,4 SD drop found within 60 days
+B,EWMA,indep,,,4 SD drop found within 60 days
+B,EWMA,ar1,0.6153846153846154,0.6666666666666666,4 SD drop found within 60 days
+B,EWMA,oracle,0.000503068719187,0.00020086371397007131,4 SD drop found within 60 days
+B,FOCuS,indep,,,4 SD drop found within 60 days
+B,FOCuS,ar1,0.7333333333333333,0.45454545454545453,4 SD drop found within 60 days
+B,FOCuS,oracle,0.0004017274279401,0.00010016025641025641,4 SD drop found within 60 days
+B,FOCuS-AR,indep,1.0,,4 SD drop found within 60 days
+B,FOCuS-AR,ar1,1.0,,4 SD drop found within 60 days
+B,FOCuS-AR,oracle,0.0025403922365613,0.0007087172218284905,4 SD drop found within 60 days
+B,CPM,indep,1.0,1.0,4 SD drop found within 60 days
+B,CPM,ar1,0.413509246729815,0.33434174838305863,4 SD drop found within 60 days
+B,CPM,oracle,0.0659989984977466,0.0717574059247398,4 SD drop found within 60 days
+B,CUSUM-r,indep,1.0,,4 SD drop found within 60 days
+B,CUSUM-r,ar1,0.602931803696622,0.5522914218566393,4 SD drop found within 60 days
+B,CUSUM-r,oracle,0.0159807812826404,0.01582673885880883,4 SD drop found within 60 days
+B,EWMA-r,indep,,,4 SD drop found within 60 days
+B,EWMA-r,ar1,0.5507717303005687,0.5605916030534351,4 SD drop found within 60 days
+B,EWMA-r,oracle,0.0590077801353945,0.06722434992944971,4 SD drop found within 60 days
+B,FOCuS-r,indep,,,4 SD drop found within 60 days
+B,FOCuS-r,ar1,0.5878962536023055,0.6011834319526628,4 SD drop found within 60 days
+B,FOCuS-r,oracle,0.053015310905114,0.057676348547717846,4 SD drop found within 60 days
+HW,CUSUM,indep,,,4 SD drop found within 60 days
+HW,CUSUM,ar1,0.8235294117647058,0.8,4 SD drop found within 60 days
+HW,CUSUM,oracle,0.0049009801960392,0.004800480048004801,4 SD drop found within 60 days
+HW,EWMA,indep,,,4 SD drop found within 60 days
+HW,EWMA,ar1,0.75,1.0,4 SD drop found within 60 days
+HW,EWMA,oracle,0.000200300450676,0.00010009008107296567,4 SD drop found within 60 days
+HW,FOCuS,indep,,,4 SD drop found within 60 days
+HW,FOCuS,ar1,1.0,1.0,4 SD drop found within 60 days
+HW,FOCuS,oracle,0.0002001801621459,0.0,4 SD drop found within 60 days
+HW,FOCuS-AR,indep,1.0,,4 SD drop found within 60 days
+HW,FOCuS-AR,ar1,1.0,,4 SD drop found within 60 days
+HW,FOCuS-AR,oracle,0.0016200891049007,0.00030168946098149636,4 SD drop found within 60 days
+HW,CPM,indep,0.99626400996264,1.0,4 SD drop found within 60 days
+HW,CPM,ar1,0.7482552342971087,0.77937622281045,4 SD drop found within 60 days
+HW,CPM,oracle,0.1639739086803813,0.2019047619047619,4 SD drop found within 60 days
+HW,CUSUM-r,indep,1.0,,4 SD drop found within 60 days
+HW,CUSUM-r,ar1,0.6652744630071599,0.6514900662251656,4 SD drop found within 60 days
+HW,CUSUM-r,oracle,0.0224871875326848,0.02071779847232395,4 SD drop found within 60 days
+HW,EWMA-r,indep,1.0,,4 SD drop found within 60 days
+HW,EWMA-r,ar1,0.622891016871865,0.5881728045325779,4 SD drop found within 60 days
+HW,EWMA-r,oracle,0.0272225012556504,0.03126570825374485,4 SD drop found within 60 days
+HW,FOCuS-r,indep,1.0,,4 SD drop found within 60 days
+HW,FOCuS-r,ar1,0.6566593886462883,0.6626898047722343,4 SD drop found within 60 days
+HW,FOCuS-r,oracle,0.056301384119055,0.058664165885172447,4 SD drop found within 60 days
+YM,CUSUM,indep,1.0,1.0,4 SD drop found within 60 days
+YM,CUSUM,ar1,0.9877049180327868,0.9947643979057592,4 SD drop found within 60 days
+YM,CUSUM,oracle,0.3373143628621871,0.4597002410648779,4 SD drop found within 60 days
+YM,EWMA,indep,1.0,,4 SD drop found within 60 days
+YM,EWMA,ar1,1.0,1.0,4 SD drop found within 60 days
+YM,EWMA,oracle,0.0454736399915984,0.051106427818756586,4 SD drop found within 60 days
+YM,FOCuS,indep,1.0,,4 SD drop found within 60 days
+YM,FOCuS,ar1,1.0,1.0,4 SD drop found within 60 days
+YM,FOCuS,oracle,0.004662477194405,0.008169440242057489,4 SD drop found within 60 days
+YM,FOCuS-AR,indep,1.0,,4 SD drop found within 60 days
+YM,FOCuS-AR,ar1,1.0,,4 SD drop found within 60 days
+YM,FOCuS-AR,oracle,0.0024375380865326,0.002546602831822349,4 SD drop found within 60 days
+YM,CPM,indep,0.8956770275098249,0.9376325837929571,4 SD drop found within 60 days
+YM,CPM,ar1,0.5037425149700598,0.5265221878224974,4 SD drop found within 60 days
+YM,CPM,oracle,0.3166632921644057,0.4305837049047426,4 SD drop found within 60 days
+YM,CUSUM-r,indep,1.0,1.0,4 SD drop found within 60 days
+YM,CUSUM-r,ar1,0.9352609308885754,0.958808694607902,4 SD drop found within 60 days
+YM,CUSUM-r,oracle,0.7182127046226706,0.861053931659119,4 SD drop found within 60 days
+YM,EWMA-r,indep,1.0,1.0,4 SD drop found within 60 days
+YM,EWMA-r,ar1,0.869965112591183,0.8899379552198543,4 SD drop found within 60 days
+YM,EWMA-r,oracle,0.4378022430291182,0.5890707008335906,4 SD drop found within 60 days
+YM,FOCuS-r,indep,1.0,1.0,4 SD drop found within 60 days
+YM,FOCuS-r,ar1,0.9220610521757956,0.9443037974683545,4 SD drop found within 60 days
+YM,FOCuS-r,oracle,0.5845789093907845,0.7565748602195072,4 SD drop found within 60 days

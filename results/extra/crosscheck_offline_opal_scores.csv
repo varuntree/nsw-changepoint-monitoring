@@ -1,0 +1,7 @@
+method,adjustment,max_abs_diff,worst_col,n_alarms,caught
+PELT,STL,0.0,n_alarms,98,8
+PELT,MSTL,0.0,n_alarms,49,5
+BinSeg,STL,0.0,n_alarms,80,8
+BinSeg,MSTL,0.0,n_alarms,30,4
+WBS,STL,0.0,n_alarms,88,7
+WBS,MSTL,0.0,n_alarms,47,5

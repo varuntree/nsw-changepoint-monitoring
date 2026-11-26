@@ -1,0 +1,6 @@
+check,runs,value,se,target,censored
+"hazard at tabulated n (H&D Table 1, ARL 500, warm-up 14)",20000,0.001959728370089186,7.16804129917947e-05,0.002,
+hazard at all n 15-100 (carry-forward),20000,0.002002490300734183,3.555889795702411e-05,0.002,
+P(alarm by n = 100),20000,0.15825,,0.15816582814615732,
+"in-control ARL, H&D Table 1 (warm-up 14)",4000,504.51825,8.011624471150304,500.0,1.0
+"in-control ARL, cpm 2.3 MWARL500 (startup 20, our setting)",4000,495.67225,7.72974326594903,500.0,1.0

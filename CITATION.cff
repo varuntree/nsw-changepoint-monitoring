@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the thesis."
+abstract: "Code, data and results for a master's thesis that evaluates online changepoint methods (CUSUM, EWMA, FOCuS, FOCuS-AR, CPM and capped detectors, with PELT, Binary Segmentation and WBS as offline benchmarks) on daily NSW Opal train tap-ons and NSW electricity demand. Each detector runs on the forecast error of a past-only forecast of a normal day (same-weekday difference, median of four, Holt-Winters, yearly memory), with thresholds calibrated by simulation for a 5% chance of a false alarm in a year, allowing for autocorrelation. Includes the live electricity monitor at https://varuntree.github.io/nsw-normal-day-monitor/."
+keywords:
+  - changepoint detection
+  - online monitoring
+  - CUSUM
+  - EWMA
+  - FOCuS
+  - Opal
+  - electricity demand
+title: "Detecting Real Changes in Daily Public Data Streams: Evaluating Online Changepoint Methods on NSW Opal Train Travel and Electricity Demand"
+type: software
+authors:
+  - family-names: Zhang
+    given-names: Yihan
+  - family-names: Wang
+    given-names: Sihan
+  - family-names: Gopisetti
+    given-names: Varun Prasad
+license: MIT
+repository-code: "https://github.com/varuntree/nsw-changepoint-monitoring"
+url: "https://varuntree.github.io/nsw-normal-day-monitor/"
+version: v1.0-thesis
+date-released: 2026-11-27
+preferred-citation:
+  type: thesis
+  title: "Detecting Real Changes in Daily Public Data Streams: Evaluating Online Changepoint Methods on NSW Opal Train Travel and Electricity Demand"
+  authors:
+    - family-names: Zhang
+      given-names: Yihan
+    - family-names: Wang
+      given-names: Sihan
+    - family-names: Gopisetti
+      given-names: Varun Prasad
+  institution:
+    name: "UNSW Sydney"
+  department: "School of Mathematics and Statistics"
+  year: 2026
+  thesis-type: "Master's thesis (DATA5925 Data Science Project, Master of Data Science and Decisions)"
+  month: 11
+  notes: "Supervisor: Bao Khue Tran. DATA5925 Data Science Project, Group 5. Code and data: https://github.com/varuntree/nsw-changepoint-monitoring, tag v1.0-thesis."

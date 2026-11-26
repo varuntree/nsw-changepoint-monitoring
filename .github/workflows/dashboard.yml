@@ -1,0 +1,87 @@
+# Daily live page: refresh the AEMO and Open-Meteo data, run the monitors (dashboard/build_data.py, the electricity
+# monitor of Chapter 7 with the thesis code in cpd/ and scripts/electricity.py), check the page's detector against
+# the Python alarms, and publish index.html and data.json to the page
+#     https://varuntree.github.io/nsw-normal-day-monitor/
+# which is served by GitHub Pages from the repository varuntree/nsw-normal-day-monitor.
+#
+# Publishing needs a deploy key with write access to that repository, stored here as the Actions secret
+# MONITOR_DEPLOY_KEY (see dashboard/README.md). Without the secret the job still builds and checks the page and keeps
+# it as a workflow artifact, but publishes nothing.
+#
+# AEMO rewrites the current-month file just after midnight NEM time (AEST, UTC+10, no daylight saving).
+# 00:40 AEST = 14:40 UTC. A second run at 06:40 AEST picks the day up if a feed was late.
+# It can also be started by hand from the Actions tab.
+name: dashboard
+
+on:
+  schedule:
+    - cron: "40 14 * * *"
+    - cron: "40 20 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dashboard
+  cancel-in-progress: false
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DEPLOY_KEY: ${{ secrets.MONITOR_DEPLOY_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: dashboard/requirements.txt
+      - name: Install
+        run: pip install -r dashboard/requirements.txt
+      - name: Restore the data cache
+        uses: actions/cache@v4
+        with:
+          path: dashboard/cache
+          key: dashboard-cache-${{ github.run_id }}
+          restore-keys: dashboard-cache-
+      - name: Refresh data and run the monitors
+        run: python dashboard/build_data.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check the browser detector against the Python alarms
+        run: node dashboard/checks/check_js.mjs
+      - name: Keep the page as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-page
+          path: |
+            dashboard/index.html
+            dashboard/data.json
+            dashboard/fonts/
+          retention-days: 14
+      - name: Publish to varuntree/nsw-normal-day-monitor
+        if: env.DEPLOY_KEY != ''
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
+          git clone --depth 1 git@github.com:varuntree/nsw-normal-day-monitor.git site
+          cp dashboard/index.html dashboard/data.json site/
+          mkdir -p site/fonts && cp dashboard/fonts/* site/fonts/
+          cd site
+          git add -A
+          if git diff --cached --quiet; then
+            echo "page unchanged"
+          else
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "Daily update $(date -u +%F)"
+            git push -q
+          fi
+      - name: Note when nothing is published
+        if: env.DEPLOY_KEY == ''
+        run: echo "MONITOR_DEPLOY_KEY is not set; the page was built and checked but not published."

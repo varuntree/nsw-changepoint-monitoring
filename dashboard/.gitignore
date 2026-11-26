@@ -1,0 +1,5 @@
+# downloads and screenshots are rebuilt; data.json is committed once as a snapshot and rebuilt by the daily job
+cache/
+shots/
+checks/truth.json
+__pycache__/

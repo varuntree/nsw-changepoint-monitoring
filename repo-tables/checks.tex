@@ -1,0 +1,18 @@
+\begin{table}[t]\centering
+\caption{The implementations reproduce published values, reference software and independently written code. The EWMA run length is slightly short because our exact-variance limits are narrower at the start.}\label{tab:checks}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{6.4cm}>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{4.6cm}@{}}
+\toprule
+Check & Reference & Ours \\
+\midrule
+CUSUM, $k=0.5$, $h=4$: in-control run length & 168 \citep{montgomery2020} & 169.4 (SE 1.2) \\
+CUSUM, $k=0.5$, $h=5$: in-control run length & 465 \citep{montgomery2020} & 466.8 (SE 3.3) \\
+EWMA, $\lambda=0.1$, multiplier 2.814: in-control run length & 500 \citep{lucas1990} & 487.9 (SE 3.5) \\
+CPM statistic on a series with many ties & SciPy Mann--Whitney & equal to within $10^{-9}$ \\
+PELT change dates, 100 random series & \texttt{ruptures} & identical \\
+FOCuS and FOCuS-AR statistic, 50 random series & brute-force search over all starts & identical; \texttt{focus\_cpt} lower on 2\% and 3.5\% of days \\
+Independent code on Opal: 60 EWMA, capped EWMA and CPM monitors & our monitors & all 1,779 alarms identical in date and direction; all 60 direction-aware score rows equal \\
+Independent code in simulation, same seeds as our first 2,000 runs, independent and AR(1) thresholds & our runs & identical in all 252 false-alarm and 1,152 detection cells \\
+Independent PELT, Binary Segmentation and WBS code on the retrospective STL, MSTL and regression Opal series & our runs & identical change dates on all 9 series--method pairs; the 6 STL and MSTL score rows and their 392 change dates equal ours \\
+\bottomrule
+\end{tabular}
+\end{table}

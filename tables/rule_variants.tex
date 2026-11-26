@@ -1,0 +1,47 @@
+{\footnotesize\setlength{\tabcolsep}{1.5pt}
+\begin{longtable}{@{}lrrrrrr@{}}
+\caption{Episodes caught under the main rule, three variants and the direction-aware check: no single monitor leads under every rule. Variant 3 was the first change after the first scored run; variants 1 and 2 change one condition at a time. Ep.: episodes of 15 (chance median; $^{*}$ $p$ (own) $<0.05$; bold: the most of all 150 monitors). $p$ (adjusted): chance that the best of the 137 monitors with at least ten alarms catches as many when all alarm lists are shifted by one random offset; era shifts stay within 2020--22 or 2023--26. AR(1) threshold unless marked.}\label{tab:rule-variants}\\
+\toprule
+ & \multicolumn{2}{c}{\parbox[b]{2.7cm}{\centering Main rule: $\pm$7 d, any boundary}} & \multicolumn{2}{c}{\parbox[b]{2.7cm}{\centering Variant 1: $\pm$7 d, nearest boundary}} & \multicolumn{2}{c}{\parbox[b]{2.7cm}{\centering Variant 2: $\pm$7 d, nearest, direction}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Monitor & \begin{tabular}[b]{@{}c@{}}Ep.\\(chance)\end{tabular} & \begin{tabular}[b]{@{}c@{}}$p$\\(adjusted)\end{tabular} & \begin{tabular}[b]{@{}c@{}}Ep.\\(chance)\end{tabular} & \begin{tabular}[b]{@{}c@{}}$p$\\(adjusted)\end{tabular} & \begin{tabular}[b]{@{}c@{}}Ep.\\(chance)\end{tabular} & \begin{tabular}[b]{@{}c@{}}$p$\\(adjusted)\end{tabular} \\
+\midrule
+Same-weekday difference + CUSUM & \textbf{12$^{*}$} (4) & 0.009 & \textbf{11$^{*}$} (3) & 0.001 & 9$^{*}$ (2) & $<$0.001 \\
+Median of four + EWMA, independent$^{\dagger}$ & \textbf{12$^{*}$} (5) & 0.009 & 10$^{*}$ (4) & 0.02 & \textbf{10$^{*}$} (2) & $<$0.001 \\
+Retrospective STL + EWMA, independent & \textbf{12$^{*}$} (5) & 0.009 & 10$^{*}$ (5) & 0.02 & 8$^{*}$ (2) & 0.02 \\
+Yearly memory + CUSUM, independent$^{\dagger}$ & 11$^{*}$ (4) & 0.05 & 9$^{*}$ (4) & 0.13 & 9$^{*}$ (2) & $<$0.001 \\
+Yearly memory + FOCuS, independent$^{\dagger}$ & 11$^{*}$ (5) & 0.05 & 9$^{*}$ (4) & 0.13 & 8$^{*}$ (3) & 0.02 \\
+Retrospective STL + FOCuS-AR$^{\dagger}$ & 10$^{*}$ (4) & 0.20 & 10$^{*}$ (4) & 0.02 & 8$^{*}$ (2) & 0.02 \\
+Holt-Winters + EWMA$^{\dagger}$ & 8$^{*}$ (4) & 0.78 & 7$^{*}$ (3) & 0.82 & 7$^{*}$ (2) & 0.11 \\
+Holt-Winters + FOCuS & 9$^{*}$ (4) & 0.47 & 7 (4) & 0.82 & 4 (2) & 0.97 \\
+Same-weekday difference + EWMA & 11$^{*}$ (4) & 0.05 & 9$^{*}$ (3) & 0.13 & 7$^{*}$ (2) & 0.11 \\
+Median of four + capped FOCuS & 7$^{*}$ (2) & 0.96 & 6$^{*}$ (2) & 0.98 & 6$^{*}$ (1) & 0.40 \\
+Yearly memory + FOCuS & 7 (4) & 0.96 & 5 (4) & 1.00 & 5 (3) & 0.76 \\
+\addlinespace
+Best observed, $p$ (adjusted) & 12 & 0.009 & 11 & 0.001 & 10 & $<$0.001 \\
+Chance, 95\% of the best & 10 &  & 9 &  & 7 &  \\
+Era shifts: 95\% of the best, $p$ & 11 & 0.01 & 9 & 0.003 & -- & -- \\
+\midrule
+ & \multicolumn{2}{c}{\parbox[b]{2.7cm}{\centering Variant 3: 0--7 d, nearest}} & \multicolumn{2}{c}{\parbox[b]{2.7cm}{\centering Direction-aware check: 0--7 d, nearest, direction}} &  &  \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Monitor & \begin{tabular}[b]{@{}c@{}}Ep.\\(chance)\end{tabular} & \begin{tabular}[b]{@{}c@{}}$p$\\(adjusted)\end{tabular} & \begin{tabular}[b]{@{}c@{}}Ep.\\(chance)\end{tabular} & \begin{tabular}[b]{@{}c@{}}$p$\\(adjusted)\end{tabular} &  &  \\
+\midrule
+Same-weekday difference + CUSUM & 7$^{*}$ (2) & 0.14 & 5$^{*}$ (1) & 0.23 &  &  \\
+Median of four + EWMA, independent$^{\dagger}$ & 8$^{*}$ (2) & 0.03 & 8$^{*}$ (1) & 0.002 &  &  \\
+Retrospective STL + EWMA, independent & 7$^{*}$ (3) & 0.14 & 5$^{*}$ (1) & 0.23 &  &  \\
+Yearly memory + CUSUM, independent$^{\dagger}$ & \textbf{9$^{*}$} (2) & 0.002 & \textbf{9$^{*}$} (1) & $<$0.001 &  &  \\
+Yearly memory + FOCuS, independent$^{\dagger}$ & 7$^{*}$ (2) & 0.14 & 7$^{*}$ (2) & 0.006 &  &  \\
+Retrospective STL + FOCuS-AR$^{\dagger}$ & 8$^{*}$ (2) & 0.03 & 7$^{*}$ (1) & 0.006 &  &  \\
+Holt-Winters + EWMA$^{\dagger}$ & 7$^{*}$ (2) & 0.14 & 7$^{*}$ (1) & 0.006 &  &  \\
+Holt-Winters + FOCuS & 5 (2) & 0.86 & 3 (1) & -- &  &  \\
+Same-weekday difference + EWMA & 8$^{*}$ (2) & 0.03 & 6$^{*}$ (1) & 0.06 &  &  \\
+Median of four + capped FOCuS & 5$^{*}$ (1) & 0.86 & 5$^{*}$ (0) & 0.23 &  &  \\
+Yearly memory + FOCuS & 5 (2) & 0.86 & 5$^{*}$ (1) & 0.23 &  &  \\
+\addlinespace
+Best observed, $p$ (adjusted) & 9 & 0.002 & 9 & $<$0.001 &  &  \\
+Chance, 95\% of the best & 7 &  & 6 &  &  &  \\
+Era shifts: 95\% of the best, $p$ & -- & -- & 5 & $<$0.001 &  &  \\
+\addlinespace
+\multicolumn{7}{@{}p{14cm}}{$^{\dagger}$ Holds under both the main rule and the direction-aware check after adjustment: at least 7 episodes under each; best 9, $p$ (adjusted) $<$0.001 (era shifts $<$0.001); without 15 January 2025 the threshold is lower and 17 monitors hold.} \\
+\bottomrule
+\end{longtable}}

@@ -1,0 +1,23 @@
+% written by scripts/tables.py from results/; do not edit
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{2.9pt}
+\caption{Detection speed in simulation ($\phi=0.4$, matched 5\% false-alarm rate): FOCuS-AR, FOCuS and EWMA find a 4 SD drop fastest (2.6, 3.3 and 4.4 days against 5.4 for CUSUM), capped CUSUM and CUSUM a 1 SD drop (33.5 and 33.9); CPM rarely alarms within a week. RMD: restricted mean delay in days (not found within 60 days counts as 61); F(7): share found within 7 days. 10{,}000 runs per cell.}\label{tab:delay}
+\begin{tabular}{@{}lrrrrrrrrrrrr@{}}
+\toprule
+ & \multicolumn{6}{c}{True pattern removed} & \multicolumn{4}{c}{Holt-Winters} & \multicolumn{2}{c}{\begin{tabular}[b]{@{}c@{}}Yearly\\memory,\\holidays\end{tabular}} \\
+\cmidrule(lr){2-7}\cmidrule(lr){8-11}\cmidrule(lr){12-13}
+ & \multicolumn{2}{c}{1 SD} & \multicolumn{2}{c}{2 SD} & \multicolumn{2}{c}{4 SD} & \multicolumn{2}{c}{2 SD} & \multicolumn{2}{c}{4 SD} & \multicolumn{2}{c}{4 SD} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}\cmidrule(lr){12-13}
+Detector & RMD & F(7) & RMD & F(7) & RMD & F(7) & RMD & F(7) & RMD & F(7) & RMD & F(7) \\
+\midrule
+CUSUM & 33.9 & 0.01 & 12.3 & 0.11 & 5.4 & 0.93 & 49.1 & 0.01 & 10.3 & 0.26 & 37.7 & 0.04 \\
+EWMA & 40.1 & 0.02 & 11.3 & 0.24 & 4.4 & 0.98 & 50.9 & 0.05 & 8.7 & 0.67 & 57.0 & 0.02 \\
+FOCuS & 36.8 & 0.02 & 11.1 & 0.27 & 3.3 & 0.99 & 47.1 & 0.05 & 5.8 & 0.82 & 60.3 & 0.01 \\
+FOCuS-AR & 43.2 & 0.01 & 12.7 & 0.24 & 2.6 & 0.99 & 49.5 & 0.07 & 5.1 & 0.85 & 60.9 & 0.00 \\
+CPM & 39.2 & 0.00 & 15.5 & 0.01 & 10.9 & 0.02 & 49.3 & 0.00 & 18.9 & 0.01 & 21.5 & 0.02 \\
+\addlinespace
+Capped CUSUM & 33.5 & 0.01 & 12.6 & 0.06 & 7.5 & 0.38 & 48.9 & 0.00 & 12.3 & 0.02 & 12.5 & 0.11 \\
+Capped EWMA & 38.6 & 0.02 & 11.3 & 0.20 & 6.0 & 0.90 & 50.5 & 0.03 & 10.4 & 0.39 & 26.2 & 0.08 \\
+Capped FOCuS & 35.4 & 0.01 & 11.2 & 0.23 & 5.2 & 0.99 & 46.7 & 0.02 & 7.7 & 0.69 & 13.2 & 0.33 \\
+\bottomrule
+\end{tabular}
+\end{table}

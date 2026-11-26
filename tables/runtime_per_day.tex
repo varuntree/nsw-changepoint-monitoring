@@ -1,0 +1,18 @@
+\begin{table}[!h]
+\centering
+\caption{Every detector updates in under three microseconds per day (Section~\ref{sec:4-time}). Computing time per daily update, in microseconds, on a series of $n$ days, and for the whole Opal series in milliseconds (one thread on an Apple M4, median of 51 repeats). Pruned FOCuS: the \texttt{focus\_cpt} software.}\label{tab:runtime}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+ & \multicolumn{3}{c}{Per day ($\mu$s)} & Whole series (ms) \\
+\cmidrule(lr){2-4}
+Detector & $n=365$ & $n=1{,}095$ & $n=2{,}463$ & $n=2{,}463$ \\
+\midrule
+CUSUM & 0.003 & 0.002 & 0.002 & 0.005 \\
+EWMA & 0.004 & 0.004 & 0.004 & 0.010 \\
+CPM & 0.42 & 1.17 & 2.69 & 6.6 \\
+FOCuS, exact search (ours) & 0.56 & 0.99 & 1.78 & 4.4 \\
+FOCuS-AR, exact search (ours) & 0.54 & 0.95 & 1.69 & 4.2 \\
+Pruned FOCuS & 1.19 & 1.19 & 1.26 & 3.1 \\
+\bottomrule
+\end{tabular}
+\end{table}

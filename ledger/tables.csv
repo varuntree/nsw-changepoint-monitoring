@@ -1,0 +1,54 @@
+id,tex,anchor,source,select,column,transform,rounding,note
+boot_uncapped_min@boot_noise,tables/boot_noise.tex,uncapped detector alarms in,sim/summary/fa.csv,noise=='boot' and adj=='oracle' and rule=='ar1' and det in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'&#44;'FOCuS-AR'],fa,min*100,dp1,N7: 99.8
+t_boot_unc_hi,tables/boot_noise.tex,in 99.8 to,sim/summary/fa.csv,phi==0.4 and noise=='boot' and adj=='oracle' and rule=='ar1' and det in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'&#44;'FOCuS-AR'],fa,max*100,int,as c5_boot_unc_hi
+t_dl_ar,tables/delay.tex,4 sd drop fastest,sim/summary/delay.csv,setting=='true pattern&#44; no holidays' and rule=='oracle' and shift_sd==4.0 and det=='FOCuS-AR',rmd,x,dp1,as c5_rmd4_ar
+t_dl_f,tables/delay.tex,drop fastest (2.6,sim/summary/delay.csv,setting=='true pattern&#44; no holidays' and rule=='oracle' and shift_sd==4.0 and det=='FOCuS',rmd,x,dp1,as c5_rmd4_f
+t_dl_e,tables/delay.tex,"(2.6, 3.3 and",sim/summary/delay.csv,setting=='true pattern&#44; no holidays' and rule=='oracle' and shift_sd==4.0 and det=='EWMA',rmd,x,dp1,as c5_rmd4_e
+t_dl_c,tables/delay.tex,4.4 days against,sim/summary/delay.csv,setting=='true pattern&#44; no holidays' and rule=='oracle' and shift_sd==4.0 and det=='CUSUM',rmd,x,dp1,as c5_rmd4_cusum
+t_dl_capc1,tables/delay.tex,a 1 sd drop,sim/summary/delay.csv,setting=='true pattern&#44; no holidays' and rule=='oracle' and shift_sd==1.0 and det=='CUSUM-r',rmd,x,dp1,
+t_dl_c1,tables/delay.tex,drop (33.5 and,sim/summary/delay.csv,setting=='true pattern&#44; no holidays' and rule=='oracle' and shift_sd==1.0 and det=='CUSUM',rmd,x,dp1,
+t_bu_67_hi,tables/opal_budget.tex,monitors catch six or,opal/budget.csv,budget=='median',dir,max,words,
+t_bu_med_lo,tables/opal_budget.tex,gives the budget (achieved,opal/budget.csv,budget=='median',n_alarms,min,int,
+t_bu_med_hi,tables/opal_budget.tex,the budget (achieved 33,opal/budget.csv,budget=='median',n_alarms,max,int,
+t_bu_q_lo,tables/opal_budget.tex,(achieved 33--34 and,opal/budget.csv,budget=='quartile',n_alarms,min,int,
+t_bu_q_hi,tables/opal_budget.tex,33--34 and 19,opal/budget.csv,budget=='quartile',n_alarms,max,int,
+t_pr_k,tables/opal_primary.tex,(both counts at least,opal/bothrules_survivors.csv,survives==True,min_count,min,int,
+t_se_move,tables/opal_sens.tex,move by up to,extra/derived.csv,id=='sens_max_move_tab',value,x,words,
+t_se_hwf,tables/opal_sens.tex,days the alarms are,opal/scores.csv,method=='HW' and detector=='FOCuS' and rule=='ar1',n_alarms,x,int,
+t_se_hwe,tables/opal_sens.tex,the alarms are 43,opal/scores.csv,method=='HW' and detector=='EWMA' and rule=='ar1',n_alarms,x,int,
+t_se_ac,tables/opal_sens.tex,"are 43, 37 and",opal/scores.csv,method=='A' and detector=='CUSUM' and rule=='ar1',n_alarms,x,int,
+t_ov_lo,tables/opal_variance.tex,of a mean alarm,extra/derived.csv,id=='var_within1d_hwym_min',value,x,int,
+t_ov_hi,tables/opal_variance.tex,a mean alarm (60,extra/derived.csv,id=='var_within1d_hwym_max',value,x,int,
+t_ov_var,tables/opal_variance.tex,detector (gain up to,testbed/spread_summary.csv,subset=='all' and setting=='spread2' and adj=='HW' and det=='CUSUM-var' and rule=='ar1',delta,x,dp2,as c6_tb_var_hw
+t_ov_mean,tables/opal_variance.tex,to 0.31 against,testbed/spread_summary.csv,subset=='all' and setting=='spread2' and rule=='ar1' and source!='variance detectors',delta,max,dp2,as c6_tb_var_mean_max
+t_rt_max,tables/runtime.tex,the slowest method takes,runtime.csv,n==2463,ms,max,int,
+t_tm_max,tables/retro_extra.tex,"threshold), catch at most",opal/retro_extra.csv,rule=='ar1',episodes_caught,max,int,
+t_tb_cap_lo,tables/testbed.tex,often in background windows,testbed/summary.csv,subset=='all' and setting=='drop10' and rule=='ar1' and adj in ['A'&#44;'B'&#44;'HW'] and det in ['CUSUM-r'&#44;'EWMA-r'&#44;'FOCuS-r'],detect_ctl,min,dp2,
+t_tb_cap_hi,tables/testbed.tex,background windows (0.10,testbed/summary.csv,subset=='all' and setting=='drop10' and rule=='ar1' and adj in ['A'&#44;'B'&#44;'HW'] and det in ['CUSUM-r'&#44;'EWMA-r'&#44;'FOCuS-r'],detect_ctl,max,dp2,
+t_tb_unc_lo,tables/testbed.tex,(0.10--0.17 against,testbed/summary.csv,subset=='all' and setting=='drop10' and rule=='ar1' and adj in ['A'&#44;'B'&#44;'HW'] and det in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'],detect_ctl,min,dp2,
+t_tb_unc_hi,tables/testbed.tex,(0.10--0.17 against 0.38,testbed/summary.csv,subset=='all' and setting=='drop10' and rule=='ar1' and adj in ['A'&#44;'B'&#44;'HW'] and det in ['CUSUM'&#44;'EWMA'&#44;'FOCuS'],detect_ctl,max,dp2,
+t_tb_mc_lo,tables/testbed.tex,as much or more,testbed/matched_contrasts.csv,setting=='drop40' and capped=='FOCuS-r',diff,min,dp2,as c6_mc_focus_lo
+t_tb_mc_hi,tables/testbed.tex,or more (0.41,testbed/matched_contrasts.csv,setting=='drop40' and capped=='FOCuS-r',diff,max,dp2,as c6_mc_focus_hi
+t_tu_e,tables/tuning.tex,true pattern removed: ewma,sim/summary/tuning.csv,phi==0.4 and noise=='normal' and calendar==0 and change=='mean' and size==-1.0 and rule=='oracle' and adj=='oracle' and det=='EWMA',detect60,100x,int,
+t_tu_e05,tables/tuning.tex,$\lambda=0.1$ and,sim/summary/tuning.csv,phi==0.4 and noise=='normal' and calendar==0 and change=='mean' and size==-1.0 and rule=='oracle' and adj=='oracle' and det=='EWMA-l0.05',detect60,100x,int,
+t_tu_c,tables/tuning.tex,"$\lambda=0.05$, against",sim/summary/tuning.csv,phi==0.4 and noise=='normal' and calendar==0 and change=='mean' and size==-1.0 and rule=='oracle' and adj=='oracle' and det=='CUSUM',detect60,100x,int,
+t_va_lo,tables/validation.tex,5\% target under dependence,calib/validation.csv,kind=='surprise' and rule=='ar1',fa,min*100,dp1,as c5_val_s_lo
+t_va_hi,tables/validation.tex,dependence (3.8 to,calib/validation.csv,kind=='surprise' and rule=='ar1',fa,max*100,dp1,as c5_val_s_hi
+t_va_se,tables/validation.tex,monte carlo se about,calib/validation.csv,rule=='ar1' and kind=='surprise',se,median*100,dp1,
+var_ratio_lo@variance,tables/variance.tex,doubling of the variance,extra/derived.csv,id=='var_ratio_lo',value,x,dp1,derived
+var_ratio_hi@variance,tables/variance.tex,variance 1.6 to,extra/derived.csv,id=='var_ratio_hi',value,x,dp1,derived
+var_ratio_ar_lo@variance,tables/variance.tex,"ewma and focus, and",extra/derived.csv,id=='var_ratio_ar_lo',value,x,dp1,derived
+var_ratio_ar_hi@variance,tables/variance.tex,and 1.3 to,extra/derived.csv,id=='var_ratio_ar_hi',value,x,dp1,derived
+var_ym_holidays_t52_max@variance,tables/variance.tex,detector finds at most,sim/summary/variance.csv,noise=='normal' and calendar==1 and adj=='YM' and rule=='oracle' and det in ['CUSUM-var'&#44;'EWMA-var'&#44;'FOCuS-var'&#44;'CUSUM'&#44;'EWMA'&#44;'FOCuS'&#44;'FOCuS-AR'&#44;'CPM'],detect60,max*100,dp1,N6 (Table 5.2 detectors incl. CPM)
+t_rec_ym_noh,tables/recommend.tex,fail the simulation even without holidays (,recommend.csv,adj=='YM' and det=='CUSUM' and rule=='indep',sim_no_holidays,x,int,
+t_rec_cpm_noh,tables/recommend.tex,"fail the simulation even without holidays (63\%,",recommend.csv,adj=='A' and det=='CPM' and rule=='indep',sim_no_holidays,x,int,
+t_pr_frozen,tables/past_retro.tex,fewer episodes than its retrospective fit in,opal/past_retro_summary.csv,threshold_rule=='both' and scoring_rule=='frozen',past_fewer,x,int,
+t_pr_frozen_n,tables/past_retro.tex,than its retrospective fit in 19 of,opal/past_retro_summary.csv,threshold_rule=='both' and scoring_rule=='frozen',pairs,x,int,
+t_pr_dir,tables/past_retro.tex,pairs under the frozen rule and,opal/past_retro_summary.csv,threshold_rule=='both' and scoring_rule=='direction-aware',past_fewer,x,int,
+t_pr_dir_n,tables/past_retro.tex,pairs under the frozen rule and 12 of,opal/past_retro_summary.csv,threshold_rule=='both' and scoring_rule=='direction-aware',pairs,x,int,
+t_pr_frozen_more,tables/past_retro.tex,"under the direction-aware rule, and more in",opal/past_retro_summary.csv,threshold_rule=='both' and scoring_rule=='frozen',past_more,x,int,
+t_pr_dir_more,tables/past_retro.tex,"under the direction-aware rule, and more in 8 and",opal/past_retro_summary.csv,threshold_rule=='both' and scoring_rule=='direction-aware',past_more,x,int,
+t_off_fz_lo,tables/offline_matches.tex,near most scored boundaries: they catch,opal/offline_rules.csv,adjustment in ['STL'&#44;'MSTL'],frozen,min,int,
+t_off_fz_hi,tables/offline_matches.tex,near most scored boundaries: they catch 7 to,opal/offline_rules.csv,adjustment in ['STL'&#44;'MSTL'],frozen,max,int,
+t_off_da_lo,tables/offline_matches.tex,of the 15 episodes under the frozen rule and,opal/offline_rules.csv,adjustment in ['STL'&#44;'MSTL'],direction_aware,min,int,
+t_off_da_hi,tables/offline_matches.tex,of the 15 episodes under the frozen rule and 4 to,opal/offline_rules.csv,adjustment in ['STL'&#44;'MSTL'],direction_aware,max,int,

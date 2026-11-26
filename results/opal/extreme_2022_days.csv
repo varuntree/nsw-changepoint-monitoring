@@ -1,0 +1,17 @@
+date,A,B,HW,YM,taps,weekday,event_list
+2022-01-03,-0.35,-5.12,-4.56,-4.56,232100.0,Monday,disruption: Omicron wave: indoor masks reinstated and government asks people to work from home where possible
+2022-02-21,-21.17,-17.53,-18.45,-18.45,33600.0,Monday,disruption: Omicron easing: WFH back to employer discretion (18 Feb); most indoor masks dropped except public transport etc (25 Feb); disruption: Sydney Trains network shut down (industrial dispute with RTBU; whole network cancelled)
+2022-02-28,21.19,1.22,1.76,1.76,616700.0,Monday,
+2022-09-11,-10.95,-10.69,-11.89,-11.89,64400.0,Sunday,fault: Candidate data fault: all modes ~0.17-0.34x on a Sunday with a flat hourly profile
+2022-09-18,13.93,2.19,1.28,1.28,437900.0,Sunday,
+2022-09-29,5.08,0.14,0.25,0.25,817300.0,Thursday,
+2022-11-21,-36.35,-31.99,-33.22,-33.22,5500.0,Monday,"policy: Government fare-free week on Sydney Trains, intercity, Airport Link and Metro; station Opal gates/readers turned off"
+2022-11-22,-61.45,-54.31,-56.12,-56.12,200.0,Tuesday,"policy: Government fare-free week on Sydney Trains, intercity, Airport Link and Metro; station Opal gates/readers turned off"
+2022-11-23,-61.46,-53.98,-56.22,-56.22,200.0,Wednesday,"policy: Government fare-free week on Sydney Trains, intercity, Airport Link and Metro; station Opal gates/readers turned off"
+2022-11-24,-61.55,-53.68,-55.83,-55.83,200.0,Thursday,"policy: Government fare-free week on Sydney Trains, intercity, Airport Link and Metro; station Opal gates/readers turned off"
+2022-11-25,-58.24,-50.21,-52.48,-52.48,300.0,Friday,"policy: Government fare-free week on Sydney Trains, intercity, Airport Link and Metro; station Opal gates/readers turned off"
+2022-11-28,36.36,0.95,1.69,1.69,805700.0,Monday,
+2022-11-29,60.62,0.35,1.01,1.01,810200.0,Tuesday,
+2022-11-30,61.49,0.55,1.61,1.61,912700.0,Wednesday,
+2022-12-01,61.49,0.61,1.88,1.88,913000.0,Thursday,
+2022-12-02,58.61,1.63,2.43,2.43,923600.0,Friday,

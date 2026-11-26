@@ -1,0 +1,4 @@
+pool,days,reader_off_days_in_pool,reader_off_or_week_after_in_pool,excess_kurtosis,sd_over_sigma
+boot (as run),773,0,0,24.726227241206605,1.9912365861819155
+boot without reader-off days and the week after,773,0,0,24.726227241206605,1.9912365861819155
+boottrim (|r - median| <= 5 sigma),750,0,0,1.9563361402389852,1.345022127258861

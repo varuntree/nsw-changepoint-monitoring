@@ -1,0 +1,3 @@
+{"adj": "REGT_p", "det": "FOCuS", "rule": "ar1", "start": "2020-01-01",
+ "label": "past-only forecast with weekday, time of year and temperature; FOCuS; threshold allowing for day-to-day dependence (set for 5% false alarms a year in simulation)",
+ "chosen_from": "Chapter 6 back-test: largest paired detection gain for inserted drops (0.55 for a 10% drop) with under one alarm a year"}

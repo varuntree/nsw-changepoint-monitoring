@@ -1,0 +1,21 @@
+% written by scripts/tables.py from results/; do not edit
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{4.2pt}
+\caption{Detectors built for spread find a doubling of the variance 1.6 to 2.8 times as often as CUSUM, EWMA and FOCuS, and 1.3 to 1.7 times FOCuS-AR; under $t_5$ noise the advantage shrinks. Detection (\%), $\phi=0.4$, matched 5\% rate; after the yearly memory with holidays every detector finds at most 1.5\%.}\label{tab:variance}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+ & \multicolumn{5}{c}{Holidays removed exactly} & \multicolumn{2}{c}{\begin{tabular}[b]{@{}c@{}}No holidays,\\variance $\times2$\end{tabular}} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-8}
+Detector & $\times1.5$ & $\times2$ & $\times3$ & \begin{tabular}[b]{@{}c@{}}$\times3$, within\\14 days\end{tabular} & $\times2$, $t_5$ & \begin{tabular}[b]{@{}c@{}}True\\pattern\end{tabular} & \begin{tabular}[b]{@{}c@{}}Yearly\\memory\end{tabular} \\
+\midrule
+Variance CUSUM & 10 & 31 & 75 & 11 & 12 & 30 & 24 \\
+Variance EWMA & 8 & 25 & 65 & 22 & 6 & 23 & 18 \\
+Variance FOCuS & 10 & 31 & 75 & 16 & 12 & 30 & 24 \\
+\addlinespace
+CUSUM (mean) & 4 & 11 & 28 & 4 & 8 & 11 & 7 \\
+EWMA (mean) & 5 & 12 & 30 & 7 & 7 & 12 & 7 \\
+FOCuS (mean) & 5 & 15 & 40 & 11 & 5 & 14 & 10 \\
+FOCuS-AR (mean) & 6 & 20 & 54 & 21 & 4 & 18 & 15 \\
+CPM (mean) & 2 & 3 & 4 & 0 & 2 & 3 & 2 \\
+\bottomrule
+\end{tabular}
+\end{table}

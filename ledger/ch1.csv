@@ -1,0 +1,4 @@
+id,tex,anchor,source,select,column,transform,rounding,note
+raw_focus_alarms@ch1,ch1.tex,our detectors. it raised,opal/raw_focus_summary.csv,,n_alarms,x,int,
+raw_focus_weekend_words,ch1.tex,and a half years,opal/raw_focus_summary.csv,,weekend,x,words,spelled at the start of a sentence
+raw_focus_near,ch1.tex,"a weekend, and only",opal/raw_focus_summary.csv,,near_scored_boundary,x,int,

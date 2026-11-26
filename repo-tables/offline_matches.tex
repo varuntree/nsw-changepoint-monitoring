@@ -1,0 +1,34 @@
+% written by scripts/tables.py from results/; do not edit
+\begin{table}[ht]\centering\footnotesize\setlength{\tabcolsep}{4.5pt}
+\caption{With hindsight the offline methods put a change date near most scored boundaries: they catch 7 to 14 of the 15 episodes under the main rule and 4 to 8 under the direction-aware check. Cells: how many of PELT, Binary Segmentation and WBS have a matching change date at the boundary (blank: none). Main rule: within 7 days either side, any direction; direction-aware check: 0 to 7 days after, in the boundary's direction, credited to the nearest boundary. Retrospective STL, MSTL and regression series, 1 March 2020 to 28 September 2026.}\label{tab:offline-matches}
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+ & & \multicolumn{3}{c}{Main rule} & \multicolumn{3}{c}{Direction-aware check} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Boundary & Episode & STL & MSTL & REG & STL & MSTL & REG \\
+\midrule
+16 Mar 2020 & COVID-19 onset & 3 & 3 & 3 & 3 & 2 & 3 \\
+23 Mar 2020 & COVID-19 onset & 3 & 3 & 3 & 3 & 3 & 3 \\
+31 Mar 2020 & COVID-19 onset & 3 & 3 & 3 &  & 3 &  \\
+15 May 2020 & COVID-19 easing & 3 &  & 2 & 3 &  & 2 \\
+20 Mar 2021 & Floods, Mar 2021 & 2 & 3 &  &  &  &  \\
+23 Jun 2021 & Delta wave onset & 3 & 3 & 3 &  &  &  \\
+26 Jun 2021 & Delta wave onset & 3 & 3 & 3 & 3 & 3 & 3 \\
+11 Oct 2021 & Delta wave end & 3 & 3 & 3 & 3 & 3 & 3 \\
+24 Dec 2021 & Omicron wave onset & 3 &  & 3 & 1 &  &  \\
+18 Feb 2022 & Omicron wave end & 3 & 3 & 3 & 1 & 1 & 1 \\
+21 Feb 2022 & Shutdown, Feb 2022 & 3 & 3 & 3 & 2 & 2 & 2 \\
+7 Mar 2022 & Floods, Mar 2022 & 3 & 2 & 3 &  &  &  \\
+28 Jun 2022 & Rail dispute, Jun 2022 & 3 &  & 2 & 3 &  & 2 \\
+1 Jul 2022 & Floods, Jul 2022 & 3 &  & 2 &  &  &  \\
+31 Aug 2022 & Rail dispute, Aug 2022 &  &  &  &  &  &  \\
+15 Jan 2025 & Rail dispute, Jan 2025 & 3 & 2 &  & 1 &  &  \\
+14 Feb 2025 & Rail dispute, Feb 2025 & 3 &  & 3 &  &  &  \\
+20 May 2025 & Outage, May 2025 & 3 & 2 & 3 & 3 & 2 & 3 \\
+\midrule
+\multicolumn{2}{@{}l}{Episodes caught of 15, PELT} & 14 & 9 & 11 & 8 & 5 & 6 \\
+\multicolumn{2}{@{}l}{Episodes caught of 15, BinSeg} & 13 & 7 & 10 & 8 & 4 & 6 \\
+\multicolumn{2}{@{}l}{Episodes caught of 15, WBS} & 14 & 8 & 12 & 7 & 5 & 7 \\
+\bottomrule
+\end{tabular}
+\end{table}

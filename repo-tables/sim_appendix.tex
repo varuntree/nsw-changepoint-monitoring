@@ -1,0 +1,51 @@
+% written by scripts/tables.py from results/; do not edit
+\begin{table}[ht]\centering\footnotesize\setlength{\tabcolsep}{6.5pt}
+\caption{Simulation at $\phi=0$ and $\phi=0.6$ gives the same picture as at $\phi=0.4$, except that at $\phi=0$ the median of four and Holt-Winters exceed the false-alarm target by more; with holidays at their real size the problem is smaller but the same. FA: chance (\%) of a false alarm in a year, AR(1) threshold; Det.: share (\%) of 2 SD drops detected within 60 days, matched 5\% rate. 10{,}000 runs per cell.}\label{tab:sim-appendix}
+\begin{tabular}{@{}lrrrrrrrrrr@{}}
+\toprule
+ & \multicolumn{2}{c}{CUSUM} & \multicolumn{2}{c}{EWMA} & \multicolumn{2}{c}{FOCuS} & \multicolumn{2}{c}{FOCuS-AR} & \multicolumn{2}{c}{CPM} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}
+Forecast & FA & Det. & FA & Det. & FA & Det. & FA & Det. & FA & Det. \\
+\midrule
+\multicolumn{11}{@{}l}{\emph{$\phi=0$, no holidays; 2 SD drop $\approx$ 9\%}} \\*
+\quad True pattern & 4 & 100 & 4 & 100 & 4 & 100 & 4 & 100 & 4 & 100 \\
+\quad Same-weekday difference & 1 & 41 & 0 & 45 & 4 & 27 & 4 & 26 & 1 & 40 \\
+\quad Median of four & 50 & 52 & 40 & 47 & 38 & 55 & 33 & 54 & 79 & 55 \\
+\quad Holt-Winters & 52 & 47 & 41 & 35 & 41 & 50 & 36 & 48 & 83 & 49 \\
+\quad Yearly memory & 4 & 96 & 4 & 91 & 4 & 94 & 4 & 92 & 4 & 91 \\
+\quad Raw (no forecast) & 40 & 6 & 26 & 33 & 47 & 5 & 50 & 5 & 0 & 60 \\
+\addlinespace
+\multicolumn{11}{@{}l}{\emph{$\phi=0$, holidays in the data; 2 SD drop $\approx$ 9\%}} \\*
+\quad True pattern & 4 & 100 & 4 & 100 & 4 & 100 & 4 & 100 & 4 & 100 \\
+\quad Same-weekday difference & 100 & 0 & 100 & 0 & 100 & 0 & 100 & 0 & 2 & 1 \\
+\quad Median of four & 100 & 0 & 100 & 0 & 100 & 0 & 100 & 0 & 19 & 8 \\
+\quad Holt-Winters & 100 & 0 & 100 & 0 & 100 & 0 & 100 & 0 & 77 & 8 \\
+\quad Yearly memory & 100 & 10 & 100 & 4 & 100 & 1 & 100 & 0 & 0 & 41 \\
+\quad Raw (no forecast) & 0 & 0 & 99 & 0 & 9 & 0 & 53 & 0 & 25 & 0 \\
+\addlinespace
+\multicolumn{11}{@{}l}{\emph{$\phi=0.6$, no holidays; 2 SD drop $\approx$ 9\%}} \\*
+\quad True pattern & 6 & 100 & 6 & 98 & 6 & 100 & 6 & 98 & 5 & 99 \\
+\quad Same-weekday difference & 0 & 10 & 0 & 11 & 1 & 7 & 4 & 5 & 0 & 8 \\
+\quad Median of four & 7 & 22 & 8 & 17 & 7 & 21 & 7 & 15 & 7 & 21 \\
+\quad Holt-Winters & 6 & 24 & 6 & 15 & 5 & 22 & 6 & 15 & 7 & 25 \\
+\quad Yearly memory & 1 & 49 & 2 & 29 & 3 & 34 & 4 & 21 & 1 & 35 \\
+\quad Raw (no forecast) & 43 & 4 & 38 & 26 & 47 & 4 & 50 & 5 & 0 & 41 \\
+\addlinespace
+\multicolumn{11}{@{}l}{\emph{$\phi=0.6$, holidays in the data; 2 SD drop $\approx$ 9\%}} \\*
+\quad True pattern & 6 & 100 & 6 & 97 & 6 & 100 & 5 & 99 & 6 & 99 \\
+\quad Same-weekday difference & 100 & 0 & 100 & 0 & 100 & 0 & 100 & 0 & 1 & 1 \\
+\quad Median of four & 100 & 0 & 100 & 0 & 100 & 0 & 100 & 0 & 14 & 2 \\
+\quad Holt-Winters & 100 & 0 & 100 & 0 & 100 & 0 & 100 & 0 & 59 & 5 \\
+\quad Yearly memory & 98 & 9 & 100 & 3 & 100 & 0 & 100 & 0 & 2 & 13 \\
+\quad Raw (no forecast) & 0 & 0 & 98 & 0 & 10 & 0 & 55 & 0 & 30 & 0 \\
+\addlinespace
+\multicolumn{11}{@{}l}{\emph{$\phi=0.4$, holidays at their real size (noise SD 0.097); 2 SD drop $\approx$ 18\%}} \\*
+\quad True pattern & 6 & 100 & 5 & 100 & 6 & 100 & 6 & 100 & 6 & 100 \\
+\quad Same-weekday difference & 62 & 0 & 97 & 0 & 98 & 0 & 100 & 0 & 0 & 1 \\
+\quad Median of four & 87 & 1 & 100 & 0 & 100 & 0 & 100 & 0 & 3 & 21 \\
+\quad Holt-Winters & 93 & 0 & 100 & 0 & 100 & 0 & 100 & 0 & 5 & 29 \\
+\quad Yearly memory & 53 & 23 & 92 & 8 & 99 & 3 & 100 & 1 & 1 & 36 \\
+\quad Raw (no forecast) & 1 & 2 & 21 & 0 & 1 & 0 & 2 & 0 & 4 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}

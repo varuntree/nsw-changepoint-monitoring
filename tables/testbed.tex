@@ -1,0 +1,34 @@
+\begin{table}[t]\centering\footnotesize\linespread{1}\selectfont\setlength{\tabcolsep}{3.4pt}
+\caption{Capped detectors gain the most for larger drops. Background: alarm within 60 days with nothing inserted; gain: extra chance with an inserted change; bold: largest in the row; $^{*}$ approximate 95\% interval excludes zero. All settings: \texttt{repo-tables/testbed\_full.tex} in the repository (Appendix~\ref{app:code}).}\label{tab:testbed}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+ & \multicolumn{5}{c}{Uncapped} & \multicolumn{2}{c}{Capped} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-8}
+{} & CUSUM & EWMA & FOCuS & FOCuS-AR & CPM & CUSUM & FOCuS \\
+\midrule
+\multicolumn{8}{@{}l}{\emph{Same-weekday difference}} \\*
+\quad Background & 0.52 & 0.50 & 0.70 & 0.96 & 0.05 & 0.10 & 0.13 \\*
+\quad Gain, 20\% lasting & 0.03 & 0.10 & $-$0.04$^{*}$ & $-$0.01 & 0.00 & 0.18$^{*}$ & \textbf{0.23$^{*}$} \\
+\quad Gain, 40\% lasting & 0.20$^{*}$ & \textbf{0.42$^{*}$} & 0.19$^{*}$ & 0.03 & 0.03 & 0.29$^{*}$ & 0.36$^{*}$ \\
+\quad Gain, 20\% for 14 days & 0.02 & 0.14$^{*}$ & 0.02 & 0.00 & 0.00 & 0.26$^{*}$ & \textbf{0.30$^{*}$} \\
+\addlinespace
+\multicolumn{8}{@{}l}{\emph{Median of four}} \\*
+\quad Background & 0.45 & 0.45 & 0.58 & 0.91 & 0.13 & 0.12 & 0.13 \\*
+\quad Gain, 20\% lasting & 0.20$^{*}$ & 0.22$^{*}$ & 0.11$^{*}$ & 0.01 & 0.15$^{*}$ & 0.40$^{*}$ & \textbf{0.44$^{*}$} \\
+\quad Gain, 40\% lasting & 0.49$^{*}$ & 0.48$^{*}$ & 0.34$^{*}$ & 0.02 & 0.24$^{*}$ & 0.45$^{*}$ & \textbf{0.70$^{*}$} \\
+\quad Gain, 20\% for 14 days & 0.13 & 0.21$^{*}$ & 0.07 & 0.03 & 0.17$^{*}$ & 0.32$^{*}$ & \textbf{0.36$^{*}$} \\
+\addlinespace
+\multicolumn{8}{@{}l}{\emph{Holt-Winters}} \\*
+\quad Background & 0.38 & 0.40 & 0.58 & 0.86 & 0.04 & 0.17 & 0.17 \\*
+\quad Gain, 20\% lasting & 0.17$^{*}$ & 0.26$^{*}$ & 0.10$^{*}$ & 0.03 & 0.29$^{*}$ & 0.32$^{*}$ & \textbf{0.36$^{*}$} \\
+\quad Gain, 40\% lasting & 0.58$^{*}$ & 0.56$^{*}$ & 0.37$^{*}$ & 0.08$^{*}$ & 0.41$^{*}$ & 0.65$^{*}$ & \textbf{0.72$^{*}$} \\
+\quad Gain, 20\% for 14 days & 0.18$^{*}$ & 0.22$^{*}$ & 0.06$^{*}$ & 0.05 & 0.24$^{*}$ & 0.22$^{*}$ & \textbf{0.26$^{*}$} \\
+\addlinespace
+\multicolumn{8}{@{}l}{\emph{Holt-Winters, yearly memory}} \\*
+\quad Background & 0.39 & 0.43 & 0.58 & 0.89 & 0.20 & 0.28 & 0.28 \\*
+\quad Gain, 20\% lasting & 0.37$^{*}$ & 0.26$^{*}$ & 0.16$^{*}$ & $-$0.01 & 0.18$^{*}$ & \textbf{0.39$^{*}$} & 0.29$^{*}$ \\
+\quad Gain, 40\% lasting & 0.52$^{*}$ & 0.45$^{*}$ & 0.34$^{*}$ & 0.01 & 0.34$^{*}$ & 0.55$^{*}$ & \textbf{0.62$^{*}$} \\
+\quad Gain, 20\% for 14 days & 0.12 & \textbf{0.16$^{*}$} & 0.02 & 0.00 & 0.11 & \textbf{0.16} & \textbf{0.16$^{*}$} \\
+\bottomrule
+\end{tabular}
+\end{table}

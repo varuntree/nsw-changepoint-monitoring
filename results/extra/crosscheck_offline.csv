@@ -1,0 +1,11 @@
+check,value
+"shared vector, methods identical",3
+random cases,120
+random cases x methods identical,360
+random cases x methods compared,360
+Opal series x methods identical,9
+Opal series x methods compared,9
+independent Opal change dates compared,392
+independent Opal change dates all equal to ours,1
+independent Opal score rows,6
+independent Opal score rows equal (max abs difference 0),6

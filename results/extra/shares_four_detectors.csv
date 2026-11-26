@@ -1,0 +1,41 @@
+setting,noise,calendar,detectors,outcome,n_cells,n_unsaturated,n_floor,forecast,detector,rule,degenerate,floor_dominated
+"Gaussian, no holidays",normal,0,CEF,detection,48,45.0,13.0,91.83133139738676,2.4636317669203276,,False,False
+"Gaussian, no holidays",normal,0,CEF,false alarms,24,24.0,,32.21748097002872,0.3459310479552678,64.4843131602232,False,False
+"Gaussian, no holidays",normal,0,CEFP,detection,64,61.0,16.0,74.71504823910806,15.429219365262211,,False,False
+"Gaussian, no holidays",normal,0,CEFP,false alarms,32,31.0,,33.14794319688751,1.6566300646489367,59.0228415702404,False,False
+"Gaussian, no holidays",normal,0,CEF+cap,detection,96,90.0,25.0,91.47631297034937,2.5445924079326767,,False,False
+"Gaussian, no holidays",normal,0,CEF+cap,false alarms,48,46.0,,32.87496241355506,0.6325231149744952,64.01810120113764,False,False
+"Gaussian, no holidays",normal,0,CEFP+cap,detection,112,106.0,28.0,80.47806601019225,10.574683937012638,,False,False
+"Gaussian, no holidays",normal,0,CEFP+cap,false alarms,56,53.0,,33.32050728580019,1.3385422459767262,60.990238734444425,False,False
+"Gaussian, holidays",normal,1,CEF,detection,48,14.0,43.0,69.25283606829534,8.684299731513494,,False,True
+"Gaussian, holidays",normal,1,CEF,false alarms,24,1.0,,13.043478260869504,8.69565217391292,4.347826086956377,True,False
+"Gaussian, holidays",normal,1,CEFP,detection,64,30.0,51.0,43.00547748953973,40.98778342791119,,False,True
+"Gaussian, holidays",normal,1,CEFP,false alarms,32,6.0,,1.8953772465512089,45.94817055173008,11.449779515418369,False,False
+"Gaussian, holidays",normal,1,CEF+cap,detection,96,35.0,78.0,70.61957932989739,12.099712436583873,,False,True
+"Gaussian, holidays",normal,1,CEF+cap,false alarms,48,11.0,,7.467257429482483,24.167322530801275,17.370464727952793,False,False
+"Gaussian, holidays",normal,1,CEFP+cap,detection,112,51.0,86.0,57.97612703386612,25.37184080979944,,False,True
+"Gaussian, holidays",normal,1,CEFP+cap,false alarms,56,16.0,,5.9369059428225865,32.25326071736367,21.077375518270614,False,False
+real holiday scale,wide,1,CEF,detection,24,17.0,13.0,72.80841226056344,20.154421984771982,,False,True
+real holiday scale,wide,1,CEF,false alarms,24,8.0,,8.928933586273159,19.66658212412346,39.99409521605224,False,False
+real holiday scale,wide,1,CEFP,detection,32,25.0,14.0,42.913210775880984,46.530532244381696,,False,False
+real holiday scale,wide,1,CEFP,false alarms,32,14.0,,4.9960002994088715,38.83481516738479,32.525977929531386,False,False
+real holiday scale,wide,1,CEF+cap,detection,48,40.0,18.0,63.11448011001373,30.474257520528163,,False,False
+real holiday scale,wide,1,CEF+cap,false alarms,48,21.0,,3.844921889490326,18.070643620412312,56.31169951345838,False,False
+real holiday scale,wide,1,CEFP+cap,detection,56,48.0,19.0,55.18100129236368,36.25161016003503,,False,False
+real holiday scale,wide,1,CEFP+cap,false alarms,56,27.0,,4.049004253417231,24.570184919219702,52.49653059883532,False,False
+"t5, holidays",t5,1,CEF,detection,12,3.0,11.0,57.699139107946785,10.575215223013311,,False,True
+"t5, holidays",t5,1,CEF,false alarms,24,0.0,,,,,True,False
+"t5, holidays",t5,1,CEFP,detection,16,7.0,14.0,35.14024790649367,45.2392028033092,,False,True
+"t5, holidays",t5,1,CEFP,false alarms,32,5.0,,1.8909308453388205,45.71561025634064,11.046068548720255,False,False
+"t5, holidays",t5,1,CEF+cap,detection,24,6.0,22.0,75.86835298480398,6.03291175379902,,False,True
+"t5, holidays",t5,1,CEF+cap,false alarms,48,9.0,,8.389263168486456,21.892750627037934,14.927643336018036,False,False
+"t5, holidays",t5,1,CEFP+cap,detection,28,10.0,25.0,56.72653973274555,27.137701482423036,,False,True
+"t5, holidays",t5,1,CEFP+cap,false alarms,56,14.0,,6.446802208826889,31.99263273650978,18.922205073137242,False,False
+resampled real residuals,boot,1,CEF,detection,24,8.0,21.0,66.36968971713321,11.64479637191235,,False,True
+resampled real residuals,boot,1,CEF,false alarms,24,1.0,,13.043478260869733,8.695652173913112,4.347826086956512,True,False
+resampled real residuals,boot,1,CEFP,detection,32,16.0,23.0,37.343573154374674,48.689569549757785,,False,True
+resampled real residuals,boot,1,CEFP,false alarms,32,6.0,,1.0539348415965435,48.244970378028796,12.27503129050658,False,False
+resampled real residuals,boot,1,CEF+cap,detection,48,24.0,34.0,66.21513200968572,20.86617230687159,,False,True
+resampled real residuals,boot,1,CEF+cap,false alarms,48,13.0,,5.081153557754071,27.516625973480046,23.588778946521916,False,False
+resampled real residuals,boot,1,CEFP+cap,detection,56,32.0,36.0,56.04171137208675,29.910134096115502,,False,True
+resampled real residuals,boot,1,CEFP+cap,false alarms,56,18.0,,3.517298722547312,34.47005066478813,25.8882637103639,False,False

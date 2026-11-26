@@ -1,0 +1,107 @@
+id,value,how
+holiday_sd_real,5.662476315259601,generator.json |pub| / sd_raw
+pct_per_sd_normal,4.755914204286915,100 (1 - exp(-sigma))
+pct_per_sd_wide,9.241198627644243,100 (1 - exp(-sd_raw))
+var_ratio_lo,1.6436933941589598,"variance.csv: min spread / max of CUSUM, EWMA, FOCuS (x2, phi .4, cal 0, oracle)"
+var_ratio_hi,2.80908505148349,"max spread / min of CUSUM, EWMA, FOCuS"
+var_ratio_ar_lo,1.299816663601542,min spread / FOCuS-AR
+var_ratio_ar_hi,1.6691838365527147,max spread / FOCuS-AR
+ar1_pairs_lower,69.0,scores.csv: monitors (no FOCuS-AR) with fewer non-event alarms under AR(1) than indep
+ar1_pairs_n,70.0,pairs
+ar1_median_indep,4.863920099875156,"median non-event, indep"
+ar1_median_ar1,2.583957553058677,"median non-event, AR(1)"
+ar1_cut_pct,46.875,% cut of the median
+ar1_sub_indep,5.6239076154806495,36 pairs: median indep
+ar1_sub_ar1,4.48392634207241,36 pairs: median AR(1)
+focusfix_changed,46.0,monitors whose alarms changed
+focusfix_n,50.0,FOCuS-family Opal monitors
+focusfix_kept_median,43.75,median % of exact alarms also in the package run
+focusfix_frozen_moved3,11.0,frozen counts moved by >= 3
+focusfix_dir_moved3,2.0,direction-aware counts moved by >= 3
+focusfix_frozen_maxmove,5.0,max frozen move
+focusfix_dir_maxmove,4.0,max direction-aware move
+focusar_h_llr_phi0.0,22.9200607237218,FOCuS-AR threshold on the LLR scale h/(1-phi^2)
+focusar_h_llr_phi0.2,23.26298493595365,FOCuS-AR threshold on the LLR scale h/(1-phi^2)
+focusar_h_llr_phi0.4,24.075760672478758,FOCuS-AR threshold on the LLR scale h/(1-phi^2)
+focusar_h_llr_phi0.6,25.88941234872947,FOCuS-AR threshold on the LLR scale h/(1-phi^2)
+focusar_trigger_phi0.4,4.497070042247747,single-day trigger sqrt(h)
+focus_trigger_phi0.4,6.55698898394655,single-day trigger sqrt(h)
+kurtosis_A,134.83946938065793,excess kurtosis of the surprises 2023-25
+kurtosis_B,231.51256531792947,excess kurtosis of the surprises 2023-25
+kurtosis_HW,244.89072114004657,excess kurtosis of the surprises 2023-25
+opal_days,2463.0,days 1 Jan 2020 - 28 Sep 2026
+opal_missing_days,4.0,missing or incomplete days
+elec_days,2852.0,complete electricity days (2019-01-01 to 2026-10-22)
+generator_phi,0.40468520112781425,generator lag-one autocorrelation
+ar1_var_ratio_phi0.40,2.3333333333333335,(1 + phi) / (1 - phi) at phi = 0.40
+ar1_sd_ratio_phi0.40,1.5275252316519468,sqrt of the variance ratio at phi = 0.40
+reader_off_days,8.0,reader-off fare-free days masked in MSTL
+generator_kurtosis,24.726227241206576,"generator residuals, excess kurtosis"
+kurtosis_A_no_reader_off,201.90669588473915,"as kurtosis_*, reader-off days removed"
+kurtosis_A_no_reader_off_week,7.2419893168716385,reader-off days and the 7 days after removed
+kurtosis_B_no_reader_off,9.181098395053606,"as kurtosis_*, reader-off days removed"
+kurtosis_B_no_reader_off_week,9.059889545666206,reader-off days and the 7 days after removed
+kurtosis_HW_no_reader_off,11.035563095701665,"as kurtosis_*, reader-off days removed"
+kurtosis_HW_no_reader_off_week,10.932898183967964,reader-off days and the 7 days after removed
+reader_off_days_2023_25,3.0,reader-off days inside 2023-25
+boot_focusar_2sd_pct,0.36904151717068,"FOCuS-AR, resampled noise, 2 SD drop, true pattern, matched rate: % found within 60 days"
+generator_sigma,0.04872726529262043,generator robust sigma
+mc_se_fa,0.21794494717703367,"Monte Carlo SE of a 5% rate, 10,000 runs, percentage points"
+mc_se_det,0.5,"largest Monte Carlo SE of a detection rate, 10,000 runs"
+pub_pct,42.25078919993614,"public-holiday effect, % fall"
+xmas_pct,25.065041721961514,"Christmas-period effect, % fall"
+holiday_sd_sim,11.268034419376287,public holiday in simulated SD units
+pct_4sd_normal,17.709051092081964,% fall of a 4 SD drop
+t5_spread_ratio,1.5151797710359718,"t5, x2: mean of variance CUSUM and FOCuS over CUSUM"
+generator_sd_raw,0.09696473272650753,generator ordinary SD
+generator_n_used,773.0,days used in the generator fit
+generator_n_days,1096.0,days 2023-2025
+phi0_later_B_min,5.0,"later phi_hat = 0 segments, median of four with CUSUM, EWMA, FOCuS"
+phi0_later_B_max,9.0,"same, max"
+reader_off_min_fall_pct,99.27674403313827,smallest fall on a reader-off day against the median of the 4 previous same weekdays (all 99.3-99.98%)
+splithalf_share_in_band,98.48484848484848,% of matched cells within 4-6% on odd batches
+splithalf_cells,462.0,cells
+splithalf_min_pct,0.86,"worst cell, %"
+extra_before_min_days,2.0,"A+CUSUM extra catches before a boundary: nearest offset per episode, min"
+extra_before_max_days,4.0,"same, max"
+a_cusum_frozen_extra_n,1.0,"episodes the frozen rule adds over the nearest-boundary rule (A+CUSUM, AR(1))"
+a_cusum_frozen_extra_bounds,2.0,episodes with a boundary within 7 days of that alarm
+focusfix_frozen_minmove3,3.0,smallest frozen move among the counts that moved by >= 3
+offline_gap_weeks_min,3.425625920471281,"offline segmentation: mean weeks between marked changes, min over 9 runs"
+offline_gap_weeks_max,11.270935960591133,"same, max"
+covid_pick_max_gap_weeks,1.7142857142857142,"Figure 6.4 monitors: longest alarm - change date, weeks"
+var_school_hwym_min,31.11111111111111,"variance detectors, HW/YM, AR(1): % alarms in school holidays, min"
+var_school_hwym_max,40.0,"same, max"
+var_within1d_hwym_min,60.0,"variance detectors, HW/YM, AR(1): % alarms within a day of a mean alarm, min"
+var_within1d_hwym_max,73.17073170731707,"same, max"
+sens_max_move_tab,5.0,tab:opal-sens monitors: largest move in episodes over the sensitivity runs and windows
+sens_k1_add_ym_stl,4.0,episodes added by k=1 for YM+CUSUM and STL+CUSUM (both equal)
+hw_ewma_runs_min,6.0,"HW+EWMA: episodes over the sensitivity runs and the 3/7/14-day windows, min"
+hw_ewma_runs_max,9.0,"same, max"
+hw_ewma_rules_min,7.0,"episodes over the five rule versions, min"
+hw_ewma_rules_max,8.0,"same, max"
+a_cusum_rules_min,5.0,"episodes over the five rule versions, min"
+a_cusum_rules_max,12.0,"same, max"
+frozen_leaders_n,3.0,monitors at the frozen-rule maximum
+frozen_leaders_indep_n,2.0,of them with the independent threshold
+frozen_best_past,12.0,"best past-only, frozen"
+frozen_best_retro,12.0,"best retrospective, frozen"
+focusfix_h_move_surprise,0.3682775784138004,largest % change of a FOCuS-family threshold (surprise)
+focusfix_h_move_level,1.2270495060799913,largest % change of a FOCuS-family threshold (level)
+focus_cpt_lower_pct_FOCuS,1.8684931506849245,"focus_cpt below the exact statistic: % of days, mean of 50 series"
+focus_cpt_lower_pct_FOCuS-AR,3.5397260273972497,"same, FOCuS-AR"
+drop_pct_sd0.5,-2.4069235059612004,100 (exp(-k sigma) - 1)
+drop_pct_sd1,-4.755914204286915,100 (exp(-k sigma) - 1)
+drop_pct_sd2,-9.285641209388452,100 (exp(-k sigma) - 1)
+drop_pct_sd4,-17.709051092081964,100 (exp(-k sigma) - 1)
+generator_trend_pct,5.7017677100756,"fitted trend, % a year"
+generator_trend,0.055451430590033574,"fitted trend, log scale a year"
+generator_n_excluded,323.0,days removed before the generator fit
+nodq_survivors_lose,3.0,both-rules survivors whose count falls without 15 Jan 2025
+nodq_survivors_hold,5.0,of them still holding
+elec_years,6.809034907597536,years monitored (n_alarms / alarms_per_year)
+elec_xmas_alarms,4.0,alarms on 25 or 26 December
+elec_nov23_min_pct,6.173432625365871,"working days 24-29 Nov 2023: surprise of the temperature regression, % above forecast, min"
+elec_nov23_max_pct,10.153168338190044,"same, max"
+elec_hw_credit_min_days,5.0,"HW AR(1) frozen-rule credits: days before the lockdown order, min"
+elec_hw_credit_max_days,6.0,"same, max"

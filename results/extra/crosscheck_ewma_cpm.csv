@@ -1,0 +1,48 @@
+check,value
+kernel inputs,26.0
+EWMA max abs path difference,3.552713678800501e-15
+"CPM max abs path difference, inputs without signed zeros",1.7763568394002505e-15
+"CPM max abs path difference, all inputs after z + 0.0",1.7763568394002505e-15
+CPM max abs path difference from the independent code's signed-zero tie miscount,0.0009389320937720491
+Opal monitors compared,60.0
+"Opal alarms, independent code",1779.0
+"Opal alarms, ours (same monitors)",1779.0
+Opal alarms only in one run,0.0
+Opal alarms with a different direction,0.0
+Opal score rows with every compared column equal,60.0
+Opal score rows whose episodes equal our direction-aware count,60.0
+Opal score rows whose episodes equal our frozen-rule count,15.0
+simulation false-alarm cells compared,810.0
+"false-alarm cells with |z| > 3, excluding YM + capped FOCuS + holidays + AR(1)",4.0
+"false-alarm max |z|, excluding those cells",3.3600719200037528
+YM + capped FOCuS + holidays + AR(1) cells,3.0
+their max |z| against our exact FOCuS,31.552812053249006
+their max |z| against our pre-fix package FOCuS,0.6725591561774383
+"false-alarm max |z|, independent threshold rule",1.8632732019989637
+"false-alarm cells with |z| > 3 under the matched rule (threshold estimated on 1,000 runs in the independent code)",4.0
+t5 false-alarm cells compared,54.0
+t5 false-alarm max |z|,2.55475874172382
+detection cells compared,3888.0
+detection cells with |z| > 4,9.0
+"of those, capped FOCuS (package in the independent code)",6.0
+detection cells mean z,0.007694044700664571
+CPM alarms compared for the change date,368.0
+CPM alarms whose change date differs,6.0
+"CPM change date difference, days (min)",-2.0
+"of those, first COVID-19 alarms (opal/covid.csv, Figure 6.4)",0.0
+"first 2,000 runs: EWMA/capped EWMA/CPM false-alarm cells, independent and AR(1) rules",252.0
+"first 2,000 runs: EWMA/capped EWMA/CPM false-alarm cells identical",252.0
+"first 2,000 runs: EWMA/capped EWMA/CPM false-alarm cells, Gaussian",216.0
+"first 2,000 runs: EWMA/capped EWMA/CPM false-alarm cells, t5",36.0
+"first 2,000 runs: EWMA/capped EWMA/CPM detection cells, independent and AR(1) rules",1152.0
+"first 2,000 runs: EWMA/capped EWMA/CPM detection cells identical",1152.0
+"first 2,000 runs: EWMA/capped EWMA/CPM detection cells, Gaussian",1080.0
+"first 2,000 runs: EWMA/capped EWMA/CPM detection cells, t5",72.0
+"first 2,000 runs: CUSUM/capped CUSUM cells (group harness detectors) compared",864.0
+"first 2,000 runs: CUSUM/capped CUSUM cells identical",864.0
+"first 2,000 runs: FOCuS/capped FOCuS cells (focus_cpt in the independent code) compared",864.0
+"first 2,000 runs: FOCuS/capped FOCuS cells identical",445.0
+"matched-rule false-alarm cells (threshold from the independent 1,000 held-out runs vs our 5,000)",270.0
+matched-rule false-alarm max |z|,3.3600719200037528
+matched-rule detection cells compared,1296.0
+matched-rule detection cells identical,509.0

@@ -1,0 +1,4 @@
+,change_starts
+PELT pen=3log(n) min_size=7,198 400
+BinSeg thr=4.0,198 400
+WBS thr=4.5,198 400
